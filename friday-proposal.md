@@ -97,10 +97,11 @@ Learning GitHub and Python language.
 ### List of services:
 
 * Ability to create a user account and a pantry, save your ingredients or recipes for next time
+* Allow to search for receips without having a user account
 * Add ingredients to your pantry
 * Delete ingredients from your pantry
-* Find recipes based on what ingredients you have
-* Share your recipes or keep them private
+* Find recipes based on what ingredients you have in your pantry
+* Share your recipes or keep them privateLi
 * Choose between categories such as breakfast, lunch, dinner, dessert; cuisine; snacks; meals;
 
 
