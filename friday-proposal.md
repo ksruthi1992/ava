@@ -101,7 +101,7 @@ Learning GitHub and Python language.
 * Add ingredients to your pantry
 * Delete ingredients from your pantry
 * Find recipes based on what ingredients you have in your pantry
-* Share your recipes or keep them privateLi
+* Share your recipes or keep them private
 * Choose between categories such as breakfast, lunch, dinner, dessert; cuisine; snacks; meals;
 
 
