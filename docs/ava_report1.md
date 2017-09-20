@@ -1,4 +1,4 @@
-```
+
 ## AVA
 
 ### Table of contents  
@@ -10,7 +10,6 @@
   * [Actors and Goals](#actor)
   * [Use Cases](#usecase)
   * [System Sequence Diagrams](#diagrams)
-```
 
 ## <a name="requirements"></a> Customer Requirements
 
