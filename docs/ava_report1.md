@@ -29,6 +29,6 @@
 | REQ - 8      | 1        | Ava analyzes recipes and provides related side dishes to make a full meal |
 
 
+## <a name="requirements"></a> System Sequence Diagrams
 
-
-
+![image](Sequence_Diagram_for_Login.png)
