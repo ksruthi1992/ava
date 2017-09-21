@@ -28,6 +28,9 @@
 | REQ - 7      | 1        | Ava will let users share their recipes   |
 | REQ - 8      | 1        | Ava analyzes recipes and provides related side dishes to make a full meal |
 
+## <a name="usecase"></a> Use Case Diagram
+
+![image](use_case_diagram.jpg)
 
 ## <a name="diagrams"></a> System Sequence Diagrams
 
