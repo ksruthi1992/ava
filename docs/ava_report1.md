@@ -32,3 +32,6 @@
 ## <a name="diagrams"></a> System Sequence Diagrams
 
 ![image](Sequence_Diagram_for_Login.png)
+
+
+![image](Sequence_Diagram_Input_Ingredients.png)
