@@ -20,7 +20,7 @@
 | REQ - 3a     | 5        | ...based on the ingredients              |
 | REQ - 3b     | 4        | ...based on cuisine                      |
 | REQ - 3c     | 3        | ...based on time-of-day                  |
-| REQ - 4      | 2        | Ava will let users bookmark/save recipes |
+| REQ - 4      | 3        | Ava will let users bookmark/save recipes |
 | REQ - 5      | 2        | Ava will let users leave a review        |
 | REQ - 5a     | 2        | ...by giving a rating (on a scale of 1-5), based on how much they liked it |
 | REQ - 5b     | 2        | ...by giving a suggestion in text/comment |
