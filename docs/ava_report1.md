@@ -32,6 +32,25 @@
 
 ![image](use_case_diagram.jpg)
 
+
+
+
+
+| Use Cases | Description                              |
+| --------- | ---------------------------------------- |
+| UC - 1    | NewUserSignUp New User can sign up to 'Ava' application |
+| UC - 2    | LoginUser Existing user can login to 'Ava' application |
+| UC - 3    | SaveIngredients User can save ingredients in the pantry |
+| UC - 4    | SearchReceipe User can search receipes based on the search filter |
+| UC - 5    | GiveFeedback Existing users can give feedback for receipes |
+| UC - 6    | ShareReceipe Users can share receipes on social media |
+| UC - 7    | ViewReceipeOfTheDay Users can view receipe of the day |
+| UC - 8    | AddReceipe Admin can add receipe         |
+| UC - 9    | EditReceipe Admin can edit receipe       |
+| UC - 10   | EditRceipeOfTheDay Admin can edit receipe of the day |
+
+
+
 ## <a name="diagrams"></a> System Sequence Diagrams
 
 Login
