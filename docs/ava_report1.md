@@ -40,5 +40,7 @@
 ![image](Sequence_Diagram_Input_Ingredients.png)
 
 
+![image](Sequence_Diagram_Search_Recipes_modified.png)
+
 
 ![image](Sequence_Diagram_Admin_login.png)
