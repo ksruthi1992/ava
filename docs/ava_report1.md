@@ -34,9 +34,21 @@
 
 ## <a name="diagrams"></a> System Sequence Diagrams
 
+Login
+
+
+
 ![image](Sequence_Diagram_for_Login.png)
 
 
+
+
+
+
+
+
+
+Add ingredients to Pantry
 
 
 
@@ -46,9 +58,21 @@
 
 
 
+
+
+
+
+Search
+
+
+
 ![image](Sequence_Diagram_Search_Recipes_modified.png)
 
 
+
+
+
+Admin login
 
 
 
