@@ -47,7 +47,7 @@
 | UC - 7    | ViewReceipeOfTheDay Users can view receipe of the day |
 | UC - 8    | AddReceipe Admin can add receipe         |
 | UC - 9    | EditReceipe Admin can edit receipe       |
-| UC - 10   | EditRceipeOfTheDay Admin can edit receipe of the day |
+| UC - 10   | EditRceipeOfTheDay Admin can show receipe of the day to logged in users |
 
 
 
