@@ -54,11 +54,11 @@ Pantry: a place to store all of the user's current ingredients; recipes will be 
 
 #### 		<a name="usecasediagram"></a> iii. Use Case Diagram
 
-​		![image](use_case_diagram.jpg)
-=======
+![image](use_case_diagram.jpg)
+
 ![image](diagrams/use_case_diagram.jpg)
 
-=======
+
 ![image](diagrams/use_case_diagram.jpg)
 
 
