@@ -50,21 +50,6 @@ Pantry: a place to store all of the user's current ingredients; recipes will be 
 
 #### 		<a name="casualdescription"></a> i. Casual Description
 
-#### 		<a name="fullydresseddescription"></a> ii. Fully-Dressed Description
-
-#### 		<a name="usecasediagram"></a> iii. Use Case Diagram
-
-![image](use_case_diagram.jpg)
-
-![image](diagrams/use_case_diagram.jpg)
-
-
-![image](diagrams/use_case_diagram.jpg)
-
-
-
-
-
 | Use Cases | Description                              |
 | --------- | ---------------------------------------- |
 | UC - 1    | NewUserSignUp New User can sign up to 'Ava' application |
@@ -85,6 +70,16 @@ Pantry: a place to store all of the user's current ingredients; recipes will be 
 | UC - 16   | FeedbackOption2 Logged in users can provide suggestion in text for recipe |
 | UC - 17   | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |
 | UC - 18   | TrackMostViewed Admin should be able to track most viewed recipe |
+
+#### 		<a name="fullydresseddescription"></a> ii. Fully-Dressed Description
+
+#### 		<a name="usecasediagram"></a> iii. Use Case Diagram
+
+![image](diagrams/use_case_diagram.jpg)
+
+
+
+
 
 ####			<a name="systemrequirements"></a> iv. System Requirements - Use Case Traceability Matrix 
 
