@@ -46,7 +46,6 @@ Pantry: a place to store all of the user's current ingredients; recipes will be 
 
 ### 	<a name="actor"></a> b. Actors and Goals
 
-<<<<<<< HEAD
 ### 	<a name="usecase"></a> c. Use Cases
 
 #### 		<a name="casualdescription"></a> i. Casual Description
@@ -58,7 +57,9 @@ Pantry: a place to store all of the user's current ingredients; recipes will be 
 ​		![image](use_case_diagram.jpg)
 =======
 ![image](diagrams/use_case_diagram.jpg)
->>>>>>> 418360923a5b55a06bb472026ca8878df611c17b
+
+=======
+![image](diagrams/use_case_diagram.jpg)
 
 
 
