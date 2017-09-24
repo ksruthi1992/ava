@@ -3,7 +3,8 @@
 
 ### Table of contents  
 * [Project Proposal](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/friday-proposal.md)
-* [Customer Requirements](#requirements)
+* [Customer Statement of requirements](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/Customer%20Statement%20of%20Requirements.md#customer-statement-of-requirements)
+* [Requirements](#requirements)
 * [Glossary](#glossary)
 * [Functional Requirments](#functional)
   * [Actors and Goals](#actor)
@@ -39,11 +40,25 @@ Pantry: a place to store all of the user's current ingredients; recipes will be 
 
 
 
+## <a name="functionalrequirements"></a> Functional Requirements Specification
 
+### 	<a name="stakeholders"></a> a. Stakeholders
 
-## <a name="usecase"></a> Use Case Diagram
+### 	<a name="actor"></a> b. Actors and Goals
 
-![image](use_case_diagram.jpg)
+<<<<<<< HEAD
+### 	<a name="usecase"></a> c. Use Cases
+
+#### 		<a name="casualdescription"></a> i. Casual Description
+
+#### 		<a name="fullydresseddescription"></a> ii. Fully-Dressed Description
+
+#### 		<a name="usecasediagram"></a> iii. Use Case Diagram
+
+​		![image](use_case_diagram.jpg)
+=======
+![image](diagrams/use_case_diagram.jpg)
+>>>>>>> 418360923a5b55a06bb472026ca8878df611c17b
 
 
 
@@ -70,8 +85,8 @@ Pantry: a place to store all of the user's current ingredients; recipes will be 
 | UC - 17   | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |
 | UC - 18   | TrackMostViewed Admin should be able to track most viewed recipe |
 
+####			<a name="systemrequirements"></a> iv. System Requirements - Use Case Traceability Matrix 
 
-### Traceability matrix
 |  Req  	| PW 	| UC1 	| UC2 	| UC3 	| UC4 	| UC5 	| UC6 	| UC7 	| UC8 	| UC9 	| UC10 	| UC11 	| UC12 	| UC13 	| UC14 	| UC15 	| UC16 	| UC17 	| UC18 	|
 |:-----:	|:--:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:----:	|:----:	|:----:	|:----:	|:----:	|:----:	|:----:	|:----:	|:----:	|
 |  REQ1 	|  5 	|  X  	|  X  	|     	|     	|     	|     	|     	|     	|     	|      	|   X  	|      	|      	|      	|      	|      	|      	|      	|
@@ -84,13 +99,13 @@ Pantry: a place to store all of the user's current ingredients; recipes will be 
 |  REQ8 	|  1 	|     	|     	|     	|     	|     	|     	|     	|     	|     	|      	|      	|      	|      	|      	|      	|      	|   X  	|      	|
 |  REQ9 	|  5 	|     	|     	|     	|     	|     	|     	|     	|  X  	|  X  	|      	|      	|      	|      	|      	|      	|      	|      	|   X  	|
 
-## <a name="diagrams"></a> System Sequence Diagrams
+####	###<a name="diagrams"></a> d. System Sequence Diagrams 
 
 Login
 
 
 
-![image](Sequence_Diagram_for_Login.png)
+![image](diagrams/Sequence_Diagram_for_Login.png)
 
 
 
@@ -104,7 +119,7 @@ Add ingredients to Pantry
 
 
 
-![image](Sequence_Diagram_Input_Ingredients.png)
+![image](diagrams/Sequence_Diagram_Input_Ingredients.png)
 
 
 
@@ -118,7 +133,7 @@ Search
 
 
 
-![image](Sequence_Diagram_Search_Recipes_modified.png)
+![image](diagrams/Sequence_Diagram_Search_Recipes_modified.png)
 
 
 
@@ -128,7 +143,18 @@ Admin login
 
 
 
-![image](Sequence_Diagram_Admin_login.png)
+![image](diagrams/Sequence_Diagram_Admin_login.png)
 
 
 
+## <a name="nonfunctional"></a> Nonfunctional Requirements
+
+Functionality - 
+
+Usability-
+
+Reliability-
+
+Performance-
+
+Supportability-
