@@ -95,7 +95,7 @@ Pantry: a place to store all of the user's current ingredients; recipes will be 
 |  REQ8 	|  1 	|     	|     	|     	|     	|     	|     	|     	|     	|     	|      	|      	|      	|      	|      	|      	|      	|   X  	|      	|
 |  REQ9 	|  5 	|     	|     	|     	|     	|     	|     	|     	|  X  	|  X  	|      	|      	|      	|      	|      	|      	|      	|      	|   X  	|
 
-####	###<a name="diagrams"></a> d. System Sequence Diagrams 
+### <a name="diagrams"></a> d. System Sequence Diagrams
 
 Login
 
