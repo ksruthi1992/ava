@@ -44,7 +44,7 @@ Pantry: a place to store all of the user's current ingredients; recipes will be 
 
 ## <a name="usecase"></a> Use Case Diagram
 
-![image](use_case_diagram.jpg)
+![image](diagrams/use_case_diagram.jpg)
 
 
 
@@ -91,7 +91,7 @@ Login
 
 
 
-![image](Sequence_Diagram_for_Login.png)
+![image](diagrams/Sequence_Diagram_for_Login.png)
 
 
 
@@ -105,7 +105,7 @@ Add ingredients to Pantry
 
 
 
-![image](Sequence_Diagram_Input_Ingredients.png)
+![image](diagrams/Sequence_Diagram_Input_Ingredients.png)
 
 
 
@@ -119,7 +119,7 @@ Search
 
 
 
-![image](Sequence_Diagram_Search_Recipes_modified.png)
+![image](diagrams/Sequence_Diagram_Search_Recipes_modified.png)
 
 
 
@@ -129,7 +129,7 @@ Admin login
 
 
 
-![image](Sequence_Diagram_Admin_login.png)
+![image](diagrams/Sequence_Diagram_Admin_login.png)
 
 
 
