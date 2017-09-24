@@ -73,6 +73,187 @@ Pantry: a place to store all of the user's current ingredients; recipes will be 
 
 #### 		<a name="fullydresseddescription"></a> ii. Fully-Dressed Description
 
+UC1 - NewUserSignUp 
+
+Related Requirements: REQ - 1
+
+Initiating Actor: User
+
+Goal: User wants to get signed up for Ava application
+
+Participating Actors: Ava
+
+Preconditions: 
+
+PostConditions: User is directed to the registration page in Ava 
+
+Main Success Scenario:
+
+    1.User opens the Ava application 
+
+	2.User signs up by going to the registration page
+
+	3.User submits the application and his/her account gets created
+
+	4.Ava must be able to register new users
+
+
+UC2 - LoginUser 
+
+Related Requirements: REQ - 1
+
+Initiating Actor: User,Ava
+
+Goal: Existing user can login to Ava application
+
+Participating Actors: Database
+
+Preconditions: User must already have an account in Ava 
+
+PostConditions: User is authenticated and user can go through Ava application 
+
+Main Success Scenario:
+​	 
+    1.User gets logged in to Ava
+
+	2.Ava must be able to authenticate the already existing users
+
+	3.Users can view the Ava application 
+
+​	
+UC3 - SaveIngredients 
+
+Related Requirements: REQ - 2
+
+Initiating Actor: User,Ava
+
+Goal: User can add/save items to their pantry 
+
+Participating Actors: Database
+
+Preconditions: New/Existing users can view the ingredients in pantry
+
+PostConditions: User can view the ingredients which he/she has added to their pantry
+
+Main Success Scenario:
+
+	1.New/Existing users can browse the Ava application 
+
+	2.User goes to the pantry mode
+
+	3.User is given list of ingredients 
+
+	4.User makes a selection
+
+	5.User can add/save ingredients to their pantry 
+
+UC4 - SearchRecipe 
+​	
+Related Requirements: REQ - 3
+
+Initiating Actor: User,Ava
+
+Goal: User can search any recipe 
+
+Participating Actors: Database
+
+Preconditions: User can view the ingredients in their pantry
+
+PostConditions: User can view the ingredients which he/she has added to their pantry
+
+Ava should be able to find a recipe
+
+
+UC5 - GiveFeedback 
+
+Related Requirements: REQ - 5
+
+Initiating Actor: User,Ava
+
+Goal: User can give feedback for any recipe
+
+Participating Actors: Database
+
+Preconditions: User must already have an account in Ava 
+
+PostConditions: User can view any recipe and give feedback 
+
+Main Success Scenario:
+
+	1.User logs in to Ava
+
+	2.User goes to the pantry mode
+
+	3.User can view any recipe
+
+	4.User gives feedback/review for the same
+
+UC6 - ShareRecipe
+
+Related Requirements: REQ - 7
+
+Initiating Actor: User,Ava
+
+Goal: User can share their recipes 
+
+Participating Actors: Database
+
+Preconditions: User must already have an account in Ava 
+
+PostConditions: User can view any recipe and share it with others 
+
+Main Success Scenario:
+
+	1.User logs in to Ava
+
+	2.User goes to the pantry mode
+
+	3.User can view any recipe
+
+	4.User shares the recipe 
+
+UC7 - ViewRecipeOfTheDay 
+
+Related Requirements: REQ - 6
+
+Initiating Actor: User,Ava,Admin
+
+Goal: User can view Recipe of the day
+
+Participating Actors: Database
+
+Preconditions: User must already have an account in Ava 
+
+PostConditions: User can view Recipe of the day which the admin will show to the existing users
+
+Main Success Scenario:
+
+	1.User logs in to Ava
+
+	2.Admin will show Recipe of the day to existing users
+
+	3.Existing users can view Recipe of the day
+
+UC8 - AddRecipe 
+
+Related Requirements: REQ - 9
+
+Initiating Actor: Ava,Admin
+
+Goal: Admin should be able to add any recipe 
+
+Participating Actors: Database
+
+Preconditions: NA
+
+PostConditions: A new gets added in the Ava application
+
+Main Success Scenario:
+
+	1.Admin can add any recipe whenever required
+
+
+
 #### 		<a name="usecasediagram"></a> iii. Use Case Diagram
 
 ![image](diagrams/use_case_diagram.jpg)
