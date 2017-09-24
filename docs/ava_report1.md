@@ -3,7 +3,8 @@
 
 ### Table of contents  
 * [Project Proposal](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/friday-proposal.md)
-* [Customer Requirements](#requirements)
+* [Customer Statement of requirements](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/Customer%20Statement%20of%20Requirements.md#customer-statement-of-requirements)
+* [Requirements](#requirements)
 * [Glossary](#glossary)
 * [Functional Requirments](#functional)
   * [Actors and Goals](#actor)
