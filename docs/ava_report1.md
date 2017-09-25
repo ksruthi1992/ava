@@ -636,16 +636,17 @@ Admin login
 
 #### <a name="concept_definition"></a> i. Concept Definition
 
-| Responsibility Description | Type | Concept Name  |
-| -------------------------- | ---- | ------------- |
-|                            |      |               |
-|                            |      | Search Recipe |
-|                            |      | Give Feedback |
-|                            |      |               |
-|                            |      |               |
-|                            |      |               |
-|                            |      |               |
-|                            |      |               |
+| Responsibility Description               | Type | Concept Name  |
+| ---------------------------------------- | ---- | ------------- |
+| R-01: Knows which registered users are accessing website | K    | Admin         |
+| R-02: Adds/deletes recipes, approves feedback, picks recipe of the day. | D    | Admin         |
+| R-03: Adds ingredients to pantry, search recipes, must register to save ingredients | D    | NewUser       |
+| R-04: Adds ingredients to pantry, search recipes, | D    | ExistingUser  |
+| R-05: Recipe modified, added, or deleted from website. | D    | ModifyRecipe  |
+| R-06: Recipe with user specifications will be pulled from database | K    | SearchRecipe  |
+| R-07: User will be able to add ingredient to their individual pantry. | D    | AddIngredient |
+| R-08: Feedback will be added to recipe page. | D    | GetFeedback   |
+| R-09: Daily recipe will be added to top of search. | D    | DailyRecipe   |
 
 
 
