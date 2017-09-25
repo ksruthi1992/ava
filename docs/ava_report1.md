@@ -18,10 +18,10 @@
 
 * [Actors and Goals](#actor)
 * [Use Cases](#usecase)
-  * *[Casual description](#casual_description)*
-  * *[Fully dressed description](#fully_dressed_description)*
-  * *[Use case diagram](#usecase_diagram)*
-  * *[Use case traceability matrix](#use_case_traceability)*
+  * *[Casual description](#casualdescription)*
+  * *[Fully dressed description](#fullydresseddescription)*
+  * *[Use case diagram](#usecasediagram)*
+  * *[Use case traceability matrix](#usecasetraceability)*
 * [System Sequence Diagrams](#diagrams)
 
 **[Non Functional requirements](#non_functional_requirements)**
@@ -320,7 +320,8 @@ Main Success Scenario:
 
 
 
-####			<a name="systemrequirements"></a> iv. System Requirements - Use Case Traceability Matrix 
+####			<a name="usecasetraceability"></a> iii. Use Case Traceability Matrix
+
 
 |  Req  	| PW 	| UC1 	| UC2 	| UC3 	| UC4 	| UC5 	| UC6 	| UC7 	| UC8 	| UC9 	| UC10 	| UC11 	| UC12 	| UC13 	| UC14 	| UC15 	| UC16 	| UC17 	| UC18 	|
 |:-----:	|:--:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:----:	|:----:	|:----:	|:----:	|:----:	|:----:	|:----:	|:----:	|:----:	|
@@ -429,6 +430,3 @@ Legal- how should the system be licensed? any liability issues? any royalties or
 ## <a name="planofwork"></a> Plan of Work
 
 ## <a name="references"></a> References
-
-
-
