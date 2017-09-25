@@ -18,9 +18,9 @@
 
 * [Actors and Goals](#actor)
 * [Use Cases](#usecase)
-  * *[Casual description](#casual_description)*
-  * *[Fully dressed description](#fully_dressed_description)*
-  * *[Use case diagram](#usecase_diagram)*
+  * *[Casual description](#casualdescription)*
+  * *[Fully dressed description](#fullydresseddescription)*
+  * *[Use case diagram](#usecasediagram)*
   * *[Use case traceability matrix](#use_case_traceability)*
 * [System Sequence Diagrams](#diagrams)
 
