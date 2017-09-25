@@ -67,19 +67,19 @@
 
 ## <a name="glossary"></a> Glossary
 
-Database: The file where the ingredients in the pantry and recipes are stored.
+*Ava* : The system to be created; she will help a user as they navigate through the site.
 
-Ava: The system to be created; she will help a user as they navigate through the site.
+*User* : Any person that uses the website to input ingredients to the pantry or searches for recipes based on the ingredients he/she has.
 
-Ingredients: Items that are used to search for recipes or store in a pantry.
+*Pantry* : A place to store all of the user's current ingredients; recipes will be found off of this information.
 
-Pantry: A place to store all of the user's current ingredients; recipes will be found off of this information.
+*Ingredients* : Edible items the user has in the pantry and the ones used to search for recipes.
 
-User: Any person that uses the website to input ingredients to the pantry or searches for recipes based on the ingredients he/she has.
+*Admin* : A person who has deep access to the system, is capable of adding new recipes to the system; can view the user's pantry.
 
-Admin: A person who has deep access to the system, is capable of adding new recipes to the system; can view the user's pantry.
+*Recipe of the Day* : Recommended recipe for the day by Ava.
 
-Recipe of the Day: Recipe that is famous for that day.
+
 
 
 ## <a name="functionalrequirements"></a> Functional Requirements Specification
@@ -166,6 +166,8 @@ Main Success Scenario:
 
 
 
+
+
 #### UC2 - LoginUser 
 
 Related Requirements: REQ - 1
@@ -189,6 +191,8 @@ Main Success Scenario:
 	3.Users can view the Ava application 
 ​	
 ​	
+
+
 
 #### UC3 - SaveIngredients 
 
@@ -215,6 +219,8 @@ Main Success Scenario:
 	4.User makes a selection
 
 	5.User can add/save ingredients to their pantry 
+
+
 ​	
 
 #### UC4 - SearchRecipe 
@@ -235,6 +241,8 @@ PostConditions: User can view the ingredients which he/she has added to their pa
 Main Success Scenario:
 ​		
 		1.Ava should be able to find a recipe
+
+
 #### UC - 4a SearchFilter1 
 
 Related Requirements: REQ - 3
@@ -252,6 +260,8 @@ PostConditions: User can browse recipes on website with their criteria.
 Main Success Scenario:
 
 	1.User can search any recipe based on the ingredients
+
+
 #### UC - 4b SearchFilter2  
 
 Related Requirements: REQ - 3
@@ -268,6 +278,8 @@ PostConditions:
 
 Main Success Scenario:
      1.User can search any recipe based on time of the day
+
+
 #### UC - 4c SearchFilter3 
 
 Related Requirements: REQ - 3
@@ -307,6 +319,10 @@ Main Success Scenario:
 	3.User can view any recipe
 
 	4.User gives feedback/review for the same
+
+
+
+
 #### UC - 5a FeedbackOption1 
 
 Related Requirements: REQ - 5
@@ -328,6 +344,8 @@ Main Success Scenario:
 	2.User wants to provide feedback by giving rating
 
 	3.User gives rating for the recipe
+
+
 #### UC - 5b FeedbackOption2
 
 Related Requirements: REQ - 5
@@ -350,6 +368,8 @@ Main Success Scenario:
 
 	3.User provides suggestion by adding text	
 ​	
+
+
 
 #### UC6 - ShareRecipe
 
@@ -374,6 +394,10 @@ Main Success Scenario:
 	3.User can view any recipe
 
 	4.User shares the recipe 
+
+
+
+
 #### UC7 - ViewRecipeOfTheDay 
 
 Related Requirements: REQ - 6
@@ -395,6 +419,10 @@ Main Success Scenario:
 	2.Admin will show Recipe of the day to existing users
 
 	3.Existing users can view Recipe of the day
+
+
+
+
 #### UC8 - AddRecipe 
 
 Related Requirements: REQ - 9
@@ -433,6 +461,8 @@ Main Success Scenario:
 	2.Admin can edit the recipe
 ​	
 
+
+
 #### UC - 10 DisplayRceipeOfTheDay 
 
 Related Requirements: REQ - 6
@@ -452,6 +482,10 @@ Main Success Scenario:
 	1.Admin adds the recipe of the day 
 
 	2.Users having account in Ava will be able to view the recipe of the day
+
+
+
+
 #### UC - 11 ManageAccount 
 
 Related Requirements: REQ - 4,REQ - 8
@@ -473,6 +507,9 @@ Main Success Scenario:
 	2.Based on user's preferences,Ava provides related side dishes
 
 	3.Ava allows users to bookmark or save recipe
+
+
+
 
 #### UC - 12 TrackMostViewed 
 
@@ -498,9 +535,7 @@ Main Success Scenario:
 
 #### 		<a name="usecasediagram"></a> iii. Use Case Diagram
 
-![image](diagrams/use case diagram.jpg)
-
-
+![image](diagrams/use_case_diagram.jpg)
 
 
 
