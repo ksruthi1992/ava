@@ -385,7 +385,7 @@ Admin login
 
 ## <a name="non_functional_requirements"></a> Nonfunctional Requirements
 
-Functionality -  
+Functionality - The system shows varies recipes that the users can try with the ingredients they provide. Users are able to use the system without signing up but they won't be able to save their ingredients or recipe for future use. 
 
 Usability- This is a simple and user-friendly site; therefore, we assume the user will have a basic understanding of computer processes. User interface standards? 
 
@@ -396,7 +396,8 @@ is restarting the system acceptable in the event of failure? how much data can t
 Performance- number of concurrent users supported? response time? number of transactions per second?
              Based on the ingredients in the pantry / inputted by the user, the search results of the recipes should be as close to the              ingredients available to the user.
 
-Supportability- how will the system be extended? who maintains the system? plans to port the system to a different software or hardware environment?
+Supportability- The system will be maintain by the admin.
+how will the system be extended?  plans to port the system to a different software or hardware environment?
 
 Implementation- are there constraints on the hardware platform? are constraints imposed by the maintenance team? by the testing team?
 
