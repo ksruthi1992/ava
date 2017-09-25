@@ -54,21 +54,21 @@
 ## <a name="requirements"></a> Customer Requirements                                  
 
 | Requirements | Priority | Description                              |
-| ------------ | -------- | ---------------------------------------- |
-| REQ - 1      | 5        | Ava should be able to authenticate the user/register new users |
-| REQ - 2      | 5        | Ava must let users add items to their pantry |
-| REQ - 3      | 5        | Ava should be able to find a recipe      |
-| REQ - 3a     | 5        | ...based on the ingredients              |
-| REQ - 3b     | 4        | ...based on cuisine                      |
-| REQ - 3c     | 3        | ...based on time-of-day                  |
-| REQ - 4      | 3        | Ava will let users bookmark/save recipes |
-| REQ - 5      | 2        | Ava will let users leave a review        |
-| REQ - 5a     | 2        | ...by giving a rating (on a scale of 1-5), based on how much they liked it |
-| REQ - 5b     | 2        | ...by giving a suggestion in text/comment |
-| REQ - 6      | 1        | Ava will let users view recipe of the day and admin should be able to show recipe of the day to logged in users |
-| REQ - 7      | 1        | Ava will let users share their recipes   |
-| REQ - 8      | 1        | Ava analyzes recipes and provides related side dishes to make a full meal |
-| REQ - 9      | 5        | Admin should be able to add or edit recipes and keep track of most viewed recipes |
+| ------------ | :------: | ---------------------------------------- |
+| REQ - 1      |    5     | Ava should be able to authenticate the user/register new users |
+| REQ - 2      |    5     | Ava must let users add items to their pantry |
+| REQ - 3      |    5     | Ava should be able to find a recipe      |
+| REQ - 3a     |    5     | ...based on the ingredients              |
+| REQ - 3b     |    4     | ...based on cuisine                      |
+| REQ - 3c     |    3     | ...based on time-of-day                  |
+| REQ - 4      |    3     | Ava will let users bookmark/save recipes |
+| REQ - 5      |    2     | Ava will let users leave a review        |
+| REQ - 5a     |    2     | ...by giving a rating (on a scale of 1-5), based on how much they liked it |
+| REQ - 5b     |    2     | ...by giving a suggestion in text/comment |
+| REQ - 6      |    1     | Ava will let users view recipe of the day and admin should be able to show recipe of the day to logged in users |
+| REQ - 7      |    1     | Ava will let users share their recipes   |
+| REQ - 8      |    1     | Ava analyzes recipes and provides related side dishes to make a full meal |
+| REQ - 9      |    5     | Admin should be able to add or edit recipes and keep track of most viewed recipes |
 
 ## <a name="glossary"></a> Glossary
 
@@ -91,12 +91,7 @@
 
 ### 	<a name="stakeholders"></a> a. Stakeholders
 
-The following people will be involved with the website:
-
-- Teenagers
-
-- Adults
-
+Those who would be interested in use of the Ava web interface are those who are looking to find recipes based on ingredients they have at home, as well as those users who need inspiration for recipes to cook based on personal preference, such as cuisine origin. Non-users who would be interested in this are cooks who are interested in appending their own recipes to share to a mass audience, as well as sponsors who want to feature specific recipes for the recipe of the day. The administrative users will also have a interest in the system due to involvement in development and creative execution.
 
 ### 	<a name="actor"></a> b. Actors and Goals
 
@@ -819,4 +814,4 @@ Furthermore, particular to a recipe, the relevancy algorithm/formula will theref
 
 ## <a name="references"></a> References
 
-No references included thus far.
+**Marsic, Ivan. Software Engineering. Rutgers University, New Brunswick, New Jersey , 2012**
