@@ -120,6 +120,8 @@ The following people will be involved with the website:
 
   #### 	<a name="casualdescription"></a> i. Casual Description
 
+  ​
+
 
 
 | Use Cases | Description                              |
@@ -547,6 +549,8 @@ Main Success Scenario:
 ####			<a name="usecasetraceability"></a> iii. Use Case Traceability Matrix
 
 
+
+
 |  Req  	| PW 	| UC1 	| UC2 	| UC3 	| UC4 	| UC5 	| UC6 	| UC7 	| UC8 	| UC9 	| UC10 	| UC11 	| UC12 	| UC13 	| UC14 	| UC15 	| UC16 	| UC17 	| UC18 	|
 |:-----:	|:--:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:----:	|:----:	|:----:	|:----:	|:----:	|:----:	|:----:	|:----:	|:----:	|
 |  REQ1 	|  5 	|  X  	|  X  	|     	|     	|     	|     	|     	|     	|     	|      	|   X  	|      	|      	|      	|      	|      	|      	|      	|
@@ -810,6 +814,8 @@ Furthermore, particular to a recipe, the relevancy algorithm/formula will theref
    1. After searching for recipe, click on "desired recipe" for more information about it
 
 ## <a name="plan_of_work"></a> Plan of Work
+
+![image](diagrams/ava_gantt_chart.JPG)
 
 ## <a name="references"></a> References
 
