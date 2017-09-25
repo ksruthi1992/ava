@@ -620,9 +620,9 @@ Admin login
 
 **Supportability**- The system will be maintain by the administration. The system will be extended when searching for a recipe; a recipe can be searched based on ingredients, time-of-day, or cuisine. The system will also be extended when allowing the user to give feedback; the user may give feedback through a comment or a rating. 
 
-**Implementation**- are there constraints on the hardware platform? are constraints imposed by the maintenance team? by the testing team?
+**Implementation**- We will be using Python as well as Django in order to build the website and use APIs to provide simpler writing and pulling from the backend database. There will be three databases which will hold user accounts, recipes, and also user pantry data.
 
-**Interfaces**- should the system interact with any existing systems? how are data exported/imported into the system? what standards in use by the client should be supported by the system?
+**Interfaces**- The system will be easily readable in order for the non-admin Users to know as soon as accessing the main page what to do in order to use Ava.
 
 **Operation**- The administration will manage the system by adding new recipes to the system, show recipe of the day to users, and track the most viewed recipe. 
 
@@ -656,6 +656,10 @@ Admin login
 
 
 #### <a name="attribute_definitions"></a> iii. Attribute Definitions
+
+| Concept | Attribute | Attribute Description |
+| :-----: | :-------: | :-------------------: |
+
 
 ### <a name="operation_contracts"></a> System Operation Contracts
 
@@ -749,3 +753,5 @@ Admin login
 ## <a name="plan_of_work"></a> Plan of Work
 
 ## <a name="references"></a> References
+
+No references included thus far.
