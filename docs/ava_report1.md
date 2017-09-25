@@ -619,6 +619,28 @@ Legal- how should the system be licensed? any liability issues? any royalties or
 
 ### <a name="preliminary_design"></a> Preliminary Design
 
+###### Home/Dashboard
+
+![image](diagrams/home.jpg)
+
+###### Login
+
+![image](diagrams/login.jpg)
+
+###### Register
+
+![image](diagrams/register.jpg)
+
+###### Pantry
+
+![image](diagrams/pantry.jpg)
+
+###### Recipe
+
+![image](diagrams/recipe.jpg)
+
+
+
 ### <a name="user_effort_estimation"></a> User Effort Estimation
 
 ## <a name="plan_of_work"></a> Plan of Work
