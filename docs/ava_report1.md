@@ -728,7 +728,9 @@ The factors based on user search includes:
 * Ingredients needed for the recipe (i)
 * Ava rating (a)
 * User rating (u)
-  initial_search_score(for a recipe) x = (m/i) +  ( a/10 * 0.75) + (u/10 * 0.25) 
+  ​
+
+**initial_search_score**(for a recipe) x = (m/i) +  ( a/10 * 0.75) + (u/10 * 0.25) 
 
 Furthermore, particular to a recipe, the relevancy algorithm/formula will therefore work on these factors:
 
