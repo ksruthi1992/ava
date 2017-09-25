@@ -67,19 +67,19 @@
 
 ## <a name="glossary"></a> Glossary
 
-Database: The file where the ingredients in the pantry and recipes are stored.
+*Ava* : The system to be created; she will help a user as they navigate through the site.
 
-Ava: The system to be created; she will help a user as they navigate through the site.
+*User* : Any person that uses the website to input ingredients to the pantry or searches for recipes based on the ingredients he/she has.
 
-Ingredients: Items that are used to search for recipes or store in a pantry.
+*Pantry* : A place to store all of the user's current ingredients; recipes will be found off of this information.
 
-Pantry: A place to store all of the user's current ingredients; recipes will be found off of this information.
+*Ingredients* : Edible items the user has in the pantry and the ones used to search for recipes.
 
-User: Any person that uses the website to input ingredients to the pantry or searches for recipes based on the ingredients he/she has.
+*Admin* : A person who has deep access to the system, is capable of adding new recipes to the system; can view the user's pantry.
 
-Admin: A person who has deep access to the system, is capable of adding new recipes to the system; can view the user's pantry.
+*Recipe of the Day* : Recommended recipe for the day by Ava.
 
-Recipe of the Day: Recipe that is famous for that day.
+
 
 
 ## <a name="functionalrequirements"></a> Functional Requirements Specification
