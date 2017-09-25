@@ -617,7 +617,7 @@ Legal- how should the system be licensed? any liability issues? any royalties or
 
 ###### Login
 
-![image](diagrams\login.jpg)
+![image](diagrams/login.jpg)
 
 ###### Register
 
@@ -625,11 +625,11 @@ Legal- how should the system be licensed? any liability issues? any royalties or
 
 ###### Pantry
 
-![image](diagrams\pantry.jpg)
+![image](diagrams/pantry.jpg)
 
 ###### Recipe
 
-![image](diagrams\recipe.jpg)
+![image](diagrams/recipe.jpg)
 
 
 
