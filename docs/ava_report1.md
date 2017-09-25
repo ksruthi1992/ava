@@ -535,9 +535,7 @@ Main Success Scenario:
 
 #### 		<a name="usecasediagram"></a> iii. Use Case Diagram
 
-![image](diagrams/use case diagram.jpg)
-
-
+![image](diagrams/use_case_diagram.jpg)
 
 
 
