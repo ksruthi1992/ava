@@ -351,9 +351,9 @@ Admin login
 
 ## <a name="nonfunctional"></a> Nonfunctional Requirements
 
-Functionality - 
+Functionality -  
 
-Usability-
+Usability- This is a simple and user-friendly site.
 
 Reliability-
 
