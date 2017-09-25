@@ -277,9 +277,9 @@ Goal: User should be able to search recipe using cuisine
 
 Participating Actors: Database
 
-Preconditions:  
+Preconditions:  There is none worth mentioning.
 
-PostConditions: 
+PostConditions: Recipes will be listed based on their time of day keyword.
 
 Main Success Scenario:
      1.User can search any recipe based on time of the day
