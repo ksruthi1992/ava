@@ -209,7 +209,7 @@ Goal: User can add/save items to their pantry
 
 Participating Actors: Database
 
-Preconditions: New/Existing users can view the ingredients in pantry
+Preconditions: New/Existing users can view various ingredients
 
 PostConditions: User can view the ingredients which he/she has added to their pantry.
 
@@ -656,6 +656,61 @@ Admin login
 #### <a name="attribute_definitions"></a> iii. Attribute Definitions
 
 ### <a name="operation_contracts"></a> System Operation Contracts
+
+| Operation      | NewUserSignUp                            |
+| -------------- | ---------------------------------------- |
+| Precondition   | N/A                                      |
+| Post-condition | User is directed to the registration page in Ava |
+
+| Operation      | LoginUser                                |
+| -------------- | ---------------------------------------- |
+| Precondition   | User must already have an account in Ava |
+| Post-condition | User is authenticated and user can use Ava site |
+
+| Operation      | SaveIngredients                          |
+| -------------- | ---------------------------------------- |
+| Precondition   | Users can view various ingredients       |
+| Post-condition | Users can view ingredients that have been added to their panty |
+
+| Operation      | SearchRecipe                             |
+| -------------- | ---------------------------------------- |
+| Precondition   | User has ingredients in their pantry     |
+| Post-condition | User can find a recipe related to search criteria |
+
+| Operation      | GiveFeedback                             |
+| -------------- | ---------------------------------------- |
+| Precondition   | User must have an account in Ava         |
+| Post-condition | User can view any recipe and give feedback on that recipe |
+
+| Operation      | ShareRecipe                              |
+| -------------- | ---------------------------------------- |
+| Precondition   | User must have an account in Ava         |
+| Post-condition | User can view any recipe and share it with their friends |
+
+| Operation      | ViewRecipeOfTheDay                       |
+| -------------- | ---------------------------------------- |
+| Precondition   | User must have an account in Ava         |
+| Post-condition | User can view the recipe of the day (posted by admin) |
+
+| Operation      | AddRecipe                    |
+| -------------- | ---------------------------- |
+| Precondition   | N/A                          |
+| Post-condition | A new recipe is added to Ava |
+
+| Operation      | EditRecipe                             |
+| -------------- | -------------------------------------- |
+| Precondition   | Recipe must be available in Ava        |
+| Post-condition | Said recipe is edited by Administrator |
+
+| Operation      | DisplayRecipeOfDay                       |
+| -------------- | ---------------------------------------- |
+| Precondition   | User must have an account in Ava         |
+| Post-condition | User will be able to see the recipe of the day |
+
+| Operation      | ManageAccount                            |
+| -------------- | ---------------------------------------- |
+| Precondition   | N/A                                      |
+| Post-condition | Users would be able to view side dish suggestions |
 
 
 
