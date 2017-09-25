@@ -411,11 +411,11 @@ Legal- how should the system be licensed? any liability issues? any royalties or
 
 ### <a name="domain_model"></a> Domain Model
 
-#### <a name="concept_definition"></a> Concept Definition
+#### <a name="concept_definition"></a> i. Concept Definition
 
-#### <a name="association_definitions"></a> Association Definitions
+#### <a name="association_definitions"></a> ii. Association Definitions
 
-#### <a name="attribute_definitions"></a> Attribute Definitions
+#### <a name="attribute_definitions"></a> iii. Attribute Definitions
 
 ### <a name="operation_contracts"></a> System Operation Contracts
 
