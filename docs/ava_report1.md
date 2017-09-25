@@ -77,7 +77,7 @@ Pantry: A place to store all of the user's current ingredients; recipes will be 
 
 User: Any person that uses the website to input ingredients to the pantry or searches for recipes based on the ingredients he/she has.
 
-Admin: A person who is capable of adding new recipes to the system; can view the user's pantry.
+Admin: A person who has deep access to the system, is capable of adding new recipes to the system; can view the user's pantry.
 
 Recipe of the Day: Recipe that is famous for that day.
 
