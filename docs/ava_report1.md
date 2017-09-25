@@ -383,7 +383,7 @@ Admin login
 
 
 
-## <a name="nonfunctional"></a> Nonfunctional Requirements
+## <a name="non_functional_requirements"></a> Nonfunctional Requirements
 
 Functionality -  
 
@@ -407,26 +407,26 @@ Packaging- who installs the system? how many installations are there? are there 
 
 Legal- how should the system be licensed? any liability issues? any royalties or licensing fees incurred by using specific algorithms or components?
 
-## <a name="domain analysis"></a> Domain Analysis
+## <a name="domain_analysis"></a> Domain Analysis
 
-### <a name="domain model"></a> Domain Model
+### <a name="domain_model"></a> Domain Model
 
-#### <a name="concept definition"></a> Concept Definition
+#### <a name="concept_definition"></a> Concept Definition
 
-#### <a name="association definitions"></a> Association Definitions
+#### <a name="association_definitions"></a> Association Definitions
 
-#### <a name="attribute definitions"></a> Attribute Definitions
+#### <a name="attribute_definitions"></a> Attribute Definitions
 
-### <a name="operation contracts"></a> System Operation Contracts
+### <a name="operation_contracts"></a> System Operation Contracts
 
-###<a name="mathematical model"></a> Mathematical Model
+###<a name="mathematical_model"></a> Mathematical Model
 
-## <a name="user interface"></a> User Interface Design
+## <a name="user_interface"></a> User Interface Design
 
-### <a name="preliminarydesign"></a> Preliminary Design
+### <a name="preliminary_design"></a> Preliminary Design
 
-### <a name="usereffortestimation"></a> User Effort Estimation
+### <a name="user_effort_estimation"></a> User Effort Estimation
 
-## <a name="planofwork"></a> Plan of Work
+## <a name="plan_of_work"></a> Plan of Work
 
 ## <a name="references"></a> References
