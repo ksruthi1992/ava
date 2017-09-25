@@ -108,26 +108,27 @@ The following people will be involved with the website:
 
   #### 	<a name="casualdescription"></a> i. Casual Description
 
+
+
 | Use Cases | Description                              |
 | --------- | ---------------------------------------- |
 | UC - 1    | NewUserSignUp New User can sign up to 'Ava' application |
 | UC - 2    | LoginUser Existing user can login to 'Ava' application |
 | UC - 3    | SaveIngredients User can save ingredients in the pantry |
 | UC - 4    | SearchRecipe User can search recipes based on the search filter |
+| UC -4a    | SearchFilter1 User should be able to search recipe using ingredients |
+| UC -4b    | SearchFilter2 User should be able to search recipe using cuisine |
+| UC -4c    | SearchFilter3 User should be able to search recipe based on time of the day |
 | UC - 5    | GiveFeedback Existing users can give feedback for recipes |
+| UC -5a    | FeedbackOption1 Logged in users can provide rating on a scale of 1 to 5 |
+| UC -5b    | FeedbackOption2 Logged in users can provide suggestion in text for recipe |
 | UC - 6    | ShareRecipe Users can share recipes on social media |
 | UC - 7    | ViewRecipeOfTheDay Users can view recipe of the day |
 | UC - 8    | AddRecipe Admin can add recipe           |
 | UC - 9    | EditRecipe Admin can edit recipe         |
-| UC - 10   | DisplayRceipeOfTheDay Admin can show recipe of the day to logged in users |
-| UC - 11   | Authenticate System should be able to validate existing users during login |
-| UC - 12   | SearchFilter1 User should be able to search recipe using ingredients |
-| UC - 13   | SearchFilter2 User should be able to search recipe using cuisine |
-| UC - 14   | SearchFilter3 User should be able to search recipe based on time of the day |
-| UC - 15   | FeedbackOption1 Logged in users can provide rating on a scale of 1 to 5 |
-| UC - 16   | FeedbackOption2 Logged in users can provide suggestion in text for recipe |
-| UC - 17   | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |
-| UC - 18   | TrackMostViewed Admin should be able to track most viewed recipe |
+| UC -10    | DisplayRceipeOfTheDay Admin can show recipe of the day to logged in users |
+| UC -11    | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |
+| UC -12    | TrackMostViewed Admin should be able to track most viewed recipe |
 
 #### 		<a name="fullydresseddescription"></a> ii. Fully-Dressed Description
 
@@ -156,6 +157,8 @@ Main Success Scenario:
 	4.Ava must be able to register new users
 
 
+
+
 UC2 - LoginUser 
 
 Related Requirements: REQ - 1
@@ -178,6 +181,7 @@ Main Success Scenario:
 
 	3.Users can view the Ava application 
 
+​	
 ​	
 UC3 - SaveIngredients 
 
@@ -205,6 +209,7 @@ Main Success Scenario:
 
 	5.User can add/save ingredients to their pantry 
 
+​	
 UC4 - SearchRecipe 
 ​	
 Related Requirements: REQ - 3
@@ -219,8 +224,61 @@ Preconditions: User can view the ingredients in their pantry
 
 PostConditions: User can view the ingredients which he/she has added to their pantry
 
-Ava should be able to find a recipe
+Main Success Scenario:
+​		
+		1.Ava should be able to find a recipe
 
+UC - 4a SearchFilter1 
+
+Related Requirements: REQ - 3
+
+Initiating Actor:User,Ava
+
+Goal: User should be able to search recipe using ingredients
+
+Participating Actors: Database
+
+Preconditions:  
+
+PostConditions: 
+
+Main Success Scenario:
+
+	1.User can search any recipe based on the ingredients
+
+UC - 4b SearchFilter2  
+
+Related Requirements: REQ - 3
+
+Initiating Actor:User,Ava
+
+Goal: User should be able to search recipe using cuisine
+
+Participating Actors: Database
+
+Preconditions:  
+
+PostConditions: 
+
+Main Success Scenario:
+     1.User can search any recipe based on time of the day
+
+UC - 4c SearchFilter3 
+
+Related Requirements: REQ - 3
+
+Initiating Actor:User,Ava
+
+Goal: User should be able to search recipe based on time of the day
+
+Participating Actors: Database
+
+Preconditions:  
+
+PostConditions: 
+
+Main Success Scenario:
+     1.User should be able to search recipe based on time of the day		
 
 UC5 - GiveFeedback 
 
@@ -246,6 +304,51 @@ Main Success Scenario:
 
 	4.User gives feedback/review for the same
 
+UC - 5a FeedbackOption1 
+
+Related Requirements: REQ - 5
+
+Initiating Actor:User,Ava
+
+Goal: Logged in users can provide rating on a scale of 1 to 5
+
+Participating Actors: Database
+
+Preconditions: User must have an account in Ava  
+
+PostConditions: Rating is provided by the user for the recipe he/she viewed
+
+Main Success Scenario:
+
+	1.User views a recipe in Ava
+
+	2.User wants to provide feedback by giving rating
+
+	3.User gives rating for the recipe
+
+UC - 5b FeedbackOption2
+
+Related Requirements: REQ - 5
+
+Initiating Actor:User,Ava
+
+Goal: Logged in users can provide suggestion in text for recipe
+
+Participating Actors: Database
+
+Preconditions: User must have an account in Ava  
+
+PostConditions: Suggestion for a recipe is added
+
+Main Success Scenario:
+
+	1.User views a recipe in Ava
+
+	2.User wants to add a suggestion for a recipe
+
+	3.User provides suggestion by adding text	
+
+​	
 UC6 - ShareRecipe
 
 Related Requirements: REQ - 7
@@ -309,6 +412,89 @@ PostConditions: A new gets added in the Ava application
 Main Success Scenario:
 
 	1.Admin can add any recipe whenever required
+
+UC9 - EditRecipe 
+
+Related Requirements: REQ - 9
+
+Initiating Actor:Ava,Admin
+
+Goal: Admin should be able to edit any recipe
+
+Participating Actors: Database
+
+Preconditions: Recipe must be available in Ava  
+
+PostConditions: Admin can make changes in recipe by editing it
+
+Main Success Scenario:
+
+	1.Admin searches for the recipe where changes should be made
+
+	2.Admin can edit the recipe
+​	
+
+UC - 10 DisplayRceipeOfTheDay 
+
+Related Requirements: REQ - 6
+
+Initiating Actor:User,Ava,Admin
+
+Goal: Ava will let users view recipe of the day and admin should be able to show recipe of the day to logged in users
+
+Participating Actors: Database
+
+Preconditions: User must have an account in Ava 
+
+PostConditions: Users would be able to view recipe of the day
+
+Main Success Scenario:
+
+	1.Admin adds the recipe of the day 
+
+	2.Users having account in Ava will be able to view the recipe of the day
+
+UC - 11 ManageAccount 
+
+Related Requirements: REQ - 4,REQ - 8
+
+Initiating Actor:User,Ava,Admin
+
+Goal: Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe
+
+Participating Actors: Database
+
+Preconditions:  
+
+PostConditions: Users would be able to view side dishes
+
+Main Success Scenario:
+
+	1.Ava analyzes user's recipe to manage specific user account
+
+	2.Based on user's preferences,Ava provides related side dishes
+
+	3.Ava allows users to bookmark or save recipe
+
+UC - 12 TrackMostViewed 
+
+Related Requirements: REQ - 9
+
+Initiating Actor:User,Ava,Admin
+
+Goal: Admin should be able to add or edit recipes and keep track of most viewed recipes
+
+Participating Actors: Database
+
+Preconditions:  
+
+PostConditions: Admin would know the most active users and less active users
+
+Main Success Scenario:
+
+	1.Admin analyzes users and keeps track of the most viewed recipe
+​	
+
 
 
 
