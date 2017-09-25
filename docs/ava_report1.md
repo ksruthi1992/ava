@@ -746,6 +746,21 @@ Admin login
 
 ### <a name="user_effort_estimation"></a> User Effort Estimation
 
+1. Home/Dashboard
+   1. Click "menu icon"
+   2. Click "Log on icon"
+   3. Click "send" to talk with Ava
+2. Login
+   1. After entering in information, click "Log in"
+3. Register
+   1. If user does not have a current account, they click "register"
+   2. After entering in information, click "sign up"
+4. Pantry
+   1. Click on the "pantry" icon to access pantry
+   2. Click on the "item(s)" to add to each food group
+5. Recipe
+   1. After searching for recipe, click on "desired recipe" for more information about it
+
 ## <a name="plan_of_work"></a> Plan of Work
 
 ## <a name="references"></a> References
