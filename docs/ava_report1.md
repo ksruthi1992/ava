@@ -613,7 +613,7 @@ Legal- how should the system be licensed? any liability issues? any royalties or
 
 ###### Home/Dashboard
 
-![home](diagrams\home.jpg)
+![image](diagrams/home.jpg)
 
 ###### Login
 
@@ -621,7 +621,7 @@ Legal- how should the system be licensed? any liability issues? any royalties or
 
 ###### Register
 
-![register](diagrams\register.jpg)
+![image](diagrams/register.jpg)
 
 ###### Pantry
 
