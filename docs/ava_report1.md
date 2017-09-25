@@ -71,9 +71,9 @@ The following people will be involved with the website:
 
 - Able to view the user's pantry
 
-### 	<a name="usecase"></a> c. Use Cases
+  ### <a name="usecase"></a> c. Use Cases
 
-#### 		<a name="casualdescription"></a> i. Casual Description
+  #### 	<a name="casualdescription"></a> i. Casual Description
 
 | Use Cases | Description                              |
 | --------- | ---------------------------------------- |
@@ -353,10 +353,22 @@ Admin login
 
 Functionality -  
 
-Usability- This is a simple and user-friendly site.
+Usability- This is a simple and user-friendly site; therefore, we assume the user will have a basic understanding of computer processes. User interface standards? 
 
-Reliability-
+Reliability- A reliable system will need to be maintained in order for our users be able to use the site regularly, whenever they need to and the system will also need to be secure so our users feel safe inputting their information when making and submitting an account. 
 
-Performance-
+is restarting the system acceptable in the event of failure? how much data can the system lose?
 
-Supportability-
+Performance- number of concurrent users supported? response time? number of transactions per second?
+
+Supportability- how will the system be extended? who maintains the system? plans to port the system to a different software or hardware environment?
+
+Implementation- are there constraints on the hardware platform? are constraints imposed by the maintenance team? by the testing team?
+
+Interfaces- should the system interact with any existing systems? how are data exported/imported into the system? what standards in use by the client should be supported by the system?
+
+Operation- who manages the running system?
+
+Packaging- who installs the system? how many installations are there? are there any constraints on the installation?
+
+Legal- how should the system be licensed? any liability issues? any royalities or licensing fees incurred by using specific algorithms or components?
