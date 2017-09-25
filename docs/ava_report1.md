@@ -394,6 +394,7 @@ Reliability- A reliable system will need to be maintained in order for our users
 is restarting the system acceptable in the event of failure? how much data can the system lose?
 
 Performance- number of concurrent users supported? response time? number of transactions per second?
+             Based on the ingredients in the pantry / inputted by the user, the search results of the recipes should be as close to the              ingredients available to the user.
 
 Supportability- how will the system be extended? who maintains the system? plans to port the system to a different software or hardware environment?
 
