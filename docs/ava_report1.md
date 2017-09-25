@@ -404,4 +404,31 @@ Operation- who manages the running system?
 
 Packaging- who installs the system? how many installations are there? are there any constraints on the installation?
 
-Legal- how should the system be licensed? any liability issues? any royalities or licensing fees incurred by using specific algorithms or components?
+Legal- how should the system be licensed? any liability issues? any royalties or licensing fees incurred by using specific algorithms or components?
+
+## <a name="domain analysis"></a> Domain Analysis
+
+### <a name="domain model"></a> Domain Model
+
+#### <a name="concept definition"></a> Concept Definition
+
+#### <a name="association definitions"></a> Association Definitions
+
+#### <a name="attribute definitions"></a> Attribute Definitions
+
+### <a name="operation contracts"></a> System Operation Contracts
+
+###<a name="mathematical model"></a> Mathematical Model
+
+## <a name="user interface"></a> User Interface Design
+
+### <a name="preliminarydesign"></a> Preliminary Design
+
+### <a name="usereffortestimation"></a> User Effort Estimation
+
+## <a name="planofwork"></a> Plan of Work
+
+## <a name="references"></a> References
+
+
+
