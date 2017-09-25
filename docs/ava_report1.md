@@ -501,7 +501,7 @@ Goal: Ava should be able to manage specific user account by analyzing recipes an
 
 Participating Actors: Database
 
-Preconditions:  
+Preconditions:  User has verified account. 
 
 PostConditions: Users would be able to view side dishes
 
