@@ -718,6 +718,42 @@ Admin login
 
 ### <a name="mathematical_model"></a> Mathematical Model
 
+
+
+The search for the recipe will result in four suggestions (paginated in a carousal), the top being the most relevant result based on the user search. The recipes matching the search/ingredients must be therefore rated in order to sort and send back the most relevant results. 
+
+The factors based on user search includes:
+
+* Number of matching ingredients from pantry/search (m)
+* Ingredients needed for the recipe (i)
+* Ava rating (a)
+* User rating (u)
+  initial_search_score(for a recipe) x = (m/i) +  ( a/10 * 0.75) + (u/10 * 0.25) 
+
+Furthermore, particular to a recipe, the relevancy algorithm/formula will therefore work on these factors:
+
+- Intensity of spices (s)
+
+- Calories (c)
+
+- Carbs content (b)
+
+- Temperature (t)
+
+- Meat content (m)
+
+- Texture (t)
+
+  ​
+
+  For each of the recipe in the database, all the above mentioned factors will have a numerical value on the scale of 1 to 10. 
+
+  ​
+
+  **relevancy_score** (for a recipe) y = x * 0.90 + {  (0.5) ^ [(s + c + b + t + m + t) / 60] } * 0.1
+
+  ​
+
 ## <a name="user_interface"></a> User Interface Design
 
 ### <a name="preliminary_design"></a> Preliminary Design
