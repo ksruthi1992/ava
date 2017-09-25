@@ -139,7 +139,7 @@ The following people will be involved with the website:
 
 #### 		<a name="fullydresseddescription"></a> ii. Fully-Dressed Description
 
-UC1 - NewUserSignUp 
+####UC1 - NewUserSignUp 
 
 Related Requirements: REQ - 1
 
@@ -166,7 +166,7 @@ Main Success Scenario:
 
 
 
-UC2 - LoginUser 
+####UC2 - LoginUser 
 
 Related Requirements: REQ - 1
 
@@ -187,10 +187,10 @@ Main Success Scenario:
 	2.Ava must be able to authenticate the already existing users
 
 	3.Users can view the Ava application 
+​	
+​	
 
-​	
-​	
-UC3 - SaveIngredients 
+####UC3 - SaveIngredients 
 
 Related Requirements: REQ - 2
 
@@ -215,9 +215,10 @@ Main Success Scenario:
 	4.User makes a selection
 
 	5.User can add/save ingredients to their pantry 
-
 ​	
-UC4 - SearchRecipe 
+
+####UC4 - SearchRecipe 
+
 ​	
 Related Requirements: REQ - 3
 
@@ -234,8 +235,7 @@ PostConditions: User can view the ingredients which he/she has added to their pa
 Main Success Scenario:
 ​		
 		1.Ava should be able to find a recipe
-
-UC - 4a SearchFilter1 
+####UC - 4a SearchFilter1 
 
 Related Requirements: REQ - 3
 
@@ -252,8 +252,7 @@ PostConditions:
 Main Success Scenario:
 
 	1.User can search any recipe based on the ingredients
-
-UC - 4b SearchFilter2  
+####UC - 4b SearchFilter2  
 
 Related Requirements: REQ - 3
 
@@ -269,8 +268,7 @@ PostConditions:
 
 Main Success Scenario:
      1.User can search any recipe based on time of the day
-
-UC - 4c SearchFilter3 
+####UC - 4c SearchFilter3 
 
 Related Requirements: REQ - 3
 
@@ -286,8 +284,7 @@ PostConditions:
 
 Main Success Scenario:
      1.User should be able to search recipe based on time of the day		
-
-UC5 - GiveFeedback 
+####UC5 - GiveFeedback 
 
 Related Requirements: REQ - 5
 
@@ -310,8 +307,7 @@ Main Success Scenario:
 	3.User can view any recipe
 
 	4.User gives feedback/review for the same
-
-UC - 5a FeedbackOption1 
+####UC - 5a FeedbackOption1 
 
 Related Requirements: REQ - 5
 
@@ -332,8 +328,7 @@ Main Success Scenario:
 	2.User wants to provide feedback by giving rating
 
 	3.User gives rating for the recipe
-
-UC - 5b FeedbackOption2
+####UC - 5b FeedbackOption2
 
 Related Requirements: REQ - 5
 
@@ -354,9 +349,9 @@ Main Success Scenario:
 	2.User wants to add a suggestion for a recipe
 
 	3.User provides suggestion by adding text	
-
 ​	
-UC6 - ShareRecipe
+
+####UC6 - ShareRecipe
 
 Related Requirements: REQ - 7
 
@@ -379,8 +374,7 @@ Main Success Scenario:
 	3.User can view any recipe
 
 	4.User shares the recipe 
-
-UC7 - ViewRecipeOfTheDay 
+####UC7 - ViewRecipeOfTheDay 
 
 Related Requirements: REQ - 6
 
@@ -401,8 +395,7 @@ Main Success Scenario:
 	2.Admin will show Recipe of the day to existing users
 
 	3.Existing users can view Recipe of the day
-
-UC8 - AddRecipe 
+####UC8 - AddRecipe 
 
 Related Requirements: REQ - 9
 
@@ -419,8 +412,7 @@ PostConditions: A new gets added in the Ava application
 Main Success Scenario:
 
 	1.Admin can add any recipe whenever required
-
-UC9 - EditRecipe 
+####UC9 - EditRecipe 
 
 Related Requirements: REQ - 9
 
@@ -441,7 +433,7 @@ Main Success Scenario:
 	2.Admin can edit the recipe
 ​	
 
-UC - 10 DisplayRceipeOfTheDay 
+####UC - 10 DisplayRceipeOfTheDay 
 
 Related Requirements: REQ - 6
 
@@ -460,8 +452,7 @@ Main Success Scenario:
 	1.Admin adds the recipe of the day 
 
 	2.Users having account in Ava will be able to view the recipe of the day
-
-UC - 11 ManageAccount 
+####UC - 11 ManageAccount 
 
 Related Requirements: REQ - 4,REQ - 8
 
@@ -483,7 +474,7 @@ Main Success Scenario:
 
 	3.Ava allows users to bookmark or save recipe
 
-UC - 12 TrackMostViewed 
+####UC - 12 TrackMostViewed 
 
 Related Requirements: REQ - 9
 
