@@ -149,7 +149,7 @@ Goal: User wants to get signed up for Ava application
 
 Participating Actors: Ava
 
-Preconditions: 
+Preconditions: None worth mentioning.
 
 PostConditions: User is directed to the registration page in Ava 
 
@@ -178,7 +178,7 @@ Participating Actors: Database
 
 Preconditions: User must already have an account in Ava 
 
-PostConditions: User is authenticated and user can go through Ava application 
+PostConditions: User is authenticated and user can go through Ava application.
 
 Main Success Scenario:
 ​	 
@@ -202,7 +202,7 @@ Participating Actors: Database
 
 Preconditions: New/Existing users can view the ingredients in pantry
 
-PostConditions: User can view the ingredients which he/she has added to their pantry
+PostConditions: User can view the ingredients which he/she has added to their pantry.
 
 Main Success Scenario:
 
@@ -245,9 +245,9 @@ Goal: User should be able to search recipe using ingredients
 
 Participating Actors: Database
 
-Preconditions:  
+Preconditions:  The user must have food items available to them checked in the Pantry.
 
-PostConditions: 
+PostConditions: User can browse recipes on website with their criteria.
 
 Main Success Scenario:
 
@@ -600,6 +600,8 @@ Legal- how should the system be licensed? any liability issues? any royalties or
 #### <a name="concept_definition"></a> i. Concept Definition
 
 #### <a name="association_definitions"></a> ii. Association Definitions
+
+
 
 #### <a name="attribute_definitions"></a> iii. Attribute Definitions
 
