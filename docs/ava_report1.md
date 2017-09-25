@@ -12,32 +12,6 @@
   * [System Sequence Diagrams](#diagrams)
 
 
-## Stakeholder
-The following people will be involved with the website:
-
-- Teenagers
-
-- Adults
-
-
-## Actors and Goals
- 
-#### User
-- Able to sign in and create pantry
-
-- Able to add their ingredients in the pantry
-
-- Able to search recipes according to the category they want with the ingredients they have
-
-#### Admin
-- Able to manage the system
-
-- Able to add new recipes to the system
-
-- Able to view the homepage
-
-- Able to view the user's pantry
-
 
 ## <a name="requirements"></a> Customer Requirements                                  
 
@@ -72,7 +46,30 @@ Pantry: a place to store all of the user's current ingredients; recipes will be 
 
 ### 	<a name="stakeholders"></a> a. Stakeholders
 
+The following people will be involved with the website:
+
+- Teenagers
+
+- Adults
+
+
 ### 	<a name="actor"></a> b. Actors and Goals
+
+#### User
+- Able to sign in and create pantry
+
+- Able to add their ingredients in the pantry
+
+- Able to search recipes according to the category they want with the ingredients they have
+
+#### Admin
+- Able to manage the system
+
+- Able to add new recipes to the system
+
+- Able to view the homepage
+
+- Able to view the user's pantry
 
 ### 	<a name="usecase"></a> c. Use Cases
 
