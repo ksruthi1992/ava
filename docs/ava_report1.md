@@ -1,4 +1,9 @@
 
+
+
+
+
+
 ## AVA
 
 ### Table of contents  
@@ -569,29 +574,26 @@ Admin login
 
 ## <a name="non_functional_requirements"></a> Nonfunctional Requirements
 
-Functionality - The system shows varies recipes that the users can try with the ingredients they provide. Users are able to use the system without signing up but they won't be able to save their ingredients or recipe for future use. 
+**Functionality** - The system shows varies recipes that the users can try with the ingredients they provide. Users are able to use the system without signing up but they won't be able to save their ingredients or recipe for future use. 
 
-Usability- This is a simple and user-friendly site; therefore, we assume the user will have a basic understanding of computer processes. User interface standards? 
+**Usability**- This is a simple and user-friendly site; therefore, we assume the user will have a basic understanding of computer processes. User interface will be easy to learn and easy to manage for user and administration. 
 
-Reliability- A reliable system will need to be maintained in order for our users be able to use the site regularly, whenever they need to and the system will also need to be secure so our users feel safe inputting their information when making and submitting an account. 
+**Reliability**- A reliable system will need to be maintained in order for our users be able to use the site regularly, whenever they need to and the system will also need to be secure so our users feel safe inputting their information when making and submitting an account. In the event of failure, the system may be restarted. 
 
-is restarting the system acceptable in the event of failure? how much data can the system lose?
+**Performance**- Based on either ingredients in the pantry or ingredients inputted by the user, the search results displayed should be recipes that are closely related to the specified ingredients available to the user. 
 
-Performance- number of concurrent users supported? response time? number of transactions per second?
-             Based on the ingredients in the pantry / inputted by the user, the search results of the recipes should be as close to the              ingredients available to the user.
 
-Supportability- The system will be maintain by the admin.
-how will the system be extended?  plans to port the system to a different software or hardware environment?
+**Supportability**- The system will be maintain by the administration. The system will be extended when searching for a recipe; a recipe can be searched based on ingredients, time-of-day, or cuisine. The system will also be extended when allowing the user to give feedback; the user may give feedback through a comment or a rating. 
 
-Implementation- are there constraints on the hardware platform? are constraints imposed by the maintenance team? by the testing team?
+**Implementation**- are there constraints on the hardware platform? are constraints imposed by the maintenance team? by the testing team?
 
-Interfaces- should the system interact with any existing systems? how are data exported/imported into the system? what standards in use by the client should be supported by the system?
+**Interfaces**- should the system interact with any existing systems? how are data exported/imported into the system? what standards in use by the client should be supported by the system?
 
-Operation- who manages the running system?
+**Operation**- The administration will manage the system by adding new recipes to the system, show recipe of the day to users, and track the most viewed recipe. 
 
-Packaging- who installs the system? how many installations are there? are there any constraints on the installation?
+**Packaging**- The user will not need to install the system, it will be available online to anyone who wants to make an account or simply just browse the site. 
 
-Legal- how should the system be licensed? any liability issues? any royalties or licensing fees incurred by using specific algorithms or components?
+**Legal**- As of right now, the system will not be licensed. There are no liability issues/royalties to discuss.
 
 ## <a name="domain_analysis"></a> Domain Analysis
 
@@ -599,17 +601,24 @@ Legal- how should the system be licensed? any liability issues? any royalties or
 
 #### <a name="concept_definition"></a> i. Concept Definition
 
+| Responsibility Description | Type | Concept Name  |
+| -------------------------- | ---- | ------------- |
+|                            |      |               |
+|                            |      | Search Recipe |
+|                            |      | Give Feedback |
+|                            |      |               |
+|                            |      |               |
+|                            |      |               |
+|                            |      |               |
+|                            |      |               |
+
+
+
 #### <a name="association_definitions"></a> ii. Association Definitions
 
 #### <a name="attribute_definitions"></a> iii. Attribute Definitions
 
 ### <a name="operation_contracts"></a> System Operation Contracts
-
-| Responsibility Description               | Type | Concept Name |
-| ---------------------------------------- | ---- | ------------ |
-| Coordinate actions of all concepts associated with the use cases and entire system and delegate work to other concepts |      |              |
-|                                          |      |              |
-|                                          |      |              |
 
 
 
