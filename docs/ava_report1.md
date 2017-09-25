@@ -2,14 +2,47 @@
 ## AVA
 
 ### Table of contents  
-* [Project Proposal](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/friday-proposal.md)
-* [Customer Statement of requirements](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/Customer%20Statement%20of%20Requirements.md#customer-statement-of-requirements)
-* [Requirements](#requirements)
-* [Glossary](#glossary)
-* [Functional Requirments](#functional)
-  * [Actors and Goals](#actor)
-  * [Use Cases](#usecase)
-  * [System Sequence Diagrams](#diagrams)
+
+**[Project Proposal](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/friday-proposal.md)**
+
+**[Customer Statement of requirements](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/Customer%20Statement%20of%20Requirements.md#customer-statement-of-requirements)**
+
+**[Requirements](#requirements)**
+
+**[Glossary](#glossary)**
+
+**[Functional Requirments](#functional)**
+
+* [Stakeholders](#stakeholders)
+
+
+* [Actors and Goals](#actor)
+* [Use Cases](#usecase)
+  * *[Casual description](#casual_description)*
+  * *[Fully dressed description](#fully_dressed_description)*
+  * *[Use case diagram](#usecase_diagram)*
+  * *[Use case traceability matrix](#use_case_traceability)*
+* [System Sequence Diagrams](#diagrams)
+
+**[Non Functional requirements](#non_functional_requirements)**
+
+**[Domain Analysis](#domain_analysis)**
+
+* [Domain Model](#domain_model)
+  * *[Concept definition](#concept_definition)*
+  * *[Association Definitions](association_definitions)*
+  * *[Attribute Definitons](attribute_definitions)*
+* [System Operation Contracts](#operation_contracts)
+* [Mathematical model](#mathematical_model)
+
+**[User Interface design](#user_interface)**
+
+* [Preliminary design](#preliminary_design)
+* [User Effort estimation](#user_effort_estimation)
+
+**[Plan of Work](#plan_of_work)**
+
+**[References](#references)**
 
 
 
@@ -281,7 +314,7 @@ Main Success Scenario:
 
 #### 		<a name="usecasediagram"></a> iii. Use Case Diagram
 
-![image](diagrams/use_case_diagram.jpg)
+![image](diagrams/use case diagram.jpg)
 
 
 
