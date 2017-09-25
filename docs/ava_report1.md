@@ -128,12 +128,12 @@ The following people will be involved with the website:
 | UC - 2    | LoginUser Existing user can login to 'Ava' application |
 | UC - 3    | SaveIngredients User can save ingredients in the pantry |
 | UC - 4    | SearchRecipe User can search recipes based on the search filter |
-| UC -4a    | SearchFilter1 User should be able to search recipe using ingredients |
-| UC -4b    | SearchFilter2 User should be able to search recipe using cuisine |
-| UC -4c    | SearchFilter3 User should be able to search recipe based on time of the day |
+| UC - 4a   | SearchFilter1 User should be able to search recipe using ingredients |
+| UC - 4b   | SearchFilter2 User should be able to search recipe using cuisine |
+| UC - 4c   | SearchFilter3 User should be able to search recipe based on time of the day |
 | UC - 5    | GiveFeedback Existing users can give feedback for recipes |
-| UC -5a    | FeedbackOption1 Logged in users can provide rating on a scale of 1 to 5 |
-| UC -5b    | FeedbackOption2 Logged in users can provide suggestion in text for recipe |
+| UC - 5a   | FeedbackOption1 Logged in users can provide rating on a scale of 1 to 5 |
+| UC - 5b   | FeedbackOption2 Logged in users can provide suggestion in text for recipe |
 | UC - 6    | ShareRecipe Users can share recipes on social media |
 | UC - 7    | ViewRecipeOfTheDay Users can view recipe of the day |
 | UC - 8    | AddRecipe Admin can add recipe           |
@@ -656,6 +656,12 @@ Admin login
 
 
 #### <a name="attribute_definitions"></a> iii. Attribute Definitions
+
+| Concept | Attribute | Attribute Desciption |
+| ------- | --------- | -------------------- |
+|         |           |                      |
+|         |           |                      |
+|         |           |                      |
 
 | Concept | Attribute | Attribute Description |
 | :-----: | :-------: | :-------------------: |
