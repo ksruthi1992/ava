@@ -613,23 +613,23 @@ Legal- how should the system be licensed? any liability issues? any royalties or
 
 ###### Home/Dashboard
 
-![home](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\home.jpg)
+![home](diagrams\home.jpg)
 
 ###### Login
 
-![login](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\login.jpg)
+![login](diagrams\login.jpg)
 
 ###### Register
 
-![register](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\register.jpg)
+![register](diagrams\register.jpg)
 
 ###### Pantry
 
-![pantry](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\pantry.jpg)
+![pantry](diagrams\pantry.jpg)
 
 ###### Recipe
 
-![recipe](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\recipe.jpg)
+![recipe](diagrams\recipe.jpg)
 
 
 
