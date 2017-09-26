@@ -139,11 +139,9 @@ Those who would be interested in use of the Ava web interface are those who are 
 | UC -10    | DisplayRceipeOfTheDay Admin can show recipe of the day to logged in users |
 | UC -11    | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |
 | UC -12    | TrackMostViewed Admin should be able to track most viewed recipe |
-#### 		<a name="fullydresseddescription"></a> ii. Fully-Dressed Description
+#### <a name="fullydresseddescription"></a> ii. Fully-Dressed Description
 
-
-
-#### UC1 - NewUserSignUp 
+##### UC1 - NewUserSignUp
 
 Related Requirements: REQ - 1
 
@@ -166,13 +164,11 @@ Main Success Scenario:
 	3.User submits the application and his/her account gets created
 
 	4.Ava must be able to register new users
-
-
-----
+---
 
 
 
-#### UC2 - LoginUser 
+##### UC2 - LoginUser
 
 Related Requirements: REQ - 1
 
@@ -197,9 +193,7 @@ Main Success Scenario:
 
 ​	
 
-
-
-#### UC3 - SaveIngredients 
+##### UC3 - SaveIngredients
 
 Related Requirements: REQ - 2
 
@@ -224,13 +218,11 @@ Main Success Scenario:
 	4.User makes a selection
 
 	5.User can add/save ingredients to their pantry 
-
-
 ---
 
 ​	
 
-#### UC4 - SearchRecipe 
+##### UC4 - SearchRecipe
 
 ​	
 Related Requirements: REQ - 3
@@ -248,9 +240,11 @@ PostConditions: User can view the ingredients which he/she has added to their pa
 Main Success Scenario:
 ​		
 		1.Ava should be able to find a recipe
+---
 
 
-#### UC - 4a SearchFilter1 
+
+##### UC - 4a SearchFilter1
 
 Related Requirements: REQ - 3
 
@@ -267,9 +261,11 @@ PostConditions: User can browse recipes on website with their criteria.
 Main Success Scenario:
 
 	1.User can search any recipe based on the ingredients
+---
 
 
-#### UC - 4b SearchFilter2  
+
+##### UC - 4b SearchFilter2
 
 Related Requirements: REQ - 3
 
@@ -285,9 +281,11 @@ PostConditions: Recipes will be listed based on their time of day keyword.
 
 Main Success Scenario:
      1.User can search any recipe based on time of the day
+---
 
 
-#### UC - 4c SearchFilter3 
+
+##### UC - 4c SearchFilter3
 
 Related Requirements: REQ - 3
 
@@ -307,9 +305,7 @@ Main Success Scenario:
 
 
 
-
-
-#### UC5 - GiveFeedback 
+##### UC5 - GiveFeedback
 
 Related Requirements: REQ - 5
 
@@ -332,11 +328,11 @@ Main Success Scenario:
 	3.User can view any recipe
 
 	4.User gives feedback/review for the same
+---
 
 
 
-
-#### UC - 5a FeedbackOption1 
+##### UC - 5a FeedbackOption1
 
 Related Requirements: REQ - 5
 
@@ -357,9 +353,11 @@ Main Success Scenario:
 	2.User wants to provide feedback by giving rating
 
 	3.User gives rating for the recipe
+---
 
 
-#### UC - 5b FeedbackOption2
+
+##### UC - 5b FeedbackOption2
 
 Related Requirements: REQ - 5
 
@@ -384,7 +382,7 @@ Main Success Scenario:
 
 
 
-#### UC6 - ShareRecipe
+##### UC6 - ShareRecipe
 
 Related Requirements: REQ - 7
 
@@ -411,7 +409,7 @@ Main Success Scenario:
 
 
 
-#### UC7 - ViewRecipeOfTheDay 
+##### UC7 - ViewRecipeOfTheDay
 
 Related Requirements: REQ - 6
 
@@ -436,7 +434,7 @@ Main Success Scenario:
 
 
 
-#### UC8 - AddRecipe 
+##### UC8 - AddRecipe
 
 Related Requirements: REQ - 9
 
@@ -457,7 +455,7 @@ Main Success Scenario:
 
 
 
-#### UC9 - EditRecipe 
+##### UC9 - EditRecipe
 
 Related Requirements: REQ - 9
 
@@ -476,11 +474,11 @@ Main Success Scenario:
 	1.Admin searches for the recipe where changes should be made
 
 	2.Admin can edit the recipe
-​	
+---
 
 
 
-#### UC - 10 DisplayRecipeOfTheDay 
+##### UC - 10 DisplayRecipeOfTheDay
 
 Related Requirements: REQ - 6
 
@@ -503,7 +501,7 @@ Main Success Scenario:
 
 
 
-#### UC - 11 ManageAccount 
+##### UC - 11 ManageAccount
 
 Related Requirements: REQ - 4,REQ - 8
 
@@ -528,7 +526,7 @@ Main Success Scenario:
 
 
 
-#### UC - 12 TrackMostViewed 
+##### UC - 12 TrackMostViewed
 
 Related Requirements: REQ - 9
 
