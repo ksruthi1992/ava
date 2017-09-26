@@ -120,7 +120,7 @@ Those who would be interested in use of the Ava web interface are those who are 
 #### <a name="casualdescription"></a> i. Casual Description
 
 
-| Use Cases                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                              |
+| Use Cases                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                              |
 | :--------------------------------------- | ---------------------------------------- |
 | UC - 1&nbsp;                             | NewUserSignUp New User can sign up to 'Ava' application |
 | UC - 2                                   | LoginUser Existing user can login to 'Ava' application |
@@ -708,8 +708,8 @@ Admin login
 
 #### <a name="attribute_definitions"></a> iii. Attribute Definitions
 
-| Concept      | Attribute                                | Attribute Desciption                     |
-| ------------ | ---------------------------------------- | ---------------------------------------- |
+| Concept      | Attribute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Attribute Desciption                     |
+| ------------ | :--------------------------------------- | ---------------------------------------- |
 | Admin        | 1. Name<br>           2. Privileges      | 1. Name: Name of Admin <br>2. Privileges: The admin has specific privileges which allows them to modify recipes, approve feedback left by Existing Users, and choose recipe of the day. |
 | NewUser      | 1. Ingredients                           | 1.  Ingredients: Every user has a list of ingredients owned. |
 | ExistingUser | 1. Name <br>2. Ingredients <br>3. Feedback Left | 1. Name: Name of User<br> 2. Ingredients: Every user has a list of ingredients owned. <br>3. Feedback left: Users may have a list of feedback given on recipes. |
