@@ -805,6 +805,8 @@ Furthermore, particular to a recipe, the relevancy algorithm/formula will theref
 
 ## <a name="plan_of_work"></a> Plan of Work
 
+![image](diagrams/ava_gantt_chart.png)
+
 ## <a name="references"></a> References
 
 No references included thus far.
