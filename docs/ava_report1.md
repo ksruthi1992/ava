@@ -624,9 +624,9 @@ Admin login
 
 **Supportability**- The system will be maintain by the administration. The system will be extended when searching for a recipe; a recipe can be searched based on ingredients, time-of-day, or cuisine. The system will also be extended when allowing the user to give feedback; the user may give feedback through a comment or a rating. 
 
-**Implementation**- are there constraints on the hardware platform? are constraints imposed by the maintenance team? by the testing team?
+**Implementation**- We will be using Python as well as Django in order to build the website and use APIs to provide simpler writing and pulling from the backend database. There will be three databases which will hold user accounts, recipes, and also user pantry data.
 
-**Interfaces**- should the system interact with any existing systems? how are data exported/imported into the system? what standards in use by the client should be supported by the system?
+**Interfaces**- The system will be easily readable in order for the non-admin Users to know as soon as accessing the main page what to do in order to use Ava.
 
 **Operation**- The administration will manage the system by adding new recipes to the system, show recipe of the day to users, and track the most viewed recipe. 
 
@@ -660,6 +660,10 @@ Admin login
 
 
 #### <a name="attribute_definitions"></a> iii. Attribute Definitions
+
+| Concept | Attribute | Attribute Description |
+| :-----: | :-------: | :-------------------: |
+
 
 ### <a name="operation_contracts"></a> System Operation Contracts
 
@@ -722,6 +726,44 @@ Admin login
 
 ### <a name="mathematical_model"></a> Mathematical Model
 
+
+
+The search for the recipe will result in four suggestions (paginated in a carousal), the top being the most relevant result based on the user search. The recipes matching the search/ingredients must be therefore rated in order to sort and send back the most relevant results. 
+
+The factors based on user search includes:
+
+* Number of matching ingredients from pantry/search (m)
+* Ingredients needed for the recipe (i)
+* Ava rating (a)
+* User rating (u)
+  ​
+
+**initial_search_score**(for a recipe) x = (m/i) +  ( a/10 * 0.75) + (u/10 * 0.25) 
+
+Furthermore, particular to a recipe, the relevancy algorithm/formula will therefore work on these factors:
+
+- Intensity of spices (s)
+
+- Calories (c)
+
+- Carbs content (b)
+
+- Temperature (t)
+
+- Meat content (m)
+
+- Texture (t)
+
+  ​
+
+  For each of the recipe in the database, all the above mentioned factors will have a numerical value on the scale of 1 to 10. 
+
+  ​
+
+  **relevancy_score** (for a recipe) y = x * 0.90 + {  (0.5) ^ [(s + c + b + t + m + t) / 60] } * 0.1
+
+  ​
+
 ## <a name="user_interface"></a> User Interface Design
 
 ### <a name="preliminary_design"></a> Preliminary Design
@@ -767,4 +809,8 @@ Admin login
 
 ## <a name="plan_of_work"></a> Plan of Work
 
+![image](diagrams/ava_gantt_chart.JPG)
+
 ## <a name="references"></a> References
+
+No references included thus far.
