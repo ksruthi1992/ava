@@ -120,25 +120,25 @@ Those who would be interested in use of the Ava web interface are those who are 
 #### <a name="casualdescription"></a> i. Casual Description
 
 
-| Use Cases       . | Description                              |
-| ----------------- | ---------------------------------------- |
-| UC - 1            | NewUserSignUp New User can sign up to 'Ava' application |
-| UC - 2            | LoginUser Existing user can login to 'Ava' application |
-| UC - 3            | SaveIngredients User can save ingredients in the pantry |
-| UC - 4            | SearchRecipe User can search recipes based on the search filter |
-| UC - 4a           | SearchFilter1 User should be able to search recipe using ingredients |
-| UC - 4b           | SearchFilter2 User should be able to search recipe using cuisine |
-| UC - 4c           | SearchFilter3 User should be able to search recipe based on time of the day |
-| UC - 5            | GiveFeedback Existing users can give feedback for recipes |
-| UC - 5a           | FeedbackOption1 Logged in users can provide rating on a scale of 1 to 5 |
-| UC - 5b           | FeedbackOption2 Logged in users can provide suggestion in text for recipe |
-| UC - 6            | ShareRecipe Users can share recipes on social media |
-| UC - 7            | ViewRecipeOfTheDay Users can view recipe of the day |
-| UC - 8            | AddRecipe Admin can add recipe           |
-| UC - 9            | EditRecipe Admin can edit recipe         |
-| UC -10            | DisplayRceipeOfTheDay Admin can show recipe of the day to logged in users |
-| UC -11            | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |
-| UC -12            | TrackMostViewed Admin should be able to track most viewed recipe |
+| Use Cases | Description                              |
+| --------- | ---------------------------------------- |
+| UC - 1    | NewUserSignUp New User can sign up to 'Ava' application |
+| UC - 2    | LoginUser Existing user can login to 'Ava' application |
+| UC - 3    | SaveIngredients User can save ingredients in the pantry |
+| UC - 4    | SearchRecipe User can search recipes based on the search filter |
+| UC - 4a   | SearchFilter1 User should be able to search recipe using ingredients |
+| UC - 4b   | SearchFilter2 User should be able to search recipe using cuisine |
+| UC - 4c   | SearchFilter3 User should be able to search recipe based on time of the day |
+| UC - 5    | GiveFeedback Existing users can give feedback for recipes |
+| UC - 5a   | FeedbackOption1 Logged in users can provide rating on a scale of 1 to 5 |
+| UC - 5b   | FeedbackOption2 Logged in users can provide suggestion in text for recipe |
+| UC - 6    | ShareRecipe Users can share recipes on social media |
+| UC - 7    | ViewRecipeOfTheDay Users can view recipe of the day |
+| UC - 8    | AddRecipe Admin can add recipe           |
+| UC - 9    | EditRecipe Admin can edit recipe         |
+| UC -10    | DisplayRceipeOfTheDay Admin can show recipe of the day to logged in users |
+| UC -11    | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |
+| UC -12    | TrackMostViewed Admin should be able to track most viewed recipe |
 #### <a name="fullydresseddescription"></a> ii. Fully-Dressed Description
 
 ##### UC1 - NewUserSignUp
@@ -687,16 +687,18 @@ Admin login
 
 | Responsibility Description               | Type | Concept Name  |
 | ---------------------------------------- | ---- | ------------- |
-| R-01: Knows which registered users are accessing website, knows most accessed recipes. | K    | Admin         |
-| R-02: Adds/deletes recipes, approves feedback, picks recipe of the day. | D    | Admin         |
-| R-03: Adds ingredients to pantry, search recipes, must register to save ingredients. | D    | NewUser       |
-| R-04: Adds ingredients to pantry, search recipes, edit personal account, adds feedback. | D    | ExistingUser  |
-| R-05: Recipe modified, added, or deleted from website. | D    | ModifyRecipe  |
-| R-06: Recipe with user specifications will be pulled from database | K    | SearchRecipe  |
+| R-01: Views which registered users are accessing website, views most accessed recipes, adds/deletes recipes, approves feedback, picks recipe of the day to be featured. | D    | Admin         |
+| R-02: Adds ingredients to pantry, search recipes, must register to save ingredients. | D    | NewUser       |
+| R-03: Adds ingredients to pantry, search recipes, edit personal account, adds feedback. | D    | ExistingUser  |
+| R-04: System knows which recipes are in the database according to time of day, ingredients, and cuisine type. | K    | Recipe        |
+| R-05: Change, add, or delete recipe from website. | D    | ModifyRecipe  |
+| R-06: Users can search recipes based on ingredient, time of day, and cuisine type. | D    | SearchRecipe  |
 | R-07: User will be able to add ingredient to their individual pantry. | D    | AddIngredient |
 | R-08: Feedback will be added to recipe page. | D    | GetFeedback   |
-| R-09: Daily recipe will be added to top of search. | D    | DailyRecipe   |
-| R-10: Share recipe to social media.      | D    | ShareRecipe   |
+| R-09: Daily recipe will be added by Admin to top of search results. | D    | DailyRecipe   |
+| R-10: User shares recipe link to social media. | D    | ShareRecipe   |
+| R-11:  System knows which ingredients user has. | K    | Ingredient    |
+| R-12: System knows if a recipe will have feedback left by users. | K    | GetFeedback   |
 
 
 
@@ -706,11 +708,11 @@ Admin login
 
 #### <a name="attribute_definitions"></a> iii. Attribute Definitions
 
-| Concept | Attribute | Attribute Desciption |
-| ------- | --------- | -------------------- |
-|         |           |                      |
-|         |           |                      |
-|         |           |                      |
+| Concept      | Attribute                        | Attribute Desciption                     |
+| ------------ | -------------------------------- | ---------------------------------------- |
+| Admin        | 1.Name            2.Privileges   | 1. Name: Name of Admin                                                                                 2. Privileges: The admin has specific privileges which allows them to modify recipes, approve feedback left by Existing Users, and choose recipe of the day. |
+| NewUser      | Name, Ingredients                |                                          |
+| ExistingUser | Name, Ingredients, Feedback Left |                                          |
 
 | Concept | Attribute | Attribute Description |
 | :-----: | :-------: | :-------------------: |
