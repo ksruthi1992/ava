@@ -120,25 +120,25 @@ Those who would be interested in use of the Ava web interface are those who are 
 #### <a name="casualdescription"></a> i. Casual Description
 
 
-| Use Cases | Description                              |
-| --------- | ---------------------------------------- |
-| UC - 1    | NewUserSignUp New User can sign up to 'Ava' application |
-| UC - 2    | LoginUser Existing user can login to 'Ava' application |
-| UC - 3    | SaveIngredients User can save ingredients in the pantry |
-| UC - 4    | SearchRecipe User can search recipes based on the search filter |
-| UC - 4a   | SearchFilter1 User should be able to search recipe using ingredients |
-| UC - 4b   | SearchFilter2 User should be able to search recipe using cuisine |
-| UC - 4c   | SearchFilter3 User should be able to search recipe based on time of the day |
-| UC - 5    | GiveFeedback Existing users can give feedback for recipes |
-| UC - 5a   | FeedbackOption1 Logged in users can provide rating on a scale of 1 to 5 |
-| UC - 5b   | FeedbackOption2 Logged in users can provide suggestion in text for recipe |
-| UC - 6    | ShareRecipe Users can share recipes on social media |
-| UC - 7    | ViewRecipeOfTheDay Users can view recipe of the day |
-| UC - 8    | AddRecipe Admin can add recipe           |
-| UC - 9    | EditRecipe Admin can edit recipe         |
-| UC -10    | DisplayRceipeOfTheDay Admin can show recipe of the day to logged in users |
-| UC -11    | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |
-| UC -12    | TrackMostViewed Admin should be able to track most viewed recipe |
+| Use Cases       . | Description                              |
+| ----------------- | ---------------------------------------- |
+| UC - 1            | NewUserSignUp New User can sign up to 'Ava' application |
+| UC - 2            | LoginUser Existing user can login to 'Ava' application |
+| UC - 3            | SaveIngredients User can save ingredients in the pantry |
+| UC - 4            | SearchRecipe User can search recipes based on the search filter |
+| UC - 4a           | SearchFilter1 User should be able to search recipe using ingredients |
+| UC - 4b           | SearchFilter2 User should be able to search recipe using cuisine |
+| UC - 4c           | SearchFilter3 User should be able to search recipe based on time of the day |
+| UC - 5            | GiveFeedback Existing users can give feedback for recipes |
+| UC - 5a           | FeedbackOption1 Logged in users can provide rating on a scale of 1 to 5 |
+| UC - 5b           | FeedbackOption2 Logged in users can provide suggestion in text for recipe |
+| UC - 6            | ShareRecipe Users can share recipes on social media |
+| UC - 7            | ViewRecipeOfTheDay Users can view recipe of the day |
+| UC - 8            | AddRecipe Admin can add recipe           |
+| UC - 9            | EditRecipe Admin can edit recipe         |
+| UC -10            | DisplayRceipeOfTheDay Admin can show recipe of the day to logged in users |
+| UC -11            | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |
+| UC -12            | TrackMostViewed Admin should be able to track most viewed recipe |
 #### <a name="fullydresseddescription"></a> ii. Fully-Dressed Description
 
 ##### UC1 - NewUserSignUp
@@ -242,7 +242,6 @@ Main Success Scenario:
 ```markdown
 	1.Ava should be able to find a recipe
 ```
-
 
 
 
