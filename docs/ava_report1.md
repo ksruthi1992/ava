@@ -109,19 +109,20 @@ The following people will be involved with the website:
 
 #### Admin
 - Able to manage the system
-
 - Able to add new recipes to the system
-
 - Able to view the homepage
-
 - Able to view the user's pantry
 
-  ### <a name="usecase"></a> c. Use Cases
 
-  #### 	<a name="casualdescription"></a> i. Casual Description
 
   ​
 
+
+
+
+### <a name="usecase"></a> c. Use Cases
+
+#### <a name="casualdescription"></a> i. Casual Description
 
 
 | Use Cases | Description                              |
@@ -143,8 +144,9 @@ The following people will be involved with the website:
 | UC -10    | DisplayRceipeOfTheDay Admin can show recipe of the day to logged in users |
 | UC -11    | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |
 | UC -12    | TrackMostViewed Admin should be able to track most viewed recipe |
-
 #### 		<a name="fullydresseddescription"></a> ii. Fully-Dressed Description
+
+
 
 #### UC1 - NewUserSignUp 
 
@@ -156,9 +158,9 @@ Goal: User wants to get signed up for Ava application
 
 Participating Actors: Ava
 
-Preconditions: None worth mentioning.
+Pre conditions: None worth mentioning.
 
-PostConditions: User is directed to the registration page in Ava 
+Post conditions: User is directed to the registration page in Ava 
 
 Main Success Scenario:
 
@@ -171,7 +173,7 @@ Main Success Scenario:
 	4.Ava must be able to register new users
 
 
-
+----
 
 
 
@@ -196,7 +198,8 @@ Main Success Scenario:
 	2.Ava must be able to authenticate the already existing users
 
 	3.Users can view the Ava application 
-​	
+----
+
 ​	
 
 
@@ -227,6 +230,8 @@ Main Success Scenario:
 
 	5.User can add/save ingredients to their pantry 
 
+
+---
 
 ​	
 
@@ -303,6 +308,12 @@ PostConditions: The recipe list will show recipes with the associated time of da
 
 Main Success Scenario:
      1.User should be able to search recipe based on time of the day		
+---
+
+
+
+
+
 #### UC5 - GiveFeedback 
 
 Related Requirements: REQ - 5
@@ -374,7 +385,7 @@ Main Success Scenario:
 	2.User wants to add a suggestion for a recipe
 
 	3.User provides suggestion by adding text	
-​	
+---
 
 
 
@@ -401,7 +412,7 @@ Main Success Scenario:
 	3.User can view any recipe
 
 	4.User shares the recipe 
-
+---
 
 
 
@@ -426,7 +437,7 @@ Main Success Scenario:
 	2.Admin will show Recipe of the day to existing users
 
 	3.Existing users can view Recipe of the day
-
+---
 
 
 
@@ -447,6 +458,10 @@ PostConditions: A new gets added in the Ava application
 Main Success Scenario:
 
 	1.Admin can add any recipe whenever required
+---
+
+
+
 #### UC9 - EditRecipe 
 
 Related Requirements: REQ - 9
@@ -489,7 +504,7 @@ Main Success Scenario:
 	1.Admin adds the recipe of the day 
 
 	2.Users having account in Ava will be able to view the recipe of the day
-
+---
 
 
 
@@ -514,7 +529,7 @@ Main Success Scenario:
 	2.Based on user's preferences,Ava provides related side dishes
 
 	3.Ava allows users to bookmark or save recipe
-
+---
 
 
 
@@ -535,7 +550,9 @@ PostConditions: Admin would know the most active users and less active users
 Main Success Scenario:
 
 	1.Admin analyzes users and keeps track of the most viewed recipe
-​	
+---
+
+
 
 
 
