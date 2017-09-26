@@ -238,8 +238,14 @@ Preconditions: User can view the ingredients in their pantry
 PostConditions: User can view the ingredients which he/she has added to their pantry
 
 Main Success Scenario:
-​		
-		1.Ava should be able to find a recipe
+
+```markdown
+	1.Ava should be able to find a recipe
+```
+
+
+
+
 ---
 
 
@@ -261,6 +267,10 @@ PostConditions: User can browse recipes on website with their criteria.
 Main Success Scenario:
 
 	1.User can search any recipe based on the ingredients
+
+
+
+
 ---
 
 
@@ -280,7 +290,12 @@ Preconditions:  There is none worth mentioning.
 PostConditions: Recipes will be listed based on their time of day keyword.
 
 Main Success Scenario:
+
      1.User can search any recipe based on time of the day
+
+
+
+
 ---
 
 
@@ -300,7 +315,12 @@ Preconditions:  No notable precondition.
 PostConditions: The recipe list will show recipes with the associated time of day keyword.
 
 Main Success Scenario:
+
      1.User should be able to search recipe based on time of the day		
+
+
+
+
 ---
 
 
@@ -328,6 +348,10 @@ Main Success Scenario:
 	3.User can view any recipe
 
 	4.User gives feedback/review for the same
+
+
+
+
 ---
 
 
@@ -353,6 +377,10 @@ Main Success Scenario:
 	2.User wants to provide feedback by giving rating
 
 	3.User gives rating for the recipe
+
+
+
+
 ---
 
 
@@ -378,6 +406,10 @@ Main Success Scenario:
 	2.User wants to add a suggestion for a recipe
 
 	3.User provides suggestion by adding text	
+
+
+
+
 ---
 
 
@@ -405,6 +437,10 @@ Main Success Scenario:
 	3.User can view any recipe
 
 	4.User shares the recipe 
+
+
+
+
 ---
 
 
