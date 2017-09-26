@@ -120,25 +120,25 @@ Those who would be interested in use of the Ava web interface are those who are 
 #### <a name="casualdescription"></a> i. Casual Description
 
 
-| Use Cases&nbsp; | Description                              |
-| --------------- | ---------------------------------------- |
-| UC - 1&nbsp;    | NewUserSignUp New User can sign up to 'Ava' application |
-| UC - 2          | LoginUser Existing user can login to 'Ava' application |
-| UC - 3          | SaveIngredients User can save ingredients in the pantry |
-| UC - 4          | SearchRecipe User can search recipes based on the search filter |
-| UC - 4a         | SearchFilter1 User should be able to search recipe using ingredients |
-| UC - 4b         | SearchFilter2 User should be able to search recipe using cuisine |
-| UC - 4c         | SearchFilter3 User should be able to search recipe based on time of the day |
-| UC - 5          | GiveFeedback Existing users can give feedback for recipes |
-| UC - 5a         | FeedbackOption1 Logged in users can provide rating on a scale of 1 to 5 |
-| UC - 5b         | FeedbackOption2 Logged in users can provide suggestion in text for recipe |
-| UC - 6          | ShareRecipe Users can share recipes on social media |
-| UC - 7          | ViewRecipeOfTheDay Users can view recipe of the day |
-| UC - 8          | AddRecipe Admin can add recipe           |
-| UC - 9          | EditRecipe Admin can edit recipe         |
-| UC -10          | DisplayRceipeOfTheDay Admin can show recipe of the day to logged in users |
-| UC -11          | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |
-| UC -12          | TrackMostViewed Admin should be able to track most viewed recipe |
+| Use Cases                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                              |
+| :--------------------------------------- | ---------------------------------------- |
+| UC - 1&nbsp;                             | NewUserSignUp New User can sign up to 'Ava' application |
+| UC - 2                                   | LoginUser Existing user can login to 'Ava' application |
+| UC - 3                                   | SaveIngredients User can save ingredients in the pantry |
+| UC - 4                                   | SearchRecipe User can search recipes based on the search filter |
+| UC - 4a                                  | SearchFilter1 User should be able to search recipe using ingredients |
+| UC - 4b                                  | SearchFilter2 User should be able to search recipe using cuisine |
+| UC - 4c                                  | SearchFilter3 User should be able to search recipe based on time of the day |
+| UC - 5                                   | GiveFeedback Existing users can give feedback for recipes |
+| UC - 5a                                  | FeedbackOption1 Logged in users can provide rating on a scale of 1 to 5 |
+| UC - 5b                                  | FeedbackOption2 Logged in users can provide suggestion in text for recipe |
+| UC - 6                                   | ShareRecipe Users can share recipes on social media |
+| UC - 7                                   | ViewRecipeOfTheDay Users can view recipe of the day |
+| UC - 8                                   | AddRecipe Admin can add recipe           |
+| UC - 9                                   | EditRecipe Admin can edit recipe         |
+| UC -10                                   | DisplayRceipeOfTheDay Admin can show recipe of the day to logged in users |
+| UC -11                                   | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |
+| UC -12                                   | TrackMostViewed Admin should be able to track most viewed recipe |
 #### <a name="fullydresseddescription"></a> ii. Fully-Dressed Description
 
 ##### UC1 - NewUserSignUp
@@ -708,14 +708,12 @@ Admin login
 
 #### <a name="attribute_definitions"></a> iii. Attribute Definitions
 
-| Concept      | Attribute                        | Attribute Desciption                     |
-| ------------ | -------------------------------- | ---------------------------------------- |
-| Admin        | 1.Name            2.Privileges   | 1. Name: Name of Admin <br>2. Privileges: The admin has specific privileges which allows them to modify recipes, approve feedback left by Existing Users, and choose recipe of the day. |
-| NewUser      | Name, Ingredients                |                                          |
-| ExistingUser | Name, Ingredients, Feedback Left |                                          |
-
-| Concept | Attribute | Attribute Description |
-| :-----: | :-------: | :-------------------: |
+| Concept      | Attribute                                | Attribute Desciption                     |
+| ------------ | ---------------------------------------- | ---------------------------------------- |
+| Admin        | 1.Name<br>           2.Privileges        | 1. Name: Name of Admin <br>2. Privileges: The admin has specific privileges which allows them to modify recipes, approve feedback left by Existing Users, and choose recipe of the day. |
+| NewUser      | 1.Ingredients                            | 1.  Ingredients: Every user has a list of ingredients owned. |
+| ExistingUser | 1.Name, 2.Ingredients 3.Feedback Left    | 1. Name: Name of User<br> 2. Ingredients: Every user has a list of ingredients owned. <br>3. Feedback left: Users may have a list of feedback given on recipes. |
+| Recipe       | 1.Name <br>2.Time Association <br>3.Origin <br>4.Feedback <br>5.Ingredients | 1. Name: Every recipe will have a name.<br>2. Time Association: A recipe will be categorized by time of the day. <br>3. A recipe will also be categorized by country origin. <br>4. Feedback left by users. <br>5. A recipe will have a list of ingredients used. |
 
 
 ### <a name="operation_contracts"></a> System Operation Contracts
