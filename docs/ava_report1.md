@@ -120,7 +120,7 @@ Those who would be interested in use of the Ava web interface are those who are 
 #### <a name="casualdescription"></a> i. Casual Description
 
 
-| Use Cases                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                              |
+| Use Cases                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                              |
 | :--------------------------------------- | ---------------------------------------- |
 | UC - 1&nbsp;                             | NewUserSignUp New User can sign up to 'Ava' application |
 | UC - 2                                   | LoginUser Existing user can login to 'Ava' application |
@@ -157,13 +157,13 @@ Post conditions: User is directed to the registration page in Ava
 
 Main Success Scenario:
 
-    1.User opens the Ava application 
+    1. User opens the Ava application 
 
-	2.User signs up by going to the registration page
+	2. User signs up by going to the registration page
 
-	3.User submits the application and his/her account gets created
+	3. User submits the application and his/her account gets created
 
-	4.Ava must be able to register new users
+	4. Ava must be able to register new users
 ---
 
 
@@ -172,7 +172,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 1
 
-Initiating Actor: User,Ava
+Initiating Actor: User, Ava
 
 Goal: Existing user can login to Ava application
 
@@ -184,11 +184,11 @@ PostConditions: User is authenticated and user can go through Ava application.
 
 Main Success Scenario:
 ​	 
-    1.User gets logged in to Ava
+    1. User gets logged in to Ava
 
-	2.Ava must be able to authenticate the already existing users
+	2. Ava must be able to authenticate the already existing users
 
-	3.Users can view the Ava application 
+	3. Users can view the Ava application 
 ----
 
 ​	
@@ -197,7 +197,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 2
 
-Initiating Actor: User,Ava
+Initiating Actor: User, Ava
 
 Goal: User can add/save items to their pantry 
 
@@ -209,15 +209,15 @@ PostConditions: User can view the ingredients which he/she has added to their pa
 
 Main Success Scenario:
 
-	1.New/Existing users can browse the Ava application 
+	1. New/Existing users can browse the Ava application 
 
-	2.User goes to the pantry mode
+	2. User goes to the pantry mode
 
-	3.User is given list of ingredients 
+	3. User is given list of ingredients 
 
-	4.User makes a selection
+	4. User makes a selection
 
-	5.User can add/save ingredients to their pantry 
+	5. User can add/save ingredients to their pantry 
 ---
 
 ​	
@@ -227,7 +227,7 @@ Main Success Scenario:
 ​	
 Related Requirements: REQ - 3
 
-Initiating Actor: User,Ava
+Initiating Actor: User, Ava
 
 Goal: User can search any recipe 
 
@@ -240,7 +240,7 @@ PostConditions: User can view the ingredients which he/she has added to their pa
 Main Success Scenario:
 
 ```markdown
-	1.Ava should be able to find a recipe
+	1. Ava should be able to find a recipe
 ```
 
 
@@ -253,7 +253,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 3
 
-Initiating Actor:User,Ava
+Initiating Actor:User, Ava
 
 Goal: User should be able to search recipe using ingredients
 
@@ -265,7 +265,7 @@ PostConditions: User can browse recipes on website with their criteria.
 
 Main Success Scenario:
 
-	1.User can search any recipe based on the ingredients
+	1. User can search any recipe based on the ingredients
 
 
 
@@ -278,7 +278,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 3
 
-Initiating Actor:User,Ava
+Initiating Actor:User, Ava
 
 Goal: User should be able to search recipe using cuisine
 
@@ -290,7 +290,7 @@ PostConditions: Recipes will be listed based on their time of day keyword.
 
 Main Success Scenario:
 
-     1.User can search any recipe based on time of the day
+     1. User can search any recipe based on time of the day
 
 
 
@@ -303,7 +303,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 3
 
-Initiating Actor:User,Ava
+Initiating Actor:User, Ava
 
 Goal: User should be able to search recipe based on time of the day
 
@@ -315,7 +315,7 @@ PostConditions: The recipe list will show recipes with the associated time of da
 
 Main Success Scenario:
 
-     1.User should be able to search recipe based on time of the day		
+     1. User should be able to search recipe based on time of the day		
 
 
 
@@ -328,7 +328,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 5
 
-Initiating Actor: User,Ava
+Initiating Actor: User, Ava
 
 Goal: User can give feedback for any recipe
 
@@ -340,13 +340,13 @@ PostConditions: User can view any recipe and give feedback
 
 Main Success Scenario:
 
-	1.User logs in to Ava
+	1. User logs in to Ava
 
-	2.User goes to the pantry mode
+	2. User goes to the pantry mode
 
-	3.User can view any recipe
+	3. User can view any recipe
 
-	4.User gives feedback/review for the same
+	4. User gives feedback/review for the same
 
 
 
@@ -359,7 +359,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 5
 
-Initiating Actor:User,Ava
+Initiating Actor:User, Ava
 
 Goal: Logged in users can provide rating on a scale of 1 to 5
 
@@ -371,11 +371,11 @@ PostConditions: Rating is provided by the user for the recipe he/she viewed
 
 Main Success Scenario:
 
-	1.User views a recipe in Ava
+	1. User views a recipe in Ava
 
-	2.User wants to provide feedback by giving rating
+	2. User wants to provide feedback by giving rating
 
-	3.User gives rating for the recipe
+	3. User gives rating for the recipe
 
 
 
@@ -388,7 +388,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 5
 
-Initiating Actor:User,Ava
+Initiating Actor:User, Ava
 
 Goal: Logged in users can provide suggestion in text for recipe
 
@@ -400,11 +400,11 @@ PostConditions: Suggestion for a recipe is added
 
 Main Success Scenario:
 
-	1.User views a recipe in Ava
+	1. User views a recipe in Ava
 
-	2.User wants to add a suggestion for a recipe
+	2. User wants to add a suggestion for a recipe
 
-	3.User provides suggestion by adding text	
+	3. User provides suggestion by adding text	
 
 
 
@@ -417,7 +417,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 7
 
-Initiating Actor: User,Ava
+Initiating Actor: User, Ava
 
 Goal: User can share their recipes 
 
@@ -429,13 +429,13 @@ PostConditions: User can view any recipe and share it with others
 
 Main Success Scenario:
 
-	1.User logs in to Ava
+	1. User logs in to Ava
 
-	2.User goes to the pantry mode
+	2. User goes to the pantry mode
 
-	3.User can view any recipe
+	3. User can view any recipe
 
-	4.User shares the recipe 
+	4. User shares the recipe 
 
 
 
@@ -448,7 +448,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 6
 
-Initiating Actor: User,Ava,Admin
+Initiating Actor: User, Ava, Admin
 
 Goal: User can view Recipe of the day
 
@@ -460,11 +460,11 @@ PostConditions: User can view Recipe of the day which the admin will show to the
 
 Main Success Scenario:
 
-	1.User logs in to Ava
+	1. User logs in to Ava
 
-	2.Admin will show Recipe of the day to existing users
+	2. Admin will show Recipe of the day to existing users
 
-	3.Existing users can view Recipe of the day
+	3. Existing users can view Recipe of the day
 ---
 
 
@@ -473,7 +473,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 9
 
-Initiating Actor: Ava,Admin
+Initiating Actor: Ava, Admin
 
 Goal: Admin should be able to add any recipe 
 
@@ -485,7 +485,7 @@ PostConditions: A new gets added in the Ava application
 
 Main Success Scenario:
 
-	1.Admin can add any recipe whenever required
+	1. Admin can add any recipe whenever required
 ---
 
 
@@ -494,7 +494,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 9
 
-Initiating Actor:Ava,Admin
+Initiating Actor: Ava, Admin
 
 Goal: Admin should be able to edit any recipe
 
@@ -506,9 +506,9 @@ PostConditions: Admin can make changes in recipe by editing it
 
 Main Success Scenario:
 
-	1.Admin searches for the recipe where changes should be made
+	1. Admin searches for the recipe where changes should be made
 
-	2.Admin can edit the recipe
+	2. Admin can edit the recipe
 ---
 
 
@@ -517,7 +517,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 6
 
-Initiating Actor:User,Ava,Admin
+Initiating Actor:User, Ava, Admin
 
 Goal: Ava will let users view recipe of the day and admin should be able to show recipe of the day to logged in users
 
@@ -529,9 +529,9 @@ PostConditions: Users would be able to view recipe of the day
 
 Main Success Scenario:
 
-	1.Admin adds the recipe of the day 
+	1. Admin adds the recipe of the day 
 
-	2.Users having account in Ava will be able to view the recipe of the day
+	2. Users having account in Ava will be able to view the recipe of the day
 ---
 
 
@@ -540,7 +540,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 4,REQ - 8
 
-Initiating Actor:User,Ava,Admin
+Initiating Actor: User, Ava, Admin
 
 Goal: Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe
 
@@ -552,11 +552,11 @@ PostConditions: Users would be able to view side dishes
 
 Main Success Scenario:
 
-	1.Ava analyzes user's recipe to manage specific user account
+	1. Ava analyzes user's recipe to manage specific user account
 
-	2.Based on user's preferences,Ava provides related side dishes
+	2. Based on user's preferences,Ava provides related side dishes
 
-	3.Ava allows users to bookmark or save recipe
+	3. Ava allows users to bookmark or save recipe
 ---
 
 
@@ -565,7 +565,7 @@ Main Success Scenario:
 
 Related Requirements: REQ - 9
 
-Initiating Actor:User,Ava,Admin
+Initiating Actor: User, Ava, Admin
 
 Goal: Admin should be able to add or edit recipes and keep track of most viewed recipes
 
@@ -577,7 +577,7 @@ PostConditions: Admin would know the most active users and less active users
 
 Main Success Scenario:
 
-	1.Admin analyzes users and keeps track of the most viewed recipe
+	1. Admin analyzes users and keeps track of the most viewed recipe
 ---
 
 
@@ -710,10 +710,12 @@ Admin login
 
 | Concept      | Attribute                                | Attribute Desciption                     |
 | ------------ | ---------------------------------------- | ---------------------------------------- |
-| Admin        | 1.Name<br>           2.Privileges        | 1. Name: Name of Admin <br>2. Privileges: The admin has specific privileges which allows them to modify recipes, approve feedback left by Existing Users, and choose recipe of the day. |
-| NewUser      | 1.Ingredients                            | 1.  Ingredients: Every user has a list of ingredients owned. |
-| ExistingUser | 1.Name, 2.Ingredients 3.Feedback Left    | 1. Name: Name of User<br> 2. Ingredients: Every user has a list of ingredients owned. <br>3. Feedback left: Users may have a list of feedback given on recipes. |
-| Recipe       | 1.Name <br>2.Time Association <br>3.Origin <br>4.Feedback <br>5.Ingredients | 1. Name: Every recipe will have a name.<br>2. Time Association: A recipe will be categorized by time of the day. <br>3. A recipe will also be categorized by country origin. <br>4. Feedback left by users. <br>5. A recipe will have a list of ingredients used. |
+| Admin        | 1. Name<br>           2. Privileges      | 1. Name: Name of Admin <br>2. Privileges: The admin has specific privileges which allows them to modify recipes, approve feedback left by Existing Users, and choose recipe of the day. |
+| NewUser      | 1. Ingredients                           | 1.  Ingredients: Every user has a list of ingredients owned. |
+| ExistingUser | 1. Name <br>2. Ingredients <br>3. Feedback Left | 1. Name: Name of User<br> 2. Ingredients: Every user has a list of ingredients owned. <br>3. Feedback left: Users may have a list of feedback given on recipes. |
+| Recipe       | 1. Name <br>2. Time Association <br>3. Origin <br>4. Feedback <br>5. Ingredients | 1. Name: Every recipe will have a name.<br>2. Time Association: A recipe will be categorized by time of the day. <br>3. A recipe will also be categorized by country origin. <br>4. Feedback left by users. <br>5. A recipe will have a list of ingredients used. |
+| ModifyRecipe | 1. Modifier <br> 2. Name of Item<br>3. Ingredients<br>4. Category | 1. The name of the Admin who modified this item<br>2. Allows to modify the name of the recipe. <br>3. Allows for Admin to modify ingredients of recipe.<br>4. Allows the Admin to modify the categories recipe belongs to. |
+| SearchRecipe | 1. List Recipes                          | 1. List the recipes from the database based on criteria. |
 
 
 ### <a name="operation_contracts"></a> System Operation Contracts
