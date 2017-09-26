@@ -710,7 +710,7 @@ Admin login
 
 | Concept      | Attribute                        | Attribute Desciption                     |
 | ------------ | -------------------------------- | ---------------------------------------- |
-| Admin        | 1.Name            2.Privileges   | 1. Name: Name of Admin                                                                                 2. Privileges: The admin has specific privileges which allows them to modify recipes, approve feedback left by Existing Users, and choose recipe of the day. |
+| Admin        | 1.Name            2.Privileges   | 1. Name: Name of Admin <br>2. Privileges: The admin has specific privileges which allows them to modify recipes, approve feedback left by Existing Users, and choose recipe of the day. |
 | NewUser      | Name, Ingredients                |                                          |
 | ExistingUser | Name, Ingredients, Feedback Left |                                          |
 
