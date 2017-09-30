@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ava</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel="stylesheet" href="{% static 'css/style.css'%} ">
+
+  
+</head>
+<body>
+  <div class="logo-container">
+  <img src="{% static 'images/ava_logo.png' %}">
+  </div>
+{#{{ context }}#}
+  <div class="ava-container">
+      {% if context.response %}
+  <h1 class="ava-dialogue">{{ context }} </h1>
+      {% else %}
+  <h1 class="ava-dialogue">Hey there! {{ context }}</h1>
+      {% endif %}
+
+{#  <h1 class="ava-dialogue-down">...</h1>#}
+  </div>
+
+  <div class="user-container">
+      {% if context.query %}
+  <h1 class="user-dialogue">{{ context.query }}</h1>
+      {% endif %}
+{#  <h1 class="user-dialogue-down"></h1>#}
+  </div>
+
+  <fieldset class="field-container">
+      <form action="#" method="post">
+           {% csrf_token %}
+          <input type="text" placeholder="What's up?" class="field" name="query"/>
+
+          {% for key, value in context.items %}
+              {% if key != 'query' %}
+              <input type="hidden" name="{{ key }}" value="{{ value }}">
+              {% else %}
+              {% endif %}
+          {% endfor %}
+
+          <div class="icons-container">
+              <div class="icon-search"></div>
+        {#          <div class="icon-close">#}
+              <div class="x-up"></div>
+              <div class="x-down"></div>
+              </div>
+          </div>
+      </form>
+  </fieldset>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+
+    <script  src="{% static 'js/index.js' %}"></script>
+
+</body>
+</html>

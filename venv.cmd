@@ -1,0 +1,5 @@
+cd env
+cd Scripts
+activate
+cd ..
+cd ..

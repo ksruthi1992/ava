@@ -1,4 +1,4 @@
-"""ava URL Configuration
+"""ava - dashboard URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from dashboard.views import Dashboard
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'', include('dashboard.urls')),
+    url(r'^$', Dashboard.as_view(), name='dashboard'),
 ]
