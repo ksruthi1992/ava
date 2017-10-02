@@ -18,9 +18,9 @@
 {#{{ context }}#}
   <div class="ava-container">
       {% if context.response %}
-  <h1 class="ava-dialogue">{{ context }} </h1>
+  <h1 class="ava-dialogue">{{ context.response }} </h1>
       {% else %}
-  <h1 class="ava-dialogue">Hey there! {{ context }}</h1>
+  <h1 class="ava-dialogue">Hey there! </h1>
       {% endif %}
 
 {#  <h1 class="ava-dialogue-down">...</h1>#}
@@ -38,12 +38,12 @@
            {% csrf_token %}
           <input type="text" placeholder="What's up?" class="field" name="query"/>
 
-          {% for key, value in context.items %}
-              {% if key != 'query' %}
-              <input type="hidden" name="{{ key }}" value="{{ value }}">
-              {% else %}
-              {% endif %}
-          {% endfor %}
+{#          {% for key, value in context.items %}#}
+{#              {% if key != 'query' %}#}
+{#              <input type="hidden" name="{{ key }}" value="{{ value }}">#}
+{#              {% else %}#}
+{#              {% endif %}#}
+{#          {% endfor %}#}
 
           <div class="icons-container">
               <div class="icon-search"></div>
