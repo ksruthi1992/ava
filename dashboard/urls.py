@@ -16,8 +16,9 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from dashboard.views import Dashboard
+from dashboard.views import Dashboard, Respond
 
 urlpatterns = [
     url(r'^$', Dashboard.as_view(), name='dashboard'),
+    url(r'^respond/$', Respond.as_view(), name='respond')
 ]
