@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from dashboard.views import Dashboard, Respond
+from dashboard.views import Dashboard, Respond, Sruthi
 
 urlpatterns = [
     url(r'^$', Dashboard.as_view(), name='dashboard'),
-    url(r'^respond/$', Respond.as_view(), name='respond')
+    url(r'^respond/$', Respond.as_view(), name='respond'),
+    url(r'^sruthi/$', Sruthi.as_view(), name='sruthi')
 ]
