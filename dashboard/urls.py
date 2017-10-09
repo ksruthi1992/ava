@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^$', Dashboard.as_view(), name='dashboard'),
     url(r'^respond/$', Respond.as_view(), name='respond'),
     url(r'^sruthi/$', Sruthi.as_view(), name='sruthi')
+#    url(r'^angelica/$', Angelica.as_view(), name='angelica')
 ]
