@@ -2,3 +2,5 @@ env/*
 ava/local_settings*
 .idea\workspace.xml
 *.pyc
+
+

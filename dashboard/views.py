@@ -29,8 +29,9 @@ class Dashboard(TemplateView):
             except:
                 response = "Sorry, i do not understand..."
 
-            context = {'query':query, 'response':response}
+            context = {'query':query, 'response':response, '':''}
         return render(request, template_name, context={'context':context})
+
 
     template_name = "dashboard.html"
 
@@ -51,6 +52,19 @@ class Sruthi(APIView):
         res = {"query":query, "response": "hey"}
 
         return Response(res)
+
+class Neha(APIView):
+    def get(self,request, *args, **kwargs):
+        return Response("Hello!",status=status.HTTP_200_OK)
+    def post(self,request,*args,**kwargs):
+        query = request.data["query"]
+        res = {"query":query, "response": "heyy"}
+
+        return Response(res)
+
+
+
+
 
 #class Angelica(APIView):
 #    def get(self,request, *args, **kwargs):
