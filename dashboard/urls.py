@@ -23,9 +23,6 @@ urlpatterns = [
     url(r'^respond/$', Respond.as_view(), name='respond'),
     url(r'^sruthi/$', Sruthi.as_view(), name='sruthi'),
     url(r'^neha/$', Neha.as_view(), name='neha')
-<<<<<<< HEAD
     url(r'^vidhya/$', Vidhya.as_view(), name='vidhya')
-=======
->>>>>>> 09b90dfbc077da15c4b10de32d56c3fc09dcdccd
     url(r'^angelica/$', Angelica.as_view(), name='angelica')
 ]

@@ -71,15 +71,6 @@ class Neha(APIView):
             res = {"query": query, "response": "heyy"}
 
             return Response(res)
-class Angelica(APIView):
-    def get(self,request, *args, **kwargs):
-        return Response("hey",status=status.HTTP_200_OK)
-    def post(self,request, *args, **kwargs):
-        query = request.data["query"]
-        res = {"query":query, "response": "hey"}
-
-<<<<<<< HEAD
-=======
 
 class Angelica(APIView):
     def get(self,request, *args, **kwargs):
@@ -88,6 +79,5 @@ class Angelica(APIView):
         query = request.data["query"]
         res = {"query":query, "response": "hey"}
 
->>>>>>> 09b90dfbc077da15c4b10de32d56c3fc09dcdccd
         return Response(res)
 
