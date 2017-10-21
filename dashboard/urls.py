@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^respond/$', Respond.as_view(), name='respond'),
     url(r'^sruthi/$', Sruthi.as_view(), name='sruthi'),
     url(r'^neha/$', Neha.as_view(), name='neha')
-#    url(r'^angelica/$', Angelica.as_view(), name='angelica')
+    url(r'^vidhya/$', Vidhya.as_view(), name='vidhya')
+    url(r'^angelica/$', Angelica.as_view(), name='angelica')
 ]
