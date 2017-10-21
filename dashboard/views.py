@@ -64,7 +64,7 @@ class Neha(APIView):
 
     class Vidhya(APIView):
         def get(self, request, *args, **kwargs):
-            return Response("Hello!", status=status.HTTP_200_OK)
+            return Response("Hi!", status=status.HTTP_200_OK)
 
         def post(self, request, *args, **kwargs):
             query = request.data["query"]
