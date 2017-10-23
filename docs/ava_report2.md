@@ -57,7 +57,6 @@ Users may enter ingredients through the Ava chat box, which will be sent through
 ![Sequence_Diagram_Input_Ingredients](diagrams/Sequence_Diagram_Input_Ingredients.png)
 ####Use Case 3: Search Ingredients
 Users will be able to search for recipes based on ingredients in the pantry, cultural origin of the cuisine, and time of day food is typically eaten. The request is sent through the Ava front-end chat box, then the queries are against the recipes in the database. From there, the most relevant recipe will be sent back to the front-end for viewing by the user.
-![Sequence_Diagram_Search_Recipes](diagrams/Sequence_Diagram_Search_Recipes.png)
 
 ![Sequence_Diagram_Search_Recipes_modified](diagrams/Sequence_Diagram_Search_Recipes_modified.png)
 
@@ -88,20 +87,12 @@ The **client–server model** is a distributed application structure that partit
 ##### Major system services :
 
 - User Authentication 
-
 - User Pantry Management
-
 - User Profile
-
 - Recipe Search 
-
 - Recipe Ratings and Feedback
 
-  ​
-
   In general, a service is an abstraction of computer resources and a client does not have to be concerned with how the server performs while fulfilling the request and delivering the response. The client only has to understand the response based on the well-known application protocol, i.e. the content and the formatting of the data for the requested service.
-
-  ​
 
 #### <a name="identifyingsystems"></a>Identifying subsystems
 
@@ -119,11 +110,11 @@ The system works with multiple storage strategies for different forms of data. F
 
 The major differences between conventional RDBMS services, MySQL and PostgreSQL are as below: 
 
-**1. Partitioning**
+######**1. Partitioning**
 
 MySQL and PostgreSQL differ significantly with respect to their partitioning methods, which determine how data is stored on different nodes of the database. MySQL uses a proprietary technology called MySQL Cluster to perform horizontal clustering, which consists of creating multiple clusters with a single cluster instance within each node. PostgreSQL doesn’t implement true partitioning, although it can provide a similar capability with table inheritance. This task involves using a separate sub-table to control each “partition.”
 
-**2. Replication**
+######**2. Replication**
 
 A database may use multiple methods to store redundant data across multiple nodes. MySQL uses master-master replication, in which each node can update the data. Both MySQL and PostgreSQL can perform master-slave replication, where one node controls the storage of data by the other nodes. PostgreSQL can also handle other types of replication with the implementation of third-party extensions.
 
@@ -179,31 +170,38 @@ These were used with intention of flexibility in the design of AVA. AVA is meant
 
 ## <a name="uidesign"></a> User Interface Design and Implementation
 
-Dashboard
+There are three pages in which the user will be able to access on this iteration of Ava. The pages implemented below are deemed necessary to utilize all of Ava's resources, as well as be a simplistic design that does not overcrowd.
 
+###Dashboard
+The Dashboard is the home page in which the user first accesses. There is room for a chat box for text input, as well as several links to other functions of the web page.
 ![home](diagrams/home.jpg)
 
 
 
 
 
-Pantry panel
+###Pantry Panel
+The Pantry Panel is a pop-up API which will allow users to checkbox the items they wish to input into their Pantry. This is the front-end implementation which will tell the database the ingredients a user will like to search recipes with.
 
 ![pantry](diagrams/pantry.jpg)
 
 
 
-Recipe page
+###Recipe Page
+The Recipe Page is a pop-up box which will show the recipe that best fits the user's query. The user may exit the box as shown in the top left, for easy navigation.
 
 ![recipe](diagrams/recipe.jpg)
 
 ## <a name="uidesign"></a> Progress
 
 #### <a name="progressreport"></a>Progress report
+This is the bar diagram of the development of Ava. The beginning stages of development occurred in early to late September in order to establish the concepts and implementation of the web page. As shown below, the back-end and front-end development, which will take the majority of resources, has been the subject of development starting from the beginning of October.
 
 ![gantt_r2](diagrams/gantt_r2.JPG)
 
 ### <a name="planofwork"></a> Plan of work
+
+
 
 | Section              | Modules                                  | Deadline |
 | -------------------- | ---------------------------------------- | -------- |
@@ -230,6 +228,8 @@ Recipe page
 
 #### <a name="breakdown"></a>Breakdown of Responsibilities
 
+Since the development of this project will take many resources and can be code-heavy and takes a significant amount of analysis, the APIs have been broken up and divided amongst the team members. This is the breakdown of which team member is developing which API. As shown below, the team has broken up into two entities in order to split who develop front-end and back-end.
+
 * Backend APIs:
   * Recipe Search: Swapnil
   * Authentication: Neha
@@ -237,3 +237,9 @@ Recipe page
   * Pantry: Sruthi, Angelica
   * Registration: Anand
 * Frontend: Parker, Swapnil, Anand
+
+#### <a name="references"></a>References
+
+* Documentation of PostgreSQL: https://wiki.postgresql.org/wiki/Main_Page
+
+* Report 2 Guidelines: https://csus-csc-131-fall2017.github.io/Course-Repo/report2.html
