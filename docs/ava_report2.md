@@ -145,7 +145,7 @@ System interaction will require:
 
 ##### Hamming distance algorithm for ingredients matching
 
-All the ingredients are identified by unique id-weight. Each recipe has ingredient score based on the ingredients associated to it. 
+All the ingredients are identified by unique id-weight. Each recipe has an  ingredient score based on the ingredients and keywords associated to it, such as time-of-day and cultural origin. 
 
 To get list of recipes, hamming distance between the query ingredients or ingredients in the user pantry will be used to determine relative relevancy. 
 
@@ -155,14 +155,15 @@ To get list of recipes, hamming distance between the query ingredients or ingred
 
 Data structures used :
 
-* list
+* Lists
 
-* dictionary (key, value pair)
+* Dictionary (key, value pair)
 
-* json objects
+* JSON objects
 
-* defined objects (User, Pantry, Recipe, Feedback)
+* Defined Objects (User, Pantry, Recipe, Feedback)
 
+These were used with intention of flexibility in the design of AVA. AVA is meant to have multiple uses, as well as tend towards using object-oriented programming in order to be more efficient with resources.
   ​
 
 ## <a name="uidesign"></a> User Interface Design and Implementation
