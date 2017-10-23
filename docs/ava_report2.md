@@ -2,22 +2,22 @@
 
 ### Table of contents  
 
-**[Interaction Diagrams](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/friday-proposal.md)**
+**[Interaction Diagrams]()**
 
-**[Class Diagram and Interface Specification](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/Customer%20Statement%20of%20Requirements.md#customer-statement-of-requirements)**
+**[Class Diagram and Interface Specification]()**
 
 * [Class Diagram](#classdiagram)
 * [Data Types and Operation Signatures](#classdiagram)
 
-**[System Architecture and System Design](#requirements)**
+**[System Architecture and System Design](#systemdesign)**
 
-* [Architectural Styles](#classdiagram)
-* [Identifying Subsystems](#classdiagram)
-* [Mapping Subsystems to Hardware](#classdiagram)
-* [Persistent Data Storage](#classdiagram)
-* [Network Protocol](#classdiagram)
-* [Global Control Flow](#classdiagram)
-* [Hardware Requirements](#classdiagram)
+* [Architectural Styles](#architecturalstyles)
+* [Identifying Subsystems](#identifyingsystems)
+* [Mapping Subsystems to Hardware](#mappingssystems)
+* [Persistent Data Storage](#datastorage)
+* [Network Protocol](#networkprotocol)
+* [Global Control Flow](#controlflow)
+* [Hardware Requirements](#hardwarerequirements)
 
 **[Algorithms and Data Structures](#glossary)**
 
@@ -33,4 +33,20 @@
 * [Breakdown of Responsibilities](#diagrams)
 
 **[References](#references)**
+
+
+
+## <a name=""></a> Interaction diagram
+
+![Sequence_Diagram_for_Login](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\Sequence_Diagram_for_Login.png)
+
+![Sequence_Diagram_Input_Ingredients](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\Sequence_Diagram_Input_Ingredients.png)
+
+![Sequence_Diagram_Search_Recipes](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\Sequence_Diagram_Search_Recipes.png)
+
+![Sequence_Diagram_Search_Recipes_modified](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\Sequence_Diagram_Search_Recipes_modified.png)
+
+## <a name="classdiagram"></a> Class diagram
+
+## <a name="systemdesign"></a> System Architecture and system design
 
