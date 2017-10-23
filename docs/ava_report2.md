@@ -187,9 +187,34 @@ Recipe page
 
 ## <a name="uidesign"></a> Progress
 
-#### <a name="progressreport"></a>Progress report/ Plan of work
+#### <a name="progressreport"></a>Progress report
 
 ![gantt_r2](diagrams/gantt_r2.JPG)
+
+### <a name="planofwork"></a> Plan of work
+
+| Section              | Modules                                  | Deadline |
+| -------------------- | ---------------------------------------- | -------- |
+| Analysis             | Customer Requirement Analysis            | Oct 12   |
+|                      | UML diagrams                             | Oct 12   |
+|                      | Report1                                  | Oct 12   |
+| Design               | UI Design                                | Oct 23   |
+|                      | Interaction dialogue design              | Oct 23   |
+|                      | coding architecture design               | Oct 23   |
+| Backend Development  | Module-1 AuthenticationBackend development | Nov 7    |
+|                      | Module-2 Search                          | Nov 7    |
+|                      | Module-3 Pantry                          | Nov 7    |
+|                      | Module-4Recipe                           | Nov 7    |
+|                      | Module5-Share                            | Nov 7    |
+|                      | Module6-Admin mode                       | Nov 7    |
+|                      | Module7-Feedback                         | Nov 7    |
+|                      | Module8-Small talk                       | Nov 7    |
+| Frontend development | Module1-Dashboard                        | Nov 6    |
+|                      | Module2-Menu/nav                         | Nov 6    |
+|                      | Module3-Pantry                           | Nov 6    |
+|                      | Module4-Receipe screen                   | Nov 6    |
+
+
 
 #### <a name="breakdown"></a>Breakdown of Responsibilities
 
