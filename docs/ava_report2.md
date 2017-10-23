@@ -41,14 +41,16 @@
 
 This is our introduction.
 
-## <a name="interactiondiagrams"></a> Interaction diagrams
+## <a name="interactiondiagrams"></a> Interaction Diagrams
 
-####Use Case 1 - Service Diagram for Login
-In order for users who would like to save their Pantry, the user will send an authentication request by logging in through the Ava front-end service. From there, the request will be verified through the database back-end. If successful, then the user may use various perks of being a user of this service.
+####Use Case 1: Login
+In order for users to log-in, the user will send an authentication request by logging in through the Ava front-end service. From there, the request will be verified through the database back-end. If successful, then the user may use various perks of being a user of this service.
 ![Sequence_Diagram_for_Login](diagrams/Sequence_Diagram_for_Login.png)
-
+####Use Case 2: Input Ingredients
+Users may enter ingredients through the Ava chat box, which will be sent through to the back-end database. From there, the database will store this information and it will be represented to the user as ingredients in the "Pantry". 
 ![Sequence_Diagram_Input_Ingredients](diagrams/Sequence_Diagram_Input_Ingredients.png)
-
+####Use Case 3: Search Ingredients
+Users will be able to search for recipes based on ingredients in the pantry, cultural origin of the cuisine, and time of day food is typically eaten. The request is sent through the Ava front-end chat box, then the queries are against the recipes in the database. From there, the most relevant recipe will be sent back to the front-end for viewing by the user.
 ![Sequence_Diagram_Search_Recipes](diagrams/Sequence_Diagram_Search_Recipes.png)
 
 ![Sequence_Diagram_Search_Recipes_modified](diagrams/Sequence_Diagram_Search_Recipes_modified.png)
