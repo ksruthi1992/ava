@@ -81,15 +81,15 @@ The **client–server model** is a distributed application structure that partit
 
 ##### Major system services :
 
-- user authentication 
+- User Authentication 
 
-- user pantry management
+- User Pantry Management
 
-- user profile
+- User Profile
 
-- recipe search 
+- Recipe Search 
 
-- recipe ratings and feedback
+- Recipe Ratings and Feedback
 
   ​
 
@@ -137,7 +137,7 @@ Clients and servers exchange messages in a request–response messaging pattern.
 
 #### <a name="hardwarerequirements"></a>Hardware Requirements
 
-The AVA website will not require any specific devices. System interaction will require:
+The AVA website will not require any high-end devices. It only will require a hardware with stable internet access. Therefore, system interaction will require:
 
 * A client device which can access internet [personal computer, laptop, smartphone]
 * Web Browser
@@ -164,11 +164,8 @@ To get list of recipes, hamming distance between the query ingredients or ingred
 Data structures used :
 
 * Lists
-
 * Dictionary (key, value pair)
-
 * JSON objects
-
 * Defined Objects (User, Pantry, Recipe, Feedback)
 
 These were used with intention of flexibility in the design of AVA. AVA is meant to have multiple uses, as well as tend towards using object-oriented programming in order to be more efficient with resources.
@@ -227,8 +224,8 @@ Recipe page
 
 #### <a name="breakdown"></a>Breakdown of Responsibilities
 
-* Backend Apis
-  * recipe search: Swapnil
+* Backend APIs:
+  * Recipe Search: Swapnil
   * Authentication: Neha
   * Feedback: Vidhya
   * Pantry: Sruthi, Angelica
