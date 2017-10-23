@@ -15,7 +15,7 @@
 
 * [Architectural Styles](#architecturalstyles)
 * [Identifying Subsystems](#identifyingsystems)
-* [Mapping subsystems to Hardware](#hardwaremappings)
+* [Mapping Subsystems to Hardware](#hardwaremappings)
 * [Persistent Data Storage](#datastorage)
 * [Network Protocol](#networkprotocol)
 * [Global Control Flow](#controlflow)
@@ -43,6 +43,8 @@ This is our introduction.
 
 ## <a name="interactiondiagrams"></a> Interaction diagrams
 
+####Use Case 1 - Service Diagram for Login
+In order for users who would like to save their Pantry, the user will send an authentication request by logging in through the Ava front-end service. From there, the request will be verified through the database back-end. If successful, then the user may use various perks of being a user of this service.
 ![Sequence_Diagram_for_Login](diagrams/Sequence_Diagram_for_Login.png)
 
 ![Sequence_Diagram_Input_Ingredients](diagrams/Sequence_Diagram_Input_Ingredients.png)
