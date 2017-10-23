@@ -12,7 +12,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from requests import get
 from dashboard.constants import *
-from dashboard.models import Command, SmallTalk, Recipe
+from dashboard.models import Command, SmallTalk, Recipe, User
 
 
 class Dashboard(TemplateView):
@@ -109,3 +109,25 @@ class Angelica(APIView):
 
         return Response(res)
 
+class Register(APIView) :
+    def post(self,request, *args, **kwargs):
+        frstname = request.data["firstname"]
+        lstname = request.data["lastname"]
+        email = request.data["email"]
+        uname = request.data["uname"]
+        pwd = request.data["pwd"]
+        flag = 0
+        try:
+            User.objects.get(Username = uname)
+        except:
+            res = "username does not exist"
+            flag += 1
+        try:
+            User.objects.get(email = email)
+        except:
+            res = "email does not exist"
+            flag += 1
+        if flag == 2 :
+            User.objects.create(firstname = frstname, lastname = lstname, email = email, username = uname, password = pwd)
+            res = "created successfully"
+        return Response (res)
