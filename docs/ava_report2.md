@@ -40,7 +40,7 @@
 
 ![Sequence_Diagram_for_Login](diagrams/Sequence_Diagram_for_Login.png)
 
-![Sequence_Diagram_Input_Ingredients](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams/Sequence_Diagram_Input_Ingredients.png)
+![Sequence_Diagram_Input_Ingredients](diagrams/Sequence_Diagram_Input_Ingredients.png)
 
 ![Sequence_Diagram_Search_Recipes](diagrams/Sequence_Diagram_Search_Recipes.png)
 
