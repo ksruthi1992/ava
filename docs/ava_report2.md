@@ -169,7 +169,7 @@ Data structures used :
 
 Dashboard
 
-![home](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\home.jpg)
+![home](diagrams/home.jpg)
 
 
 
@@ -177,13 +177,13 @@ Dashboard
 
 Pantry panel
 
-![pantry](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\pantry.jpg)
+![pantry](diagrams/pantry.jpg)
 
 
 
 Recipe page
 
-![recipe](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\recipe.jpg)
+![recipe](diagrams/recipe.jpg)
 
 ## <a name="uidesign"></a> Progress
 
