@@ -61,7 +61,7 @@ Users will be able to search for recipes based on ingredients in the pantry, cul
 ![Sequence_Diagram_Search_Recipes_modified](diagrams/Sequence_Diagram_Search_Recipes_modified.png)
 
 ## <a name="classdiagram"></a> Class diagram
-
+This is the planned implementation of the classes in Object-Oriented Programming  fashion. This implementation is meant to be both functional as well as efficient.
 
 ![image](diagrams/ava_class_diagram.png)
 =======
@@ -74,7 +74,7 @@ Users will be able to search for recipes based on ingredients in the pantry, cul
 
 ##### Client-server (Distributed application)
 
-![architecture (1)](diagrams/architecture (1).jpg)
+![architecture-1](diagrams/architecture-1.jpg)
 
 The **client–server model** is a distributed application structure that partitions tasks or workloads between the providers of a resource or service, called servers, and service requesters, called clients. Often clients and servers communicate over a computer network on separate hardware, but both client and server may reside in the same system. A server host runs one or more server programs which share their resources with clients. A client does not share any of its resources, but requests a server's content or service function. Clients therefore initiate communication sessions with servers which await incoming requests.
 
