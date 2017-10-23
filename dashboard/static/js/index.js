@@ -1,20 +1,27 @@
-$(document).on('ready', function() {
+$(document).ready(function(){
+        $mode = 0;
+        $('.type-it').typeIt({
+        strings: 'Hey there!'
+        });
 
-  $('body').addClass('is-focus');
+        $('#searchform').submit(function (event){
+            event.preventDefault();
+            $query = $('.field');
+            $('.display').html($query.val());
+            $('.type-it').typeIt({strings:'...', loop:true});
 
-  // $('.field').on('focus', function() {
-  //   $('body').addClass('is-focus');
-  // });
-  
-  // $('.field').on('blur', function() {
-  //   $('body').removeClass('is-focus is-type');
-  // });
-  
-  // $('.field').on('keydown', function(event) {
-  //   $('body').addClass('is-type');
-  //   if((event.which === 8) && $(this).val() === '') {
-  //     $('body').removeClass('is-type');
-  //   }
-  // });
-  
-});
+            $.ajax({
+                type: "POST",
+                url: "/respond/",
+                data: {"query":$query.val(), "mode": $mode},
+                success: function(data)
+                {
+                    $('.type-it').typeIt({
+                        strings: data.response, speed:30,
+                    });
+                    $mode = data.mode;
+                }
+            });
+            $query.val('');
+        });
+    });

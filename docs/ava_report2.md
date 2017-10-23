@@ -7,7 +7,7 @@
 **[Class Diagram and Interface Specification]()**
 
 * [Class Diagram](#classdiagram)
-* [Data Types and Operation Signatures](#classdiagram)
+* [Data Types and Operation Signatures](#datatypesandstructures)
 
 **[System Architecture and System Design](#systemdesign)**
 
@@ -33,6 +33,7 @@
 * [Breakdown of Responsibilities](#breakdown)
 
 **[References](#references)**
+
 
 
 
@@ -142,13 +143,47 @@ System interaction will require:
 
 
 
+##### Hamming distance algorithm for ingredients matching
+
+All the ingredients are identified by unique id-weight. Each recipe has ingredient score based on the ingredients associated to it. 
+
+To get list of recipes, hamming distance between the query ingredients or ingredients in the user pantry will be used to determine relative relevancy. 
+
+ 
+
 #### <a name="datastructures"></a>Data Structures
 
+Data structures used :
 
+* list
+
+* dictionary (key, value pair)
+
+* json objects
+
+* defined objects (User, Pantry, Recipe, Feedback)
+
+  ​
 
 ## <a name="uidesign"></a> User Interface Design and Implementation
 
+Dashboard
 
+![home](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\home.jpg)
+
+
+
+
+
+Pantry panel
+
+![pantry](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\pantry.jpg)
+
+
+
+Recipe page
+
+![recipe](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\recipe.jpg)
 
 ## <a name="uidesign"></a> Progress
 
@@ -162,10 +197,9 @@ System interaction will require:
 
 #### <a name="breakdown"></a>Breakdown of Responsibilities
 
-
-
-#### 
-
-
-
-#### 
+* recipe search: Swapnil
+* Authentication: Neha
+* Feedback: Vidhya
+* Pantry: Sruthi, Angelica
+* Registration: Anand
+* Frontend: Parker
