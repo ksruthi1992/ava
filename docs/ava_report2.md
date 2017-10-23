@@ -97,23 +97,23 @@ The **client–server model** is a distributed application structure that partit
 
 ##### Subsystems
 
-* Frontend
-* Application server
+* Front End
+* Application Server
 * Database
 
 
 
 #### <a name="datastorage"></a>Data Storage
 
-The system works with multiple storage strategies for different forms of data. For persistent data storage, the system uses *postgresql*-  object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.  PostgreSQL is developed by the PostgreSQL Global Development Group, a diverse group of many companies and individual contributors. It is free and open-source, released under the terms of the PostgreSQL License, a permissive software license.
+The system works with multiple storage strategies for different forms of data. For persistent data storage, the system uses *PostgreSQL*, an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance.  PostgreSQL is developed by the PostgreSQL Global Development Group, a diverse group of many companies and individual contributors. It is free and open-source, released under the terms of the PostgreSQL License, a permissive software license.
 
-The major differences between conventional rdbms services- MySQL and postgresql are as below : 
+The major differences between conventional RDBMS services, MySQL and PostgreSQL are as below: 
 
-**Partitioning**
+**1. Partitioning**
 
 MySQL and PostgreSQL differ significantly with respect to their partitioning methods, which determine how data is stored on different nodes of the database. MySQL uses a proprietary technology called MySQL Cluster to perform horizontal clustering, which consists of creating multiple clusters with a single cluster instance within each node. PostgreSQL doesn’t implement true partitioning, although it can provide a similar capability with table inheritance. This task involves using a separate sub-table to control each “partition.”
 
-**Replication**
+**2. Replication**
 
 A database may use multiple methods to store redundant data across multiple nodes. MySQL uses master-master replication, in which each node can update the data. Both MySQL and PostgreSQL can perform master-slave replication, where one node controls the storage of data by the other nodes. PostgreSQL can also handle other types of replication with the implementation of third-party extensions.
 
@@ -133,11 +133,11 @@ Clients and servers exchange messages in a request–response messaging pattern.
 
 #### <a name="hardwarerequirements"></a>Hardware Requirements
 
-System interaction will require:
+The AVA website will not require any specific devices. System interaction will require:
 
-* Client device [ personal computer, laptop, smartphone]
-* Web browser
-* Internet connection
+* A client device which can access internet [personal computer, laptop, smartphone]
+* Web Browser
+* Internet Connection
 
 
 
