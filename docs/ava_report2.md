@@ -127,6 +127,7 @@ Clients and servers exchange messages in a request–response messaging pattern.
 
 
 #### <a name="controlflow"></a>Global Control Flow
+The global control flow shows how users will access the website, in a step-by-step diagram. The red lines show that the user has two separate options in this flow chart.
 
 ![activity](diagrams/activity.jpg)
 
@@ -134,7 +135,7 @@ Clients and servers exchange messages in a request–response messaging pattern.
 
 #### <a name="hardwarerequirements"></a>Hardware Requirements
 
-The AVA website will not require any high-end devices. It only will require a hardware with stable internet access. Therefore, system interaction will require:
+The Ava website will not require any high-end devices. It only will require a hardware with stable internet access. Therefore, system interaction will require:
 
 * A client device which can access internet [personal computer, laptop, smartphone]
 * Web Browser
@@ -165,7 +166,7 @@ Data structures used :
 * JSON objects
 * Defined Objects (User, Pantry, Recipe, Feedback)
 
-These were used with intention of flexibility in the design of AVA. AVA is meant to have multiple uses, as well as tend towards using object-oriented programming in order to be more efficient with resources.
+These were used with intention of flexibility in the design of AVA. AVA is meant to have multiple uses, as well as tend towards using object-oriented programming in order to be more efficient with resources. This also includes a small image which will act as the main logo of the Ava project.
   ​
 
 ## <a name="uidesign"></a> User Interface Design and Implementation
@@ -188,7 +189,7 @@ The Pantry Panel is a pop-up API which will allow users to checkbox the items th
 
 
 ###Recipe Page
-The Recipe Page is a pop-up box which will show the recipe that best fits the user's query. The user may exit the box as shown in the top left, for easy navigation.
+The Recipe Page is a pop-up box which will show the recipe that best fits the user's query. The user may exit the box as shown in the top left, for easy navigation. The pop-up has three main sections, the recipe image, the recipe ingredients, as well as the recipe directions.
 
 ![recipe](diagrams/recipe.jpg)
 
