@@ -2,7 +2,7 @@
 
 ### Table of contents  
 
-**[Interaction Diagrams]()**
+**[Interaction Diagrams](#interactiondiagrams)**
 
 **[Class Diagram and Interface Specification]()**
 
@@ -36,15 +36,15 @@
 
 
 
-## <a name=""></a> Interaction diagram
+## <a name="interactiondiagrams"></a> Interaction diagrams
 
-![Sequence_Diagram_for_Login](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\Sequence_Diagram_for_Login.png)
+![Sequence_Diagram_for_Login](diagrams\Sequence_Diagram_for_Login.png)
 
 ![Sequence_Diagram_Input_Ingredients](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\Sequence_Diagram_Input_Ingredients.png)
 
-![Sequence_Diagram_Search_Recipes](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\Sequence_Diagram_Search_Recipes.png)
+![Sequence_Diagram_Search_Recipes](diagrams\Sequence_Diagram_Search_Recipes.png)
 
-![Sequence_Diagram_Search_Recipes_modified](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\Sequence_Diagram_Search_Recipes_modified.png)
+![Sequence_Diagram_Search_Recipes_modified](diagrams\Sequence_Diagram_Search_Recipes_modified.png)
 
 ## <a name="classdiagram"></a> Class diagram
 
@@ -60,13 +60,13 @@
 
 ##### Client-server (Distributed application)
 
-![architecture (1)](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\architecture (1).jpg)
+![architecture (1)](diagrams\architecture (1).jpg)
 
 The **client–server model** is a distributed application structure that partitions tasks or workloads between the providers of a resource or service, called servers, and service requesters, called clients. Often clients and servers communicate over a computer network on separate hardware, but both client and server may reside in the same system. A server host runs one or more server programs which share their resources with clients. A client does not share any of its resources, but requests a server's content or service function. Clients therefore initiate communication sessions with servers which await incoming requests.
 
 ##### Server-side internal architecture
 
-![arch2](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\arch2.jpg)
+![arch2](diagrams\arch2.jpg)
 
 
 
@@ -122,7 +122,7 @@ Clients and servers exchange messages in a request–response messaging pattern.
 
 #### <a name="controlflow"></a>Global Control Flow
 
-![activity](C:\Users\swapnil\Documents\GitHub\ava\docs\diagrams\activity.jpg)
+![activity](diagrams\activity.jpg)
 
 
 
