@@ -48,5 +48,7 @@
 
 ## <a name="classdiagram"></a> Class diagram
 
+![image](diagrams/ava_class_diagram.png)
+
 ## <a name="systemdesign"></a> System Architecture and system design
 
