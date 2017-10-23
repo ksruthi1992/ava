@@ -187,19 +187,16 @@ Recipe page
 
 ## <a name="uidesign"></a> Progress
 
-#### <a name="progressreport"></a>Progress report
+#### <a name="progressreport"></a>Progress report/ Plan of work
 
-
-
-#### <a name="planofwork"></a>Plan of work
-
-
+![gantt_r2](diagrams/gantt_r2.JPG)
 
 #### <a name="breakdown"></a>Breakdown of Responsibilities
 
-* recipe search: Swapnil
-* Authentication: Neha
-* Feedback: Vidhya
-* Pantry: Sruthi, Angelica
-* Registration: Anand
-* Frontend: Parker
+* Backend Apis
+  * recipe search: Swapnil
+  * Authentication: Neha
+  * Feedback: Vidhya
+  * Pantry: Sruthi, Angelica
+  * Registration: Anand
+* Frontend: Parker, Swapnil, Anand
