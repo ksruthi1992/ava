@@ -38,8 +38,9 @@
 
 
 ## <a name="introduction"></a> Introduction
+Ava is an online cooking assistant that acts as a personal sous Chef to help the users decide what they can eat for breakfast, lunch, and dinner—and how to make it with the ingredients they have at home.
 
-This is our introduction.
+Our goal is to Provide the user with a simple, quick, and powerful resource for discovering recipes. This system is mainly to help people who struggle with cooking, whether they have a busy schedule and do not have the time to experiment with their own ingredients or they just find cooking a challenge or a frustrating experience.    
 
 ## <a name="interactiondiagrams"></a> Interaction Diagrams
 

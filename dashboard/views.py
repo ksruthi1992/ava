@@ -131,3 +131,22 @@ class Register(APIView) :
             User.objects.create(firstname = frstname, lastname = lstname, email = email, username = uname, password = pwd)
             res = "created successfully"
         return Response (res)
+
+class Feedback(APIView):
+    def post(self,request, *args, **kwargs):
+        Username = models.Charfield(max_length=50)
+        email = models.EmailField()
+        title = models.Charfield(max_length=120)
+        message = models.Textfield()
+        happy = models.Booleanfield()
+
+    def feedback_form(request):
+        if request.method == 'POST':
+            form = Feedback_form(request.POST)
+
+            if form.is_valid():
+                form.save()
+                return render(request, 'form/thanks.html')
+ else:
+        form = FeedbackForm()
+     return render(request,'form/feedback_form.html',{'form': form})
