@@ -32,11 +32,11 @@ class User(models.Model):
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
 
-class Feedback(models.Model):
-        Username = models.Charfield(max_length=50)
-        email = models.EmailField()
-        title = models.Charfield(max_length=120)
-        message = models.Textfield()
-        happy = models.Booleanfield()
+# class Feedback(models.Model):
+#         Username = models.Charfield(max_length=50)
+#         email = models.EmailField()
+#         title = models.Charfield(max_length=120)
+#         message = models.Textfield()
+#         happy = models.Booleanfield()
 
 
