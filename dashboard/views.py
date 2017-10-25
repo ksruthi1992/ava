@@ -37,27 +37,27 @@ class Dashboard(TemplateView):
     template_name = "dashboard.html"
 
 class Respond(APIView):
+
     def get(self,request, *args, **kwargs):
         return Response("hey",status=status.HTTP_200_OK)
+
     def post(self,request, *args, **kwargs):
-        query = request.data["query"]
+        query = str(request.data["query"]).lower()
 
         if "mode" in request.data:
             mode = int(request.data["mode"])
         else:
-            mode = MODE_DEFAULT
-
+            mode = MODE_DEFAULT_CODE
 
         if query == "mode?":
             response = str(mode)
-        elif query == "blade":
-                mode = MODE_BLADE
+        elif query == MODE_ROOT:
+                mode = MODE_ROOT_CODE
                 response = "mode changed to " + str(mode)
-        elif query == "default":
-                mode = MODE_DEFAULT
+        elif query == MODE_DEFAULT:
+                mode = MODE_DEFAULT_CODE
                 response = "mode changed to " + str(mode)
-        elif mode == MODE_BLADE:
-            print mode
+        elif mode == MODE_ROOT_CODE:
             api_url = "http://api.wolframalpha.com/v2/result"
             api_key = "57H75L-P7L8U2J9HP"
             response = get(url=api_url,params={"appid":api_key, "i":query} )
@@ -67,7 +67,6 @@ class Respond(APIView):
             except:
                 response = "Sorry, i do not understand..."
 
-        print response
         res = {"query":query, "response": response, "mode": mode}
 
         return Response(res)
