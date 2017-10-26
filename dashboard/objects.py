@@ -1,4 +1,4 @@
-class User:
+class ava_User:
 
     def __init__(self, email, username, name, age):
         self.email = email
@@ -31,7 +31,7 @@ class User:
         self.age = age
 
 
-class Recipe:
+class ava_Recipe:
 
     def __init__(self, ingredients, directions, recipe_meta, feedback):
         self.ingredients = ingredients
@@ -63,7 +63,7 @@ class Recipe:
     def set_feedback(self, feedback):
         self.feedback = feedback
 
-class Pantry:
+class ava_Pantry:
 
     def __init__(self, user, ingredients):
         self.user = user
