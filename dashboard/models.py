@@ -45,6 +45,10 @@ class Direction(models.Model):
 class Ingredient(models.Model):
     name = models.CharField(max_length=50)
 
+class Pantry(models.Model):
+    user = models.ForeignKey('User')
+    ingredient = models.ForeignKey('Ingredient')
+
 class Feedback(models.Model):
     title = models.CharField(max_length=50)
     message = models.CharField(max_length=50)
