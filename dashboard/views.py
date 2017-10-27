@@ -115,20 +115,26 @@ class Register(APIView) :
         email = request.data["email"]
         uname = request.data["uname"]
         pwd = request.data["pwd"]
+        dob = request.data["dob"]
+        profile_pic = request.data["pro_pic"]
         flag = 0
         try:
-            User.objects.get(Username = uname)
+            User.objects.get(username = uname)
+            res = "username already exists"
         except:
             res = "username does not exist"
             flag += 1
         try:
             User.objects.get(email = email)
+            res = "email already exists"
         except:
             res = "email does not exist"
             flag += 1
         if flag == 2 :
-            User.objects.create(firstname = frstname, lastname = lstname, email = email, username = uname, password = pwd)
+            User.objects.create(firstname = frstname, lastname = lstname, email = email, username = uname, password = pwd, dob = dob, profile_image = profile_pic).save()
             res = "created successfully"
+
+        res = {"message":res}
         return Response (res)
 
 # class Feedback(APIView):
