@@ -4,23 +4,68 @@
 <head>
   <meta charset="UTF-8">
   <title>Ava</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href={% static 'css/style.css'%}>
 
-  <link rel="stylesheet" href="{% static 'css/style.css'%} ">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typeit@4.4.1/dist/typeit.min.js"></script>
-  <script src={% static 'js/index.js' %}></script>
-
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@4.4.1/dist/typeit.min.js"></script>
+   <script src={% static 'js/index.js' %}></script>
 </head>
-
 <body>
-{#  <div class="logo-container">#}
-{#  <img src="{% static 'images/ava_logo.png' %}"/>#}
-{#  </div>#}
 
-{#{{ context }}#}
+
+<div id='cssmenu'>
+<ul>
+
+   <li class='has-sub'><a href='#'>Pantry</a>
+      <ul>
+         <li class='has-sub'><a href='#'>Vegetables</a>
+            <ul>
+                <li><label><input type="checkbox">Onion</label></li>
+                <li><label><input type="checkbox">Tomato</label></li>
+                <li><label><input type="checkbox">Potato</label></li>
+                <li><label><input type="checkbox">Cauliflower</label></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'>Fruits</a>
+            <ul>
+                <li><label><input type="checkbox">Apples</label></li>
+                <li><label><input type="checkbox">Grapes</label></li>
+                <li><label><input type="checkbox">Mango</label></li>
+                <li><label><input type="checkbox">Strawberry</label></li>
+            </ul>
+         </li>
+          <li class='has-sub'><a href='#'>Meat</a>
+            <ul>
+                <li><label><input type="checkbox">Ham</label></li>
+                <li><label><input type="checkbox">Rosted Chicken</label></li>
+                <li><label><input type="checkbox">Whole Chicken</label></li>
+                <li><label><input type="checkbox">Chicken Wings</label></li>
+            </ul>
+         </li>
+          <li class='has-sub'><a href='#'>Deserts</a>
+            <ul>
+                <li><label><input type="checkbox">Marshmallow</label></li>
+                <li><label><input type="checkbox">Nutella</label></li>
+                <li><label><input type="checkbox">Apple sauce</label></li>
+                <li><label><input type="checkbox">Chocolate</label></li>
+            </ul>
+         </li>
+      </ul>
+
+   </li>
+
+</ul>
+
+
+
+
+
+
+
+
   <div class="ava-container">
   <h2 class="ava-dialogue"><span class="type-it"></span></h2>
   </div>
@@ -36,5 +81,8 @@
       </form>
   </fieldset>
 
+
+</div>
+
 </body>
-</html>
+<html>
