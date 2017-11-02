@@ -137,6 +137,19 @@ class Register(APIView) :
         res = {"message":res}
         return Response (res)
 
+class UserProfileView(APIView):
+    def get(self, request):
+        self.user = request.user
+        self.userdetails = Users.objects.get(username=self.user)
+        if (self.userdetails):
+            for details in self.userdetails:
+                print details.firstname
+                print details.lastname
+                print details.email
+                print details.username
+                print details.password
+                print details.dob
+
 # class Feedback(APIView):
 #     def post(self,request, *args, **kwargs):
 #         Username = models.Charfield(max_length=50)

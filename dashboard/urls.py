@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from dashboard.views import Dashboard, Respond, Sruthi, Neha, Angelica, Vidhya, Register
+from dashboard.views import Dashboard, Respond, Sruthi, Neha, Angelica, Vidhya, Register, UserProfileView
 
 urlpatterns = [
     url(r'^$', Dashboard.as_view(), name='dashboard'),
@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^neha/$', Neha.as_view(), name='neha'),
     url(r'^vidhya/$', Vidhya.as_view(), name='vidhya'),
     url(r'^angelica/$', Angelica.as_view(), name='angelica'),
-    url(r'^register/$', Register.as_view(), name='register')
+    url(r'^register/$', Register.as_view(), name='register'),
+    url(r'^userprofileview/$', UserProfileView.as_view(), name='profile')
 ]
