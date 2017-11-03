@@ -112,15 +112,15 @@ class Angelica(APIView):
 class Register(APIView) :
     def post(self,request, *args, **kwargs):
         firstname = request.data["firstname"]
-        lstname = request.data["lastname"]
+        lastname = request.data["lastname"]
         email = request.data["email"]
-        uname = request.data["uname"]
-        pwd = request.data["pwd"]
+        username = request.data["username"]
+        password = request.data["password"]
         dob = request.data["dob"]
         profile_pic = request.data["pro_pic"]
         flag = 0
         try:
-            User.objects.get(username = uname)
+            User.objects.get(username = username)
             res = "username already exists"
         except:
             res = "username does not exist"
@@ -132,8 +132,8 @@ class Register(APIView) :
             res = "email does not exist"
             flag += 1
         if flag == 2 :
-            User.objects.create(first_name = firstname, last_name = lstname, email = email, username = uname, password = pwd).save()
-            user = User.objects.get(username=uname, password=pwd)
+            User.objects.create(first_name = firstname, last_name = lastname, email = email, username = username, password = password, profile_pic = profile_pic).save()
+            user = User.objects.get(username=username, password=password)
             token = Token.objects.create(user= user)
             res = "created successfully"
 
@@ -171,3 +171,15 @@ class UserProfileView(APIView):
 #  else:
 #         form = FeedbackForm()
 #      return render(request,'form/feedback_form.html',{'form': form})
+
+class Login(APIView) :
+    def post(self,request, *args, **kwargs):
+        username = request.data["username"]
+        password = request.data["password"]
+        try:
+            User.objects.get(username = username , password = password)
+            res = "Authentication Successful"
+        except:
+            res = "Username or password is invalid"
+        res = {"message": res}
+        return Response(res)
