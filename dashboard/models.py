@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 # Create your models here.
@@ -12,15 +13,6 @@ class Command(models.Model):
 class SmallTalk(models.Model):
     query = models.CharField(max_length=50)
     response = models.CharField(max_length=50)
-
-class User(models.Model):
-    firstname = models.CharField(max_length=50)
-    lastname = models.CharField(max_length=50)
-    email = models.CharField(max_length=50)
-    username = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
-    dob = models.DateField()
-    profile_image = models.URLField()
 
 class Recipe(models.Model):
     title = models.CharField(max_length=50)
@@ -68,3 +60,7 @@ class Feedback(models.Model):
     )
 
     rating = models.IntegerField(choices=RATING)
+
+class User(AbstractUser):
+    profile_pic = models.URLField()
+
