@@ -4,3 +4,4 @@ ava/local_settings*
 *.pyc
 .idea\*
 
+*.pyc
