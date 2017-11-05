@@ -13,18 +13,16 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from requests import get
 from dashboard.constants import *
-<<<<<<< Updated upstream
+
 
 
 from rest_framework.authtoken.models import Token
 
-from dashboard.models import Command, SmallTalk, Recipe, User , Pantry , Ingredient
+from dashboard.models import Command, SmallTalk, Recipe, User, Pantry, Ingredient, Recipe_Direction, Direction, \
+    Recipe_Ingredient
 
-
-=======
-from dashboard.models import Command, SmallTalk, Recipe, User
 from dashboard.utils import prepare_response, perform_intent_function_and_get_response
->>>>>>> Stashed changes
+
 
 
 class Dashboard(TemplateView):
@@ -48,7 +46,6 @@ class Dashboard(TemplateView):
     template_name = "dashboard.html"
 
 class Controller(APIView):
-
     def get(self,request, *args, **kwargs):
         return Response("hey",status=status.HTTP_200_OK)
 
@@ -66,8 +63,8 @@ class Controller(APIView):
 
         # switch mode intent
         if intent == INTENT_SWITCH_MODE:
-            if query in MODE_AVA:
-                mode = MODE_AVA.get(query)
+            if query in AVA_MODES:
+                mode = AVA_MODES.get(query)
                 response = "Mode changed to " + mode
             else:
                 response = "Hmmm...no such mode exits"
@@ -150,7 +147,7 @@ class Register(APIView) :
 class UserProfileView(APIView):
     def get(self, request):
         self.user = request.user
-        self.userdetails = Users.objects.get(username=self.user)
+        self.userdetails = User.objects.get(username=self.user)
         if (self.userdetails):
             for details in self.userdetails:
                 print details.firstname
@@ -179,7 +176,7 @@ class UserProfileView(APIView):
 #         form = FeedbackForm()
 #      return render(request,'form/feedback_form.html',{'form': form})
 
-<<<<<<< Updated upstream
+
 
 class Login(APIView) :
     def post(self,request, *args, **kwargs):
@@ -245,5 +242,4 @@ class getRecipe(APIView) :
             time=Recipe.objects.get(time)
             serves=Recipe.objects.get(serves)
             keyword=Recipe.objects.get(keyword)
-=======
->>>>>>> Stashed changes
+

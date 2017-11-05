@@ -1,7 +1,7 @@
 DEFAULT_MODE = "default"
 ROOT_MODE = "mode"
 
-MODE_AVA = {"default":0,
+AVA_MODES = {"default":0,
                 "root":1}
 
 INTENT_LOGIN = "login"
@@ -14,6 +14,8 @@ INTENT_GET_USER_PROFILE = "get_user_profile"
 INTENT_POST_USER_PROFILE = "post_user_profile"
 INTENT_DEFAULT = "intent_default"
 INTENT_SWITCH_MODE = "switch_mode"
+
+DEFAULT_RESPONSE = "Hmmm"
 
 
 

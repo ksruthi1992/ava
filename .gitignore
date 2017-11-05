@@ -3,5 +3,4 @@ ava/local_settings*
 .idea\workspace.xml
 *.pyc
 .idea\*
-
-*.pyc
+.idea

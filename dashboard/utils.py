@@ -8,7 +8,7 @@ from constants import *
 from dashboard.models import User
 
 
-def prepare_response(query, mode, intent, parameters, context, response):
+def prepare_response(query=None, mode=AVA_MODES[DEFAULT_MODE], intent=INTENT_DEFAULT, parameters=None, context=None, response=DEFAULT_RESPONSE):
 
     result = {"query":query,
               "mode":mode,
@@ -20,7 +20,10 @@ def prepare_response(query, mode, intent, parameters, context, response):
     return result
 
 def perform_intent_function_and_get_response(intent, parameters, context):
-    response = ""
+    # response object to be sent to controller
+    # will have objects for message, error and data object for the controller
+    response = {}
+
     if intent == INTENT_DEFAULT:
         response = "This response is by default intent"
 
@@ -41,12 +44,13 @@ def perform_intent_function_and_get_response(intent, parameters, context):
             if not email_validation(email):
                 response = "Invalid email."
             else:
-
                 User.objects.create(email=email ,password=password, first_name=first_name)
                 user = User.objects.get(email=email, password=password)
                 response = "Signed up!"
+        except:
+            response = "User registration not successful"
 
-    return prepare_response(response)
+    return response
 
 def email_validation(email):
     try:
