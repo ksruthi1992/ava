@@ -32,6 +32,7 @@ var options = [];
 $('#cssmenu li.active').addClass('open').children('ul').show();
 	$('#cssmenu li.has-sub>a').on('click', function(){
 		$(this).removeAttr('href');
+
 		var element = $(this).parent('li');
 		if (element.hasClass('open')) {
 			element.removeClass('open');
@@ -47,6 +48,61 @@ $('#cssmenu li.active').addClass('open').children('ul').show();
 			element.siblings('li').find('ul').slideUp(200);
 		}
 	});
+
+
+function getSelectedChbox(frm) {
+
+  var selchbox = [];
+
+  var inpfields = frm.getElementsByTagName('input');
+  var nr_inpfields = inpfields.length;
+
+
+  for(var i=0; i<nr_inpfields; i++) {
+    if(inpfields[i].type == 'checkbox' && inpfields[i].checked == true) selchbox.push(inpfields[i].value);
+  }
+  return selchbox;
+}
+
+
+document.getElementById('btntest').onclick = function(e) {
+    e.preventDefault();
+    var selchb = getSelectedChbox(this.form);     // gets the array returned by getSelectedChbox()
+      //alert(selchb)
+
+
+    $.ajax({
+        url: '/pantry/',
+        type: 'POST',
+        data: {
+            //vegetable: $('#tomato').val(),
+            pantry_items : selchb
+        },
+        success: function (msg) {
+            alert(msg);
+
+        }
+    })
+}
+/*$(document).on('btntest','#pantry',function (e) {
+    e.preventDefault();
+    var selchb = getSelectedChbox(this.form);     // gets the array returned by getSelectedChbox()
+    alert(selchb)
+    $.ajax({
+        url: '/pantry/',
+        type: 'POST',
+        data: {
+            vegetable: $('#tomato').val(),
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+
+        },
+        success: function () {
+            alert("Hello Anand");
+
+        }
+    })
+}) */
+
 
 });
 })(jQuery);

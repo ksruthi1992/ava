@@ -120,6 +120,7 @@ body {
 
 }
 
+#pantry,
 #cssmenu,
 #cssmenu ul,
 #cssmenu ul li,
@@ -150,6 +151,7 @@ body {
 .align-right {
   float: right;
 }
+
 #cssmenu > ul > li > a {
   padding: 16px 22px;
   cursor: pointer;
@@ -162,6 +164,7 @@ body {
   -o-transition: color .2s ease;
   transition: color .2s ease;
 }
+
 #cssmenu > ul > li > a:hover {
   color: #d8f3f0;
 }
@@ -183,6 +186,7 @@ body {
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
 }
+
 #cssmenu ul > li.has-sub > a:before {
   position: absolute;
   right: 22px;
@@ -198,6 +202,7 @@ body {
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
 }
+
 #cssmenu ul > li.has-sub.open > a:after,
 #cssmenu ul > li.has-sub.open > a:before {
   -webkit-transform: rotate(45deg);
@@ -206,6 +211,7 @@ body {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
 #cssmenu ul ul li label,
 #cssmenu ul ul li a {
   padding: 14px 22px;
@@ -219,20 +225,24 @@ body {
   -o-transition: color .2s ease;
   transition: color .2s ease;
 }
+
 #cssmenu ul ul ul li label,
 #cssmenu ul ul ul li a {
   padding-left: 32px;
 }
+
 #cssmenu ul ul li label:hover,
 #cssmenu ul ul li a:hover {
   color: #ffffff;
 }
+
 #cssmenu ul ul > li.has-sub > label:after,
 #cssmenu ul ul > li.has-sub > a:after {
   top: 16px;
   right: 26px;
   background: #dddddd;
 }
+
 #cssmenu ul ul > li.has-sub > label:after,
 #cssmenu ul ul > li.has-sub > a:before {
   top: 20px;

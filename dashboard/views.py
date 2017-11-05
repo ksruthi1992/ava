@@ -2,8 +2,9 @@
 from __future__ import unicode_literals
 
 import json
-
+import re
 from django.shortcuts import render
+from django.db import connection
 
 # Create your views here.
 from django.views.generic import TemplateView
@@ -12,8 +13,13 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from requests import get
 from dashboard.constants import *
-from dashboard.models import Command, SmallTalk, Recipe, User
+
+
 from rest_framework.authtoken.models import Token
+
+from dashboard.models import Command, SmallTalk, Recipe, User , Pantry , Ingredient
+
+
 
 
 class Dashboard(TemplateView):
@@ -172,6 +178,7 @@ class UserProfileView(APIView):
 #         form = FeedbackForm()
 #      return render(request,'form/feedback_form.html',{'form': form})
 
+
 class Login(APIView) :
     def post(self,request, *args, **kwargs):
         username = request.data["username"]
@@ -183,3 +190,34 @@ class Login(APIView) :
             res = "Username or password is invalid"
         res = {"message": res}
         return Response(res)
+
+
+class Pantry(APIView):
+    form_class = Pantry;
+    template_name = "dashboard.html"
+    def post(self,request):
+        form = self.form_class(request.POST)
+        #vegie = request.data["onion"]
+        #list1 = []
+        count = Ingredient.objects.raw('SELECT 1 id , COUNT(*) AS total_count from dashboard_ingredient')
+        for obj in count:
+            count =  obj.total_count
+        print count
+        myDict = dict((request.data).iterlists())
+        for key, values in myDict.items():
+            for v in values:
+                if count == 0:
+                    Ingredient.objects.create(name=v).save()
+                else:
+                    try:
+                        Ingredient.objects.get(name=v)
+                        msg = "already existed ingredient"
+                    except:
+                        msg = "ingredient doesnot exist"
+
+
+
+
+
+        return Response("Pantry Saved", status=status.HTTP_200_OK)
+

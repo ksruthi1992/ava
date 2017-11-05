@@ -15,7 +15,8 @@
 </head>
 <body>
 
-
+<form id="pantry">
+    {% csrf_token %}
 <div id='cssmenu'>
 <ul>
 
@@ -23,34 +24,36 @@
       <ul>
          <li class='has-sub'><a href='#'>Vegetables</a>
             <ul>
-                <li><label><input type="checkbox">Onion</label></li>
-                <li><label><input type="checkbox">Tomato</label></li>
-                <li><label><input type="checkbox">Potato</label></li>
-                <li><label><input type="checkbox">Cauliflower</label></li>
+
+                <li><label><input type="checkbox" name="vegetable" value="onion" id="onion" />Onion</label></li>
+                <li><label><input type="checkbox" name="vegetable" value="tomato" id="tomato"  />Tomato</label></li>
+                <li><label><input type="checkbox" name="vegetable" value="potato" id="potato" />Potato</label></li>
+                <li><label><input type="checkbox" name="vegetable" value="cauliflower" id="cauliflower"/>Cauliflower</label></li>
+
             </ul>
          </li>
          <li class='has-sub'><a href='#'>Fruits</a>
             <ul>
-                <li><label><input type="checkbox">Apples</label></li>
-                <li><label><input type="checkbox">Grapes</label></li>
-                <li><label><input type="checkbox">Mango</label></li>
-                <li><label><input type="checkbox">Strawberry</label></li>
+                <li><label><input type="checkbox" value="apples" id="apples" />Apples</label></li>
+                <li><label><input type="checkbox" value="grapes" id = "grapes"/>Grapes</label></li>
+                <li><label><input type="checkbox" value="mango" id="mango" />Mango</label></li>
+                <li><label><input type="checkbox" value="strawberry" id="strawberry" />Strawberry</label></li>
             </ul>
          </li>
           <li class='has-sub'><a href='#'>Meat</a>
             <ul>
-                <li><label><input type="checkbox">Ham</label></li>
-                <li><label><input type="checkbox">Rosted Chicken</label></li>
-                <li><label><input type="checkbox">Whole Chicken</label></li>
-                <li><label><input type="checkbox">Chicken Wings</label></li>
+                <li><label><input type="checkbox"value="ham" id="ham" />Ham</label></li>
+                <li><label><input type="checkbox" value="rosted chicken" id="rosted chicken" />Rosted Chicken</label></li>
+                <li><label><input type="checkbox" value="whole chicken" id="whole chicken" />Whole Chicken</label></li>
+                <li><label><input type="checkbox" value="chicken wings" id="chicken wings" />Chicken Wings</label></li>
             </ul>
          </li>
           <li class='has-sub'><a href='#'>Deserts</a>
             <ul>
-                <li><label><input type="checkbox">Marshmallow</label></li>
-                <li><label><input type="checkbox">Nutella</label></li>
-                <li><label><input type="checkbox">Apple sauce</label></li>
-                <li><label><input type="checkbox">Chocolate</label></li>
+                <li><label><input type="checkbox"value="marshmallow" id="marshmallow"/>Marshmallow</label></li>
+                <li><label><input type="checkbox" value="nutella" id="nutella" />Nutella</label></li>
+                <li><label><input type="checkbox" value="apple sauce" id="apple sauce" />Apple sauce</label></li>
+                <li><label><input type="checkbox" value="chocolate" id="chocolate" />Chocolate</label></li>
             </ul>
          </li>
       </ul>
@@ -58,13 +61,10 @@
    </li>
 
 </ul>
-
-
-
-
-
-
-
+</div>
+    <button  class="button"  name="savePantry" id = 'btntest'>Save my pantry</button>
+</form>
+<!-- <button class="button" type="submit" name="savepantry" id = 'btntest' form="pantry" />Save my pantry</button> -->
 
   <div class="ava-container">
   <h2 class="ava-dialogue"><span class="type-it"></span></h2>
@@ -82,7 +82,7 @@
   </fieldset>
 
 
-</div>
+
 
 </body>
 <html>
