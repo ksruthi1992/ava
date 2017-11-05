@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from dashboard.views import Dashboard, Respond, Sruthi, Neha, Angelica, Vidhya, Register, UserProfileView, Login,Pantry
+from dashboard.views import Dashboard, Respond, Sruthi, Neha, Angelica, Vidhya, Register, UserProfileView, Login,Pantry,getRecipe
 
 
 
@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^userprofileview/$', UserProfileView.as_view(), name='profile'),
     url(r'^login/$', Login.as_view(), name='login'),
 
-    url(r'^pantry/$', Pantry.as_view(), name='pantry')
+    url(r'^pantry/$', Pantry.as_view(), name='pantry'),
 
+    url(r'^getrecipe/$', getRecipe.as_view(), name='getrecipe')
 ]

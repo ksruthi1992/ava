@@ -220,3 +220,26 @@ class Pantry(APIView):
 
 
         return Response("Pantry Saved", status=status.HTTP_200_OK)
+
+class getRecipe(APIView) :
+    def get(self, request, *args, **kwargs):
+        template_name = "recipe.html"
+        recipe_id = 1
+        print recipe_id
+        recipe_directions = Recipe_Direction.objects.get(id = recipe_id)
+        print recipe_directions
+        for direction in recipe_directions:
+            direction_id = direction.direction_id
+            print direction_id
+            direction_list = Direction.objects.get(id=direction_id)
+            print direction_list.description
+        ingredient_id = Recipe_Ingredient.objects.get(id=recipe_id)
+        for ingredient_name in ingredient_id:
+            ingredients = ingredient_name.ingredient_id
+            print ingredients
+            ingredients_list = Ingredient.objects.get(id=ingredient_id)
+            print ingredients_list.name
+            title=Recipe.objects.get(title)
+            time=Recipe.objects.get(time)
+            serves=Recipe.objects.get(serves)
+            keyword=Recipe.objects.get(keyword)
