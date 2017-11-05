@@ -16,13 +16,17 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+<<<<<<< Updated upstream
 from dashboard.views import Dashboard, Respond, Sruthi, Neha, Angelica, Vidhya, Register, UserProfileView, Login,Pantry,getRecipe
 
 
+=======
+from dashboard.views import Dashboard, Controller, Sruthi, Neha, Angelica, Vidhya, Register
+>>>>>>> Stashed changes
 
 urlpatterns = [
     url(r'^$', Dashboard.as_view(), name='dashboard'),
-    url(r'^respond/$', Respond.as_view(), name='respond'),
+    url(r'^respond/$', Controller.as_view(), name='controller'),
     url(r'^sruthi/$', Sruthi.as_view(), name='sruthi'),
     url(r'^neha/$', Neha.as_view(), name='neha'),
     url(r'^vidhya/$', Vidhya.as_view(), name='vidhya'),

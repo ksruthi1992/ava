@@ -13,6 +13,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from requests import get
 from dashboard.constants import *
+<<<<<<< Updated upstream
 
 
 from rest_framework.authtoken.models import Token
@@ -20,6 +21,10 @@ from rest_framework.authtoken.models import Token
 from dashboard.models import Command, SmallTalk, Recipe, User , Pantry , Ingredient
 
 
+=======
+from dashboard.models import Command, SmallTalk, Recipe, User
+from dashboard.utils import prepare_response, perform_intent_function_and_get_response
+>>>>>>> Stashed changes
 
 
 class Dashboard(TemplateView):
@@ -40,43 +45,39 @@ class Dashboard(TemplateView):
             context = {'query':query, 'response':response, '':''}
         return render(request, template_name, context={'context':context})
 
-
     template_name = "dashboard.html"
 
-class Respond(APIView):
+class Controller(APIView):
 
     def get(self,request, *args, **kwargs):
         return Response("hey",status=status.HTTP_200_OK)
 
     def post(self,request, *args, **kwargs):
-        query = str(request.data["query"]).lower()
 
-        if "mode" in request.data:
+        try:
+            query = str(request.data["query"]).lower()
             mode = int(request.data["mode"])
-        else:
-            mode = MODE_DEFAULT_CODE
+            intent = str(request.data["intent"])
+            parameters = str(request.data["parameters"])
+            context = str(request.data["context"])
 
-        if query == "mode?":
-            response = str(mode)
-        elif query == MODE_ROOT:
-                mode = MODE_ROOT_CODE
-                response = "mode changed to " + str(mode)
-        elif query == MODE_DEFAULT:
-                mode = MODE_DEFAULT_CODE
-                response = "mode changed to " + str(mode)
-        elif mode == MODE_ROOT_CODE:
-            api_url = "http://api.wolframalpha.com/v2/result"
-            api_key = "57H75L-P7L8U2J9HP"
-            response = get(url=api_url,params={"appid":api_key, "i":query} )
-        else:
-            try:
-                response = SmallTalk.objects.get(query=query).response
-            except:
-                response = "Sorry, i do not understand..."
+        except:
+            return Response("API parameters missing.", status=status.HTTP_400_BAD_REQUEST)
 
-        res = {"query":query, "response": response, "mode": mode}
+        # switch mode intent
+        if intent == INTENT_SWITCH_MODE:
+            if query in MODE_AVA:
+                mode = MODE_AVA.get(query)
+                response = "Mode changed to " + mode
+            else:
+                response = "Hmmm...no such mode exits"
+                pass
 
-        return Response(res)
+        # study intent and perform action if required [that can be performed with or without params]
+        response = perform_intent_function_and_get_response(intent, parameters, context)
+
+        response = prepare_response(query=query, mode=mode, intent=intent, parameters=parameters, context=context, response=response)
+        return Response(response)
 
 class Sruthi(APIView):
     def get(self,request, *args, **kwargs):
@@ -178,6 +179,7 @@ class UserProfileView(APIView):
 #         form = FeedbackForm()
 #      return render(request,'form/feedback_form.html',{'form': form})
 
+<<<<<<< Updated upstream
 
 class Login(APIView) :
     def post(self,request, *args, **kwargs):
@@ -243,3 +245,5 @@ class getRecipe(APIView) :
             time=Recipe.objects.get(time)
             serves=Recipe.objects.get(serves)
             keyword=Recipe.objects.get(keyword)
+=======
+>>>>>>> Stashed changes
