@@ -220,4 +220,3 @@ class Pantry(APIView):
 
 
         return Response("Pantry Saved", status=status.HTTP_200_OK)
-

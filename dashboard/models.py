@@ -40,6 +40,7 @@ class Ingredient(models.Model):
 class Pantry(models.Model):
     user = models.ForeignKey('User')
     ingredient = models.ForeignKey('Ingredient')
+    is_removed = models.BooleanField(default=False)
 
 class Feedback(models.Model):
     title = models.CharField(max_length=50)

@@ -30,7 +30,7 @@ urlpatterns = [
     url(r'^register/$', Register.as_view(), name='register'),
 
     url(r'^userprofileview/$', UserProfileView.as_view(), name='profile'),
-    url(r'^login/$', Login.as_view(), name='login')
+    url(r'^login/$', Login.as_view(), name='login'),
 
     url(r'^pantry/$', Pantry.as_view(), name='pantry')
 
