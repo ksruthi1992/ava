@@ -254,21 +254,40 @@ class getRecipe(APIView) :
         template_name = "recipe.html"
         recipe_id = 1
         print recipe_id
-        recipe_directions = Recipe_Direction.objects.get(id = recipe_id)
-        print recipe_directions
-        for direction in recipe_directions:
-            direction_id = direction.direction_id
-            print direction_id
-            direction_list = Direction.objects.get(id=direction_id)
-            print direction_list.description
-        ingredient_id = Recipe_Ingredient.objects.get(id=recipe_id)
+        recipe = Recipe.objects.get(id = recipe_id)
+        title = recipe.title
+        print title
+        image = recipe.featured_image
+        description = recipe.description
+        print description
+        time = recipe.time
+        print time
+        serves = recipe.serves
+        print serves
+        keywords = recipe.keywords
+        print keywords
+
+        recipe_directions = Recipe_Direction.objects.filter(recipe_id = recipe_id)
+#        print type(recipe_directions)
+#       print recipe_directions.direction_id
+        steps = []
+        for dir in recipe_directions:
+            print dir.__dict__
+            directionid = dir.direction_id
+            print directionid
+            direction = Direction.objects.get(id=directionid)
+            print direction.description
+            steps +=direction.description
+        # direction_list = Direction.objects.get(id=directionid)
+        ingredient_id = Recipe_Ingredient.objects.filter(recipe_id=recipe_id)
         for ingredient_name in ingredient_id:
+            print ingredient_name.__dict__
             ingredients = ingredient_name.ingredient_id
             print ingredients
-            ingredients_list = Ingredient.objects.get(id=ingredient_id)
+            ingredients_list = Ingredient.objects.get(id=ingredients)
             print ingredients_list.name
-            title=Recipe.objects.get(title)
-            time=Recipe.objects.get(time)
-            serves=Recipe.objects.get(serves)
-            keyword=Recipe.objects.get(keyword)
+        res = "created successfully"
+
+        res = {"message": res}
+        return Response(res)
 
