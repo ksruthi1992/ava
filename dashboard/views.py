@@ -18,10 +18,11 @@ from dashboard.constants import *
 
 from rest_framework.authtoken.models import Token
 
+from dashboard.controller import perform_intent_function_and_get_response
 from dashboard.models import Command, SmallTalk, Recipe, User, Pantry, Ingredient, Recipe_Direction, Direction, \
     Recipe_Ingredient
 
-from dashboard.utils import prepare_response, perform_intent_function_and_get_response
+from dashboard.utils import prepare_response
 
 
 
@@ -51,29 +52,42 @@ class Controller(APIView):
 
     def post(self,request, *args, **kwargs):
 
+        response = {}
+
         try:
             query = str(request.data["query"]).lower()
             mode = int(request.data["mode"])
             intent = str(request.data["intent"])
-            parameters = str(request.data["parameters"])
+            action = str(request.data["action"])
             context = str(request.data["context"])
-
         except:
-            return Response("API parameters missing.", status=status.HTTP_400_BAD_REQUEST)
+            response["data"]["response"] = API_PARAMETERS_MISSING_RESPONSE
+            return Response(prepare_response(response=response))
+
+        response["intent"] = intent
+        response["action"] = action
+        response["error"] = False
+        response["message"] = ""
+        response["data"]["response"] = ""
+        if "user" in response["data"] or "user" in
+        response["data"]["session_key"] = ""
+        response["data"]["user"] = {}
 
         # switch mode intent
         if intent == INTENT_SWITCH_MODE:
             if query in AVA_MODES:
-                mode = AVA_MODES.get(query)
-                response = "Mode changed to " + mode
+                response["mode"] = AVA_MODES.get(query)
+
+                response["data"]["response"] = "Mode changed to " + mode
+                return Response(response)
             else:
-                response = "Hmmm...no such mode exits"
-                pass
+                response["data"]["response"] = "Hmmm...no such mode exits"
+                return Response(response)
+
 
         # study intent and perform action if required [that can be performed with or without params]
-        response = perform_intent_function_and_get_response(intent, parameters, context)
-
-        response = prepare_response(query=query, mode=mode, intent=intent, parameters=parameters, context=context, response=response)
+        response = perform_intent_function_and_get_response(request, query, intent, action, context)
+        response = prepare_response(query=query, mode=response["mode"], intent=response["intent"], action = response["action"],context=response["context"], response=response["data"]["response"])
         return Response(response)
 
 
