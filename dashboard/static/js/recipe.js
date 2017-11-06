@@ -25,7 +25,7 @@
             }
         });
             $query.val('');
-    }),
+
         $.ajax2({
             type: "POST",
             url: "/recipe/",
@@ -37,7 +37,7 @@
             }
         });
             $query.val('');
-    }),
+
         $.ajax3({
             type: "POST",
             url: "/recipe/",
@@ -49,7 +49,7 @@
             }
         });
             $query.val('');
-    }),
+
         $.ajax4({
             type: "POST",
             url: "/recipe/",
@@ -61,7 +61,7 @@
             }
         });
             $query.val('');
-    }),
+
          $.ajax5({
             type: "POST",
             url: "/recipe/",
@@ -73,7 +73,6 @@
             }
         });
             $query.val('');
-    });
 
-    }
+
 }
