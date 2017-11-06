@@ -76,42 +76,6 @@ class Controller(APIView):
         response = prepare_response(query=query, mode=mode, intent=intent, parameters=parameters, context=context, response=response)
         return Response(response)
 
-class Sruthi(APIView):
-    def get(self,request, *args, **kwargs):
-        return Response("hey",status=status.HTTP_200_OK)
-    def post(self,request, *args, **kwargs):
-        query = request.data["query"]
-        res = {"query":query, "response": "hey"}
-
-        return Response(res)
-
-class Neha(APIView):
-    def get(self,request, *args, **kwargs):
-        return Response("Hello!",status=status.HTTP_200_OK)
-    def post(self,request,*args,**kwargs):
-        query = request.data["query"]
-        res = {"query":query, "response": "heyy"}
-
-        return Response(res)
-
-class Vidhya(APIView):
-    def get(self, request, *args, **kwargs):
-        return Response("Hi!", status=status.HTTP_200_OK)
-
-    def post(self, request, *args, **kwargs):
-        query = request.data["query"]
-        res = {"query": query, "response": "heyy"}
-
-        return Response(res)
-
-class Angelica(APIView):
-    def get(self,request, *args, **kwargs):
-        return Response("hey",status=status.HTTP_200_OK)
-    def post(self,request, *args, **kwargs):
-        query = request.data["query"]
-        res = {"query":query, "response": "hey"}
-
-        return Response(res)
 
 class Register(APIView) :
     def post(self,request, *args, **kwargs):
@@ -286,6 +250,7 @@ class getRecipe(APIView) :
             print ingredients
             ingredients_list = Ingredient.objects.get(id=ingredients)
             print ingredients_list.name
+
         res = "created successfully"
 
         res = {"message": res}

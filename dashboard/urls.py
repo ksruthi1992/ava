@@ -17,16 +17,13 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 
-from dashboard.views import Dashboard, Controller, Sruthi, Neha, Angelica, Vidhya, Register, UserProfileView, Login,Pantry,getRecipe
+from dashboard.views import Dashboard, Controller,Register, UserProfileView, Login,Pantry,getRecipe
 
 
 urlpatterns = [
     url(r'^$', Dashboard.as_view(), name='dashboard'),
     url(r'^respond/$', Controller.as_view(), name='controller'),
-    url(r'^sruthi/$', Sruthi.as_view(), name='sruthi'),
-    url(r'^neha/$', Neha.as_view(), name='neha'),
-    url(r'^vidhya/$', Vidhya.as_view(), name='vidhya'),
-    url(r'^angelica/$', Angelica.as_view(), name='angelica'),
+
     url(r'^register/$', Register.as_view(), name='register'),
 
     url(r'^userprofileview/$', UserProfileView.as_view(), name='profile'),

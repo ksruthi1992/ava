@@ -2,14 +2,29 @@
  $(document).ready(function(){
  var options = [];
         $mode = 0;
+        var response = {
+            "title":"Pasta",
+            "ingredients":["tomatoes", "cheese"],
+            "serves":4,
+            "directions":{
+                "1":"boil pasta",
+                "2":"cook tomatoes"
+            },
+
+        };
         $.ajax({
-            type: "POST",
-            url: "/respond/",
-            data: {"title":$title.val()},
+            type: "GET",
+            url: "/getRecipe/",
+            data: {"recipe_id":12},
             success: function(data)
             {
-                strings: data.response
-                $mode = data.mode;
+                $('.title').html(response.title);
+                $('.image').html(response.image);
+                $('.description').html(response.description);
+                $('.time').html(response.time);
+                $('.serves').html(response.serves);
+                $('.ingredients').html(response.ingredients);
+                $('.directions').html(response.directions);
             }
         });
             $query.val('');
@@ -26,53 +41,7 @@
         });
             $query.val('');
 
-        $.ajax2({
-            type: "POST",
-            url: "/recipe/",
-            data: {"time":$time.val()},
-            success: function(data)
-            {
-                strings: data.response
-                $mode = data.mode;
-            }
-        });
-            $query.val('');
-
-        $.ajax3({
-            type: "POST",
-            url: "/recipe/",
-            data: {"serves":$serves.val()},
-            success: function(data)
-            {
-                strings: data.response
-                $mode = data.mode;
-            }
-        });
-            $query.val('');
-
-        $.ajax4({
-            type: "POST",
-            url: "/recipe/",
-            data: {"ingredients":$ingredients.val()},
-            success: function(data)
-            {
-                strings: data.response
-                $mode = data.mode;
-            }
-        });
-            $query.val('');
-
-         $.ajax5({
-            type: "POST",
-            url: "/recipe/",
-            data: {"directions":$directions.val()},
-            success: function(data)
-            {
-                strings: data.response
-                $mode = data.mode;
-            }
-        });
-            $query.val('');
+     })
 
 
 }
