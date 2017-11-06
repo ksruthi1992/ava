@@ -69,7 +69,7 @@ class Controller(APIView):
         response["error"] = False
         response["message"] = ""
         response["data"]["response"] = ""
-        if "user" in response["data"] or "user" in
+        #if "user" in response["data"] or "user" in
         response["data"]["session_key"] = ""
         response["data"]["user"] = {}
 
@@ -170,10 +170,23 @@ class Login(APIView) :
 
 
 class Pantry(APIView):
+    def get(self,request):
+        try:
+            self.user_id = request.session(session_key)
+            self.user = request.user
+            #self.user_item_list = Pantry.objects.filter(user_id=self.user_id)
+            user_item_list = Pantry.objects.filter(user_id=self.user_id).exclude(is_removed=True)
+            name = []
+            for e in user_item_list():
+                print name.append(e["ingredient_id"])
+            return Response({"ingredients": name})
 
 
-    form_class = Pantry;
-    template_name = "dashboard.html"
+        except:
+            print 'No pantry items added by this user'
+        #return Response({"ingredients":["tomatoes", "potatoes"]})
+
+
     def post(self,request):
         count_ingredient = Ingredient.objects.raw('SELECT 1 id , COUNT(*) AS total_count from dashboard_ingredient')
         for obj in count_ingredient:
@@ -184,6 +197,7 @@ class Pantry(APIView):
 
         # Require session key to test the code
         user_id = request.session(session_key)
+        #user_id = 1
 
 
 

@@ -47,6 +47,23 @@ $('#cssmenu li.active').addClass('open').children('ul').show();
 			element.siblings('li').find('li').removeClass('open');
 			element.siblings('li').find('ul').slideUp(200);
 		}
+
+        $.ajax({
+        url: '/pantry/',
+        type: 'GET',
+
+        success: function (msg) {
+            for ( i = 0;i<length(msg);i++) {
+                alert(msg[i].ingredient_id)
+            }
+             //var inn = msg.names;
+             //alert(inn);
+             //$((inn)).prop('checked', true);
+             //document.getElementById().prop('checked', true);
+             //$($inn).prop('checked', true);
+             //$('#onion').prop('checked', true);
+        }
+    })
 	});
 
 
@@ -84,6 +101,8 @@ document.getElementById('btntest').onclick = function(e) {
         }
     })
 }
+
+
 /*$(document).on('btntest','#pantry',function (e) {
     e.preventDefault();
     var selchb = getSelectedChbox(this.form);     // gets the array returned by getSelectedChbox()
@@ -104,5 +123,6 @@ document.getElementById('btntest').onclick = function(e) {
 }) */
 
 
+//$('#onion').prop('checked', true);
 });
 })(jQuery);
