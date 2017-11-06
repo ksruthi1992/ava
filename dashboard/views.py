@@ -192,27 +192,56 @@ class Login(APIView) :
 
 
 class Pantry(APIView):
+
+
     form_class = Pantry;
     template_name = "dashboard.html"
     def post(self,request):
-        form = self.form_class(request.POST)
-        #vegie = request.data["onion"]
-        #list1 = []
-        count = Ingredient.objects.raw('SELECT 1 id , COUNT(*) AS total_count from dashboard_ingredient')
-        for obj in count:
-            count =  obj.total_count
-        print count
+        count_ingredient = Ingredient.objects.raw('SELECT 1 id , COUNT(*) AS total_count from dashboard_ingredient')
+        for obj in count_ingredient:
+            count_ingredient =  obj.total_count
+        print count_ingredient
         myDict = dict((request.data).iterlists())
+
+
+        # Require session key to test the code
+        user_id = request.session(session_key)
+
+
+
+
+        user = User.objects.get(id=user_id)
         for key, values in myDict.items():
+            #for loop checks for each ingredient if its present or absent in both dashboard_pantry and dashboard_ingredient
             for v in values:
-                if count == 0:
-                    Ingredient.objects.create(name=v).save()
-                else:
+                if count_ingredient == 0 and request.session[user_id]==user.id:    #***
+                    #used request.session for logged in users and to maintain their pantry
+                    #this is used to check if both tables are empty and create selected pantry entries
+                    new_ingredient = Ingredient.objects.create(name=v).save()
+                    new_in_pantry = Pantry.objects.create(ingredient_id=new_ingredient.id, user_id=user.id, is_removed=False)
+                elif request.session[user_id]==user.id:
                     try:
-                        Ingredient.objects.get(name=v)
-                        msg = "already existed ingredient"
+                        #if_present try block will  not throw an exception
+                        #if absent exception block will execute
+                        ingredient_obj = Ingredient.objects.get(name=v)
+
+                        if Pantry.objects.get(id=ingredient_obj.id):
+                            update_field = Pantry.objects.get(id=ingredient_obj.id)
+                            update_field.is_removed = False
+                            update_field.save()
+
+                        else:
+                            Pantry.objects.create(ingredient_id = ingredient_obj.id,user_id=user.id,is_removed=False)
+                            msg = "already existed ingredient"
+
                     except:
                         msg = "ingredient doesnot exist"
+                        new_ingredient = Ingredient.objects.create(name=v).save()
+                        new_in_pantry = Pantry.objects.create(ingredient_id=new_ingredient.id, user_id=user.id, is_removed=False)
+
+        #below code to update pantry items which are removed my user in user pantry i.e Pantry
+
+
 
 
 
