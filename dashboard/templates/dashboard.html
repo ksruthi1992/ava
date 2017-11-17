@@ -82,6 +82,16 @@
           {% csrf_token %}
       <input type="text" placeholder="What's up?" class="field" name="query" autocomplete="off"/>
       </form>
+
+      <form id = "pantryform" action="/">
+          (% csrf_token %)
+      <input type="text" class="field"  name="fruit" name="vegetables" name="bread" name="spices" name=" meat" name="dairy" />
+      </form>
+
+      <form id = "recipeform" action="/">
+          (% csrf_token %)
+      <input class="field" />
+      </form>
   </fieldset>
 
 

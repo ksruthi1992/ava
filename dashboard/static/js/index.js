@@ -3,12 +3,14 @@ $(document).ready(function(){
 var options = [];
 
         $mode = 0;
+
         $('.type-it').typeIt({
         strings: 'Hey there!'
 
         });
 
         $('#searchform').submit(function (event){
+
             event.preventDefault();
             $query = $('.field');
             $('.display').html($query.val());
