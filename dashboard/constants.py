@@ -15,6 +15,7 @@ INTENT_POST_USER_PROFILE = "post_user_profile"
 INTENT_DEFAULT = "intent_default"
 INTENT_SWITCH_MODE = "switch_mode"
 
+ACTION_DEFAULT = "ACTION_DEFAULTlogin"
 DEFAULT_RESPONSE = "Hmmm"
 INVALID_USERNAME_PASSWORD = "Invalid username/password"
 

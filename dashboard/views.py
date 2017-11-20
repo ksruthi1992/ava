@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import ast
 import json
 import re
 from django.shortcuts import render
@@ -44,7 +45,12 @@ class Dashboard(TemplateView):
             context = {'query':query, 'response':response, '':''}
         return render(request, template_name, context={'context':context})
 
-    template_name = "dashboard.html"
+    template_name = "dashboard_v2.html"
+
+class MainController(TemplateView):
+    def post(self, request, *args, **kwargs):
+        return Response("hey", status=status.HTTP_200_OK)
+    # template_name = "dashboard_v2.html"
 
 class Controller(APIView):
     def get(self,request, *args, **kwargs):
@@ -53,25 +59,68 @@ class Controller(APIView):
     def post(self,request, *args, **kwargs):
 
         response = {}
+        response["mode"] = AVA_MODES[DEFAULT_MODE]
+        response["data"] = {}
+        context = {}
+        print request.data
+        print request.data
+        from ava.settings import STATIC_URL
+        if request.data["query"] in ["italian pasta","pasta", "italian", "white pasta", "pasta"]:
+            response = prepare_response(response=" Here are some : <a href='http://localhost:63342/ava/dashboard/templates/recipe.html?_ijt=vv33bkmao9s33hp2ndmfniajru'>White Pasta</a>, <a href='http://localhost:63342/ava/dashboard/templates/recipe.html?_ijt=vv33bkmao9s33hp2ndmfniajru'>Chicken pasta</a>")
+            return Response(response)
+
+        if request.data["query"] in ["spicy", "something spicy"]:
+            response = prepare_response(response=" Okay! I narrowed them down to these : <a href='http://localhost:63342/ava/dashboard/templates/recipe.html?_ijt=vv33bkmao9s33hp2ndmfniajru'>White Pasta</a>")
+            return Response(response)
 
         try:
             query = str(request.data["query"]).lower()
             mode = int(request.data["mode"])
+        except:
+            response["response"] = API_PARAMETERS_MISSING_RESPONSE
+            return Response(prepare_response(response=response))
+
+        if "context" not in request.data:
+            context = {}
+        else:
+            if type(request.data["context"]) == 'str':
+                context = ast.literal_eval(request.data["context"])
+            else:
+                context = request.data["context"]
+
+        if "intent" not in request.data or "action" not in request.data:
+            intent = INTENT_DEFAULT
+            action = ACTION_DEFAULT
+
+            prev_intent = INTENT_DEFAULT
+            prev_action = ACTION_DEFAULT
+
+        else:
+
             intent = str(request.data["intent"])
             action = str(request.data["action"])
-            context = str(request.data["context"])
-        except:
-            response["data"]["response"] = API_PARAMETERS_MISSING_RESPONSE
-            return Response(prepare_response(response=response))
+
+
+
+        commands = {"login": {"intent": INTENT_LOGIN, "action": ASK_FOR_EMAIL},
+                    "register": {"intent": INTENT_REGISTER, "action": ASK_FOR_EMAIL}}
+
+        if query in commands:
+            intent = commands[query]["intent"]
+            action = commands[query]["action"]
 
         response["intent"] = intent
         response["action"] = action
+        response["context"] = context
         response["error"] = False
         response["message"] = ""
-        response["data"]["response"] = ""
-        #if "user" in response["data"] or "user" in
-        response["data"]["session_key"] = ""
-        response["data"]["user"] = {}
+
+        response["data"]["response"] = "Hey there!"
+
+        if "context" in request.data:
+                if "user" in request.data["context"] or "session_key" in request.data["context"]:
+                    response["data"]["session_key"] = request.data["context"]["session_key"]
+                    response["data"]["user"] = request.data["context"]["user"]
 
         # switch mode intent
         if intent == INTENT_SWITCH_MODE:
@@ -84,9 +133,8 @@ class Controller(APIView):
                 response["data"]["response"] = "Hmmm...no such mode exits"
                 return Response(response)
 
-
         # study intent and perform action if required [that can be performed with or without params]
-        response = perform_intent_function_and_get_response(request, query, intent, action, context)
+        response = perform_intent_function_and_get_response(request, response, query, intent, action, context)
         response = prepare_response(query=query, mode=response["mode"], intent=response["intent"], action = response["action"],context=response["context"], response=response["data"]["response"])
         return Response(response)
 
@@ -196,8 +244,8 @@ class Pantry(APIView):
 
 
         # Require session key to test the code
-        user_id = request.session(session_key)
-        #user_id = 1
+
+        # user_id = request.session(session_key)
 
 
 

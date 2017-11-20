@@ -1,0 +1,30 @@
+body{
+
+}
+.main_wrapper{
+    margin-top: 6%;
+}
+
+.uk-search-default{
+    width: 300px;
+}
+
+.tile{
+    background-color: #DDDDDD;
+}
+
+.pantry-option{
+    background-color: #48484c;
+}
+
+.hcenter{
+    margin-left: 50%;
+}
+
+.user-dialog{
+    color: #9d9d9d;
+}
+
+.ava-board{
+    height: 250px;
+}

@@ -1,4 +1,7 @@
 import os
+from datetime import datetime
+
+from elasticsearch import Elasticsearch
 
 if __name__ == '__main__' and __package__ is None:
     os.sys.path.append(
@@ -9,10 +12,18 @@ if __name__ == '__main__' and __package__ is None:
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ava.settings")
 
 import django
+
 from django.contrib.sessions.backends.db import SessionStore
 django.setup()
+
+from dashboard.models import User
 session_key = 'ei4npjnrlqwewxedox5a991vtaor2bfh'
 
-s = SessionStore()
-key = s.create()
-print s.session_key
+# s = SessionStore()
+# key = s.create()
+# print s.session_key
+# user = User.objects.create(email="asd@fsd.com", password="sad", first_name="asd").save()
+
+es = Elasticsearch()
+es.indices.create(index='my-index', ignore=400)
+es.index(index="my-index", doc_type="test-type", id=42, body={"any": "data", "timestamp": datetime.now()})

@@ -9,15 +9,15 @@ from constants import *
 from dashboard.models import User
 
 
-def prepare_response(query=None, mode=AVA_MODES[DEFAULT_MODE], intent=INTENT_DEFAULT, parameters=None, context=None, response=DEFAULT_RESPONSE):
+def prepare_response(query=None, mode=AVA_MODES[DEFAULT_MODE], intent=INTENT_DEFAULT, action=ACTION_DEFAULT, context=None, response=DEFAULT_RESPONSE):
 
     result = {"query":query,
               "mode":mode,
               "intent":intent,
-              "parameters":parameters,
+              "action":action,
               "context":context,
               "response":response}
-
+    print result
     return result
 
 

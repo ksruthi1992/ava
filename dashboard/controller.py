@@ -1,17 +1,15 @@
+import json
+
+import jsonpickle
+
 from dashboard.constants import *
 from dashboard.models import User
 from dashboard.utils import login, start_new_session_and_get_key, email_validation
 
 
-def perform_intent_function_and_get_response(request, query, intent, action, context):
+def perform_intent_function_and_get_response(request, response, query, intent, action, context):
     # response object to be sent to controller
     # will have objects for message, error and data object for the controller
-    response = {}
-    response["action"] = ""
-    response["message"] = ""
-    response["error"] = False
-    response["data"] = {}
-    response["context"] = {}
 
     if intent == INTENT_DEFAULT:
         response["message"] = "This response is by default intent"
@@ -32,12 +30,12 @@ def perform_intent_function_and_get_response(request, query, intent, action, con
 
         if action == EMAIL_INPUT:
             # check email and return if invalid, else store in context params
-            email = request.data["query"]
+            email = query
             try:
                 if not email_validation(email):
                     raise Exception
                 response["data"]["response"] = ASK_FOR_PASSWORD_RESPONSE
-                response["data"]["parameters"]["email"] = email
+                response["context"]["email"] = email
 
                 # next action
                 response["action"] = PASSWORD_INPUT
@@ -48,7 +46,7 @@ def perform_intent_function_and_get_response(request, query, intent, action, con
         if action == PASSWORD_INPUT:
             # try login
             try:
-                email = context["data"]["email"]
+                email = context["email"]
                 password = query
             except:
                 response["error"] = True
@@ -59,14 +57,14 @@ def perform_intent_function_and_get_response(request, query, intent, action, con
             if not login(email, password):
                 response["data"]["response"] = INVALID_LOGIN
                 response["action"] = ASK_IF_TO_RETRY_LOGIN
-                perform_intent_function_and_get_response(request, intent, response["action"], context)
+                perform_intent_function_and_get_response(request, response, query, intent, response["action"], context)
 
             else:
                 user = User.objects.get(email=email, password=password)
                 session_key = start_new_session_and_get_key(user)
                 response["data"]["response"] = "Welcome " + user.first_name
-                response["data"]["user"] = user
-                response["data"]["session_key"] = session_key
+                response["context"]["user"] = jsonpickle.encode(user)
+                response["context"]["session_key"] = session_key
                 return response
 
         if action == ASK_IF_TO_RETRY_LOGIN:
@@ -90,7 +88,7 @@ def perform_intent_function_and_get_response(request, query, intent, action, con
                     response["data"]["response"] = "...So, what are you looking for today ?"
                     return response
 
-                response = perform_intent_function_and_get_response(request, prev_intent, prev_action ,context)
+                response = perform_intent_function_and_get_response(request, response, query, prev_intent, prev_action ,context)
                 return response
 
     elif intent == INTENT_REGISTER:

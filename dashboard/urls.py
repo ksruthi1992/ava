@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 
-from dashboard.views import Dashboard, Controller,Register, UserProfileView, Login,Pantry,getRecipe
+from dashboard.views import Dashboard, Controller,Register, UserProfileView, Login,Pantry,getRecipe, MainController
 
 
 urlpatterns = [
@@ -31,5 +31,7 @@ urlpatterns = [
 
     url(r'^pantry/$', Pantry.as_view(), name='pantry'),
 
-    url(r'^getrecipe/$', getRecipe.as_view(), name='getrecipe')
+    url(r'^getrecipe/$', getRecipe.as_view(), name='getrecipe'),
+
+    url(r'^query/$', MainController.as_view(), name='main_controller')
 ]

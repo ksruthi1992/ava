@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ava</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/css/uikit.min.css" />
+        <link rel="stylesheet" href={% static 'css/custom.css'%}>
+        <!-- UIkit JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+
+    <button class="uk-position-top-left uk-margin-auto-top uk-button uk-button-default uk-margin-small-left" type="button" uk-toggle="target: #offcanvas-primary-nav">
+        Menu
+    </button>
+
+    <button class="uk-position-top-right uk-margin-auto-top uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-push">
+        Pantry
+    </button>
+
+{#    main wrapper start - top margin - 10% #}
+    <div class="main_wrapper">
+
+        {#  AVA dialog    #}
+        <div class="uk-card uk-text-center uk-card-header uk-card-body uk-width-1-2\@m">
+            <h3 class="uk-card-title">Hey there!</h3>
+        </div>
+
+
+
+
+
+        <div class="uk-card uk-card-default uk-card-body ava-board ">
+            {#    login   form     #}
+{#            {% include 'login-form.html' %}#}
+
+            {#    flex - options   #}
+            {% include 'flex-options.html' %}
+         </div>
+        {#  user dialog    #}
+        <div class="uk-margin-small-top uk-card uk-text-center uk-card-header uk-card-body uk-width-1-2\@m">
+            <h3 class="uk-card-title user-dialog">indian breakfast</h3>
+        </div>
+
+        {#    search input   #}
+        <div class="uk-margin-small-top horizontal uk-nav-center">
+            <form class="uk-search uk-search-default" id="search-query">
+                <span class="uk-search-icon-flip" uk-search-icon></span>
+                <input class="uk-search-input" type="search" placeholder="What are you hungry for today?">
+            </form>
+        </div>
+    </div>
+
+    <div class="uk-offcanvas-content">
+        <div id="offcanvas-primary-nav" uk-offcanvas="overlay: true">
+            <div class="uk-offcanvas-bar">
+
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-nav-header">User</li>
+                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span>Login</a></li>
+                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span>Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-offcanvas-content">
+        <div id="offcanvas-push" uk-offcanvas="mode: reveal; overlay: true; flip: true">
+            <div class="uk-offcanvas-bar">
+
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                <h3>Pantry</h3>
+
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-nav-header">Veggies</li>
+                    <div class="uk-margin-small-top uk-flex uk-flex-auto ">
+                    <li><a href="#"><div class="uk-card uk-card-small uk-card-body pantry-option">Item 1</div></a></li>
+                    <li><a href="#"><div class="uk-margin-small-left uk-card uk-card-small uk-card-body pantry-option">Item 2</div></a></li>
+                    <li><a href="#"><div class="uk-margin-small-left uk-card uk-card-small uk-card-body pantry-option"><span uk-icon="icon: plus"></span></div></a></li>
+                    </div>
+                    <li class="uk-margin uk-nav-divider"></li>
+                </ul>
+
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-nav-header">Fruits</li>
+                    <div class="uk-margin-small-top uk-flex uk-flex-auto ">
+                    <li><a href="#"><div class="uk-card uk-card-small uk-card-body pantry-option">Item 1</div></a></li>
+                    <li><a href="#"><div class="uk-margin-small-left uk-card uk-card-small uk-card-body pantry-option">Item 2</div></a></li>
+                    <li><a href="#"><div class="uk-margin-small-left uk-card uk-card-small uk-card-body pantry-option"><span uk-icon="icon: plus"></span></div></a></li>
+                    </div>
+                    <li class="uk-margin uk-nav-divider"></li>
+                </ul>
+
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-nav-header">Beverages</li>
+                    <div class="uk-margin-small-top uk-flex uk-flex-auto ">
+                    <li><a href="#"><div class="uk-card uk-card-small uk-card-body pantry-option">Item 1</div></a></li>
+                    <li><a href="#"><div class="uk-margin-small-left uk-card uk-card-small uk-card-body pantry-option">Item 2</div></a></li>
+                    <li><a href="#"><div class="uk-margin-small-left uk-card uk-card-small uk-card-body pantry-option"><span uk-icon="icon: plus"></span></div></a></li>
+                    </div>
+                    <li class="uk-margin uk-nav-divider"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
