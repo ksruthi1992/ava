@@ -4,5 +4,4 @@ ava/local_settings*
 *.pyc
 .idea\*
 .idea
-dashboard/templates/recipe.html
-dashboard/templates/recipe.html
+
