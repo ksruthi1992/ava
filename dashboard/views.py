@@ -23,8 +23,7 @@ from dashboard.controller import perform_intent_function_and_get_response
 from dashboard.models import Command, SmallTalk, Recipe, User, Pantry, Ingredient, Recipe_Direction, Direction, \
     Recipe_Ingredient
 
-from dashboard.utils import prepare_response
-
+from dashboard.utils import prepare_response, prepare_res
 
 
 class Dashboard(TemplateView):
@@ -47,9 +46,51 @@ class Dashboard(TemplateView):
 
     template_name = "dashboard_v2.html"
 
-class MainController(TemplateView):
+# class TemplateLoader(APIView):
+#     def get(self, request, *args, **kwargs):
+#         return Response(render(kwargs[]))
+
+class RecipeAdmin(TemplateView):
+    template_name = "recipe-admin.html"
+class MainController(APIView):
     def post(self, request, *args, **kwargs):
-        return Response("hey", status=status.HTTP_200_OK)
+        # request keys
+        # request_count
+        # user_info: guest, registered
+        try:
+            request_count = int(request.data["request_count"])
+            user_info = request.data["user_info"]
+        except:
+            request_count = 1
+            pass
+        response = {}
+
+        if "user_query" in request.data:
+            #     perform search
+            user_query = request.data["user_query"]
+            ava_response = "you searched for: "+ user_query
+            element = {
+                "options":[
+                    {"title":"Lasagne"},
+                    {"title":"Pastaawdawd"},
+                    {"title":"Pizza"}
+                ]
+            }
+            response =  prepare_res(ava_response, request_count,element)
+            return Response(response, status=status.HTTP_200_OK)
+
+        if request_count == 0 :
+            ava_response = "Hello!<br> What are you hungry for, today? "
+            element = {
+                    "search":
+                            {}
+                        }
+            request_count += 1
+
+
+            response = prepare_res(ava_response, request_count, element)
+            print response
+        return Response(response, status=status.HTTP_200_OK)
     # template_name = "dashboard_v2.html"
 
 class Controller(APIView):

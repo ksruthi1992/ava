@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ava</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/css/uikit.min.css" />
+        <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css'%}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css'%}"/>
+        <link rel="stylesheet" href={% static 'css/custom.css'%}>
+        <!-- UIkit JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit-icons.min.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typeit@4.4.1/dist/typeit.min.js"></script>
+        <script src={% static 'slick/slick.min.js' %}></script>
+        <script src={% static 'js/snippets.js' %}></script>
+        <script src={% static 'js/search-query.js' %}></script>
+{#        <script src={% static 'js/dashboard.js' %}></script>#}
+
+    </head>
+    <body>
+
+    <form class="uk-margin-left uk-margin-top uk-width-1-4">
+        <fieldset class="uk-fieldset">
+
+            <legend class="uk-legend">Recipe</legend>
+
+            <div class="uk-margin">
+                <input class="uk-input" type="text" placeholder="Title">
+            </div>
+
+            <div>
+                <input class="uk-input" type="text" placeholder="description">
+            </div>
+
+            <div class="uk-margin">
+                <input class="uk-input" type="text" placeholder="serves">
+            </div>
+
+            <div>
+                <input class="uk-input" type="text" placeholder="time">
+            </div>
+
+            <div class="uk-margin-top">
+                <legend class="uk-legend">Ingredients</legend>
+                <ul uk-accordion>
+                    <li>
+                        <h3 class="uk-accordion-title">Veggies</h3>
+                        <div class="uk-accordion-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="uk-accordion-title">Sauces</h3>
+                        <div class="uk-accordion-content">
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="uk-accordion-title">Beverages</h3>
+                        <div class="uk-accordion-content">
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="uk-margin-top">
+                <legend class="uk-legend">Featured image</legend>
+                <div class="uk-margin-top js-upload" uk-form-custom>
+                    <input type="file">
+                    <button class="uk-button uk-button-default" type="button" tabindex="-1">Upload</button>
+                </div>
+            </div>
+
+
+        </fieldset>
+    </form>
+
+    </body>
+</html>

@@ -25,5 +25,7 @@ session_key = 'ei4npjnrlqwewxedox5a991vtaor2bfh'
 # user = User.objects.create(email="asd@fsd.com", password="sad", first_name="asd").save()
 
 es = Elasticsearch()
-es.indices.create(index='my-index', ignore=400)
+# es.indices.create(index='my-index', ignore=400)
 es.index(index="my-index", doc_type="test-type", id=42, body={"any": "data", "timestamp": datetime.now()})
+
+print es.get(index="my-index", doc_type="test-type", id=42)['_source']['any']

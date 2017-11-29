@@ -8,6 +8,11 @@ from rest_framework.response import Response
 from constants import *
 from dashboard.models import User
 
+def prepare_res(ava_response, request_count, elements):
+    response = {"ava_response":ava_response,
+                "request_count":request_count,
+                "element":elements }
+    return response
 
 def prepare_response(query=None, mode=AVA_MODES[DEFAULT_MODE], intent=INTENT_DEFAULT, action=ACTION_DEFAULT, context=None, response=DEFAULT_RESPONSE):
 

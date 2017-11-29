@@ -37,5 +37,6 @@ API_PARAMETERS_MISSING_RESPONSE = "API parameters missing."
 AFFIRMATIONS = ["yes", "yup", "sure", "yeah"]
 NEGATIONS = ["no", "nope", "nah", "no thanks"]
 
-
+USER_INFO_GUEST = "guest"
+USER_INFO_REGISTERED = "registered"
 

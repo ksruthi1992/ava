@@ -1,9 +1,10 @@
-body{
+body {
 
 }
 .main_wrapper{
-    margin-top: 6%;
+    margin-top: 2%;
 }
+
 
 .uk-search-default{
     width: 300px;
@@ -26,5 +27,33 @@ body{
 }
 
 .ava-board{
-    height: 250px;
+    height: 350px;
+}
+
+.uk-logo{
+    color: #DDDDDD;
+    font-family: "Century Gothic" ;
+}
+
+.ratio {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
+}
+.img-circle {
+    border-radius: 50%;
+}
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.ava-dialog{
+    height: 120px;
 }

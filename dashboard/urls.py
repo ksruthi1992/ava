@@ -13,11 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+import patterns as patterns
 from django.conf.urls import url, include
 from django.contrib import admin
 
 
-from dashboard.views import Dashboard, Controller,Register, UserProfileView, Login,Pantry,getRecipe, MainController
+from dashboard.views import Dashboard, RecipeAdmin, Controller,Register, UserProfileView, Login,Pantry,getRecipe, MainController
 
 
 urlpatterns = [
@@ -33,5 +34,8 @@ urlpatterns = [
 
     url(r'^getrecipe/$', getRecipe.as_view(), name='getrecipe'),
 
-    url(r'^query/$', MainController.as_view(), name='main_controller')
+    url(r'^query/$', MainController.as_view(), name='main_controller'),
+
+    url(r'^ava-admin/$', RecipeAdmin.as_view(), name='recipe_add')
+    # url(r'^<slug>$',TemplateLoader.as_view(), name='template_loader')
 ]
