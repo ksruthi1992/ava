@@ -261,19 +261,21 @@ class Login(APIView) :
 class Pantry(APIView):
     def get(self,request):
         try:
-            self.user_id = request.session(session_key)
-            self.user = request.user
+            #self.user_id = request.session(session_key)
+            #self.user = request.user
             #self.user_item_list = Pantry.objects.filter(user_id=self.user_id)
-            user_item_list = Pantry.objects.filter(user_id=self.user_id).exclude(is_removed=True)
+            #user_item_list = Pantry.objects.filter(user_id=self.user_id).exclude(is_removed=True)
+            user_item_list = Pantry.objects.all().exclude(is_removed=True)
             name = []
-            for e in user_item_list():
-                print name.append(e["ingredient_id"])
+            for e in user_item_list:
+                name.append(e["ingredient_id"])
+
             return Response({"ingredients": name})
 
 
         except:
             print 'No pantry items added by this user'
-        #return Response({"ingredients":["tomatoes", "potatoes"]})
+        return Response({"ingredients":["tomatoes", "potatoes"]})
 
 
     def post(self,request):
@@ -290,7 +292,7 @@ class Pantry(APIView):
 
 
 
-
+        user_id=1;
         user = User.objects.get(id=user_id)
         for key, values in myDict.items():
             #for loop checks for each ingredient if its present or absent in both dashboard_pantry and dashboard_ingredient
