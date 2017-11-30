@@ -82,7 +82,7 @@ class MainController(APIView):
         if request_count == 0 :
             ava_response = "Hello!<br> What are you hungry for, today? "
             element = {
-                    "search":
+                    "login":
                             {}
                         }
             request_count += 1
