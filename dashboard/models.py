@@ -14,6 +14,10 @@ class SmallTalk(models.Model):
     query = models.CharField(max_length=50)
     response = models.CharField(max_length=50)
 
+class UserBookmarks(models.Model):
+    user = models.ForeignKey('User')
+    recipe = models.ForeignKey('Recipe')
+
 class Recipe(models.Model):
     title = models.CharField(max_length=50)
     featured_image = models.URLField()
@@ -64,4 +68,6 @@ class Feedback(models.Model):
 
 class User(AbstractUser):
     profile_pic = models.URLField()
+
+
 

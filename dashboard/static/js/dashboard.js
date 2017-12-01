@@ -48,7 +48,7 @@ $(document).ready(function () {
                     $('#ava_board').html(search_form);
                 }
                 else if("login" in data.element){
-                    $('#ava_board').html(login_form);
+                    $('#ava_board').html(signup_form);
                 }
 
             }
