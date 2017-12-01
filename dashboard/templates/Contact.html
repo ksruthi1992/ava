@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+<hr class="uk-divider-icon">
+<center><h1>CONTACT US</center></h1>
+<hr class="uk-divider-icon">
+
+<font color ="Maroon">
+    <h2> Questions, Concern or Compliment - We Want To Hear About It</h2>
+</font>
+<p>We welcome your questions. Feel free to write to us and we'll be happy to answer your questions</p>
+
+<form name="Form" action="/action_page.php" onsubmit="return validateForm()" method="post">
+
+  Username : <br>
+    <input type="text" name="username" value="">
+  <br><br>
+  Recipe : <br>
+  <input type="text" name="recipe" value="">
+  <br><br>
+  <div class="row">
+  Please enter your message : <br>
+  <textarea name="Message" id="Message" rows="3" class="form-control" maxlength="1500"></textarea>
+    <br><br>
+  Do you like our page :
+ <label><input type="checkbox" name="yes" value="yes" id="yescb" onclick="uncheck('nocb')" checked="checked"> yes</label>
+ <label><input type="checkbox" name="no" value="no" id="nocb" onclick="uncheck('yescb')"> no</label>
+      <br><br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
