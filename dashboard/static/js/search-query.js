@@ -57,7 +57,7 @@ $(document).on("submit", "#signup-form", function (e) {
             console.log(request_data);
             $.ajax({
                 type: "POST",
-                url: "/signup/",
+                url: "signup/",
                 data: request_data,
                 success: function (data) {
 
@@ -71,3 +71,7 @@ $(document).on("submit", "#signup-form", function (e) {
                 }
             });
         });
+
+$( "#menu_login" ).on( "click", function() {
+  alert( "asda" );
+});
