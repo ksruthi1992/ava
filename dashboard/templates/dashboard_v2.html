@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/css/uikit.min.css" />
         <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css'%}"/>
         <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css'%}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css'%}"/>
 
 
         <!-- UIkit JS -->
@@ -19,10 +20,14 @@
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/typeit@4.4.1/dist/typeit.min.js"></script>
+        <script>
+             var default_user_image = "https://d30y9cdsu7xlg0.cloudfront.net/png/212110-200.png";
+        </script>
         <script src={% static 'slick/slick.min.js' %}></script>
+        <script src={% static 'js/dashboard.js' %}></script>
+        <script src={% static 'js/utils.js' %}></script>
         <script src={% static 'js/snippets.js' %}></script>
         <script src={% static 'js/search-query.js' %}></script>
-        <script src={% static 'js/dashboard.js' %}></script>
         <script src={% static 'js/custom.js' %}></script>
     </head>
     <body>
@@ -39,29 +44,28 @@
         <a class="uk-navbar-toggle" uk-toggle="target: #offcanvas-primary-nav">
             <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
         </a>
+{#        <a class="uk-navbar-item uk-logo" href="#">AVA</a>#}
     </div>
-    <div class="uk-navbar-center">
-        <a class="uk-navbar-item uk-logo" href="#">AVA</a>
-    </div>
+{#    <div class="uk-navbar-center">#}
+{#        <a class="uk-navbar-item uk-logo" href="#">AVA</a>#}
+{#    </div>#}
     <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
 
             <li>
-                    <a class="uk-navbar-toggle" uk-toggle="target: #offcanvas-pantry"  >
-                        <span class="uk-margin-small-left" id="pantry">Pantry</span>
+                    <a class="uk-navbar-toggle" id="search" >
+                        <span>Search</span>
                     </a>
             </li>
 
             <li>
-                <a href="#"><img src="{% static 'images/user1.jpg'%}" class="uk-border-circle uk-responsive-width uk-responsive-height" alt="Cinque Terre"></a>
-                    <div class="uk-navbar-dropdown">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Settings</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">Logout</a></li>
-                        </ul>
-                    </div>
+                    <a class="uk-navbar-toggle" id="pantry" uk-toggle="target: #offcanvas-pantry"  >
+                        <span>Pantry</span>
+                    </a>
+            </li>
+
+            <li id="nav-user">
+
             </li>
         </ul>
     </div>
@@ -76,45 +80,16 @@
         </div>
 
 
-        <div class="uk-card uk-card-default uk-card-body ava-board" id="ava_board">
+        <div class="uk-card  uk-card-body ava-board" id="ava_board">
             <div class="uk-position-center" id="spinner" uk-spinner></div>
-
-
-            {#    login   form     #}
-{#            {% include 'login-form.html' %}#}
-
-            {#    flex - options   #}
-{#            {% include 'flex-options.html' %}#}
-
-            {#     registration form       #}
-{#            <div class="uk-position-center login-form" >#}
-{##}
-{#                <h3 class="uk-card-title"></h3>#}
-{#                <form>#}
-{#                    <div class="uk-margin">#}
-{#                        <div class="uk-inline">#}
-{#                            <span class="uk-form-icon" uk-icon="icon: user"></span>#}
-{#                            <input class="uk-input" type="text" placeholder="Email">#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{#                    <div class="uk-margin uk-nav-center">#}
-{#                        <div class="uk-inline">#}
-{#                            <button class="uk-button uk-button-default">Next</button>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </form>#}
-{#            </div>#}
-{#            #}
-
 
          </div>
 
         {#  user dialog    #}
-{##}
-{#        <div class="uk-margin-small-top uk-card uk-text-center uk-card-header uk-card-body uk-width-1-2\@m">#}
-{#            <h3 class="uk-card-title user-dialog">indian breakfast</h3>#}
-{#        </div>#}
+
+        <div class="uk-card uk-text-center uk-card-header uk-card-body uk-width-1-2\@m">
+            <h3 class="uk-card-title user-dialog" id="user-query"></h3>
+        </div>
 
     </div>
 
@@ -126,8 +101,8 @@
 
                 <ul class="uk-nav uk-nav-default">
                     <li class="uk-nav-header">User</li>
-                    <li><a href="#" id="menu_login"><span class="uk-margin-small-right" uk-icon="icon: table"></span>Login</a></li>
-                    <li><a href="#" id="menu_register"><span class="uk-margin-small-right" uk-icon="icon: table"></span>Register</a></li>
+                    <li><a href="#" id="btn-login"><span class="uk-margin-small-right" uk-icon="icon: table"></span>Login</a></li>
+                    <li><a href="#" id="btn-signup"><span class="uk-margin-small-right" uk-icon="icon: table"></span>Register</a></li>
                 </ul>
             </div>
         </div>

@@ -19,14 +19,11 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 
-from dashboard.views import Dashboard, RecipeAdmin, Controller,Register, UserProfileView, Login,Pantry,getRecipe, MainController
+from dashboard.views import Dashboard, UserSignup, RecipeAdmin, UserProfileView, Login,Pantry,getRecipe, MainController
 
 
 urlpatterns = [
     url(r'^$', Dashboard.as_view(), name='dashboard'),
-    url(r'^respond/$', Controller.as_view(), name='controller'),
-
-    url(r'^register/$', Register.as_view(), name='register'),
 
     url(r'^userprofileview/$', UserProfileView.as_view(), name='profile'),
     url(r'^login/$', Login.as_view(), name='login'),
@@ -37,6 +34,8 @@ urlpatterns = [
 
     url(r'^query/$', MainController.as_view(), name='main_controller'),
 
-    url(r'^ava-admin/$', RecipeAdmin.as_view(), name='recipe_add')
+    url(r'^ava-admin/$', RecipeAdmin.as_view(), name='recipe_add'),
+
+    url(r'^signup/$', UserSignup.as_view(), name='signup'),
     # url(r'^<slug>$',TemplateLoader.as_view(), name='template_loader')
 ]

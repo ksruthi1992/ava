@@ -52,24 +52,52 @@ class Dashboard(TemplateView):
 
 class RecipeAdmin(TemplateView):
     template_name = "recipe-admin.html"
+
 class MainController(APIView):
     def post(self, request, *args, **kwargs):
         # request keys
         # request_count
         # user_info: guest, registered
+        print request.data
         try:
-            request_count = int(request.data["request_count"])
+            request_count = int(request.data["request_count"]) + 1
             user_info = request.data["user_info"]
         except:
             request_count = 1
+            user_info = 0
             pass
         response = {}
 
         if "user_query" in request.data:
             #     perform search
             user_query = request.data["user_query"]
-            ava_response = "you searched for: "+ user_query
+
+            if user_query == 'signup':
+                ava_response = "I assure, it'll be our little secret! "
+                element = {
+                    "action": "signup",
+                }
+                response = prepare_res(ava_response, request_count, element)
+                return Response(response, status=status.HTTP_200_OK)
+
+            if user_query == 'login':
+                if user_info == 1:
+                    ava_response = "You are already logged! Do you want to logout ? "
+                    element = {
+                        "action": "login",
+                    }
+                else:
+                    ava_response = "Hmmm...<br> Do i know you ?! "
+                    element = {
+                        "action": "login",
+                    }
+                response = prepare_res(ava_response, request_count, element)
+                return Response(response, status=status.HTTP_200_OK)
+
+            ava_response = " How about these -"
             element = {
+                "action":"search_result",
+                "user_query": "We are looking for: "+ user_query,
                 "options":[
                     {"title":"Lasagne"},
                     {"title":"Pastaawdawd"},
@@ -79,137 +107,120 @@ class MainController(APIView):
             response =  prepare_res(ava_response, request_count,element)
             return Response(response, status=status.HTTP_200_OK)
 
-        if request_count == 0 :
+        if request_count == 1 :
             ava_response = "Hello!<br> What are you hungry for, today? "
             element = {
-                    "login":
-                            {}
+                    "action":"search"
                         }
-            request_count += 1
-
 
             response = prepare_res(ava_response, request_count, element)
             print response
-        return Response(response, status=status.HTTP_200_OK)
+            return Response(response, status=status.HTTP_200_OK)
+        else:
+            ava_response = "Hello again!<br> What are you hungry for, today? "
+            element = {
+                "action":"search"
+            }
+
+            response = prepare_res(ava_response, request_count, element)
+            print response
+            return Response(response, status=status.HTTP_200_OK)
+
     # template_name = "dashboard_v2.html"
 
-class Controller(APIView):
-    def get(self,request, *args, **kwargs):
-        return Response("hey",status=status.HTTP_200_OK)
-
+class Login(APIView) :
     def post(self,request, *args, **kwargs):
-
-        response = {}
-        response["mode"] = AVA_MODES[DEFAULT_MODE]
-        response["data"] = {}
-        context = {}
-        print request.data
-        print request.data
-        from ava.settings import STATIC_URL
-        if request.data["query"] in ["italian pasta","pasta", "italian", "white pasta", "pasta"]:
-            response = prepare_response(response=" Here are some : <a href='http://localhost:63342/ava/dashboard/templates/recipe.html?_ijt=vv33bkmao9s33hp2ndmfniajru'>White Pasta</a>, <a href='http://localhost:63342/ava/dashboard/templates/recipe.html?_ijt=vv33bkmao9s33hp2ndmfniajru'>Chicken pasta</a>")
-            return Response(response)
-
-        if request.data["query"] in ["spicy", "something spicy"]:
-            response = prepare_response(response=" Okay! I narrowed them down to these : <a href='http://localhost:63342/ava/dashboard/templates/recipe.html?_ijt=vv33bkmao9s33hp2ndmfniajru'>White Pasta</a>")
-            return Response(response)
+        try:
+            email = request.data["email"]
+            password = request.data["password"]
+            request_count = request.data["request_count"]
+        except:
+            message = "Oops! parameter missing at the server"
+            elements = {"action":"search"}
+            response = prepare_res(ava_response=message, request_count=1, elements=elements)
+            return Response(response, status=status.HTTP_200_OK)
 
         try:
-            query = str(request.data["query"]).lower()
-            mode = int(request.data["mode"])
+            user = User.objects.get(email=email , password = password)
+            token = Token.objects.get(user_id=user.id)
+            print token.key
+            message = "Hey there, "+ user.username + "!<br> What are you hungry for today? "
+            elements = {"action": "search",
+                        "user_id":user.id,
+                        "user_token":token.key,
+                        "user_image":user.profile_pic}
         except:
-            response["response"] = API_PARAMETERS_MISSING_RESPONSE
-            return Response(prepare_response(response=response))
+            message = "Sorry, invalid username/password! Try again ?"
+            elements = {
+                "action":"ack",
+                "ack":
+                    {"action":"login",
+                     "response":"There you go!"},
+                "nack":
+                    {"action":"search",
+                     "response":"Anyway, what delicacy were we looking for then ? "}
+                       }
+        response = prepare_res(ava_response=message, request_count= request_count, elements=elements)
+        return Response(response, status=status.HTTP_200_OK)
 
-        if "context" not in request.data:
-            context = {}
-        else:
-            if type(request.data["context"]) == 'str':
-                context = ast.literal_eval(request.data["context"])
-            else:
-                context = request.data["context"]
-
-        if "intent" not in request.data or "action" not in request.data:
-            intent = INTENT_DEFAULT
-            action = ACTION_DEFAULT
-
-            prev_intent = INTENT_DEFAULT
-            prev_action = ACTION_DEFAULT
-
-        else:
-
-            intent = str(request.data["intent"])
-            action = str(request.data["action"])
-
-
-
-        commands = {"login": {"intent": INTENT_LOGIN, "action": ASK_FOR_EMAIL},
-                    "register": {"intent": INTENT_REGISTER, "action": ASK_FOR_EMAIL}}
-
-        if query in commands:
-            intent = commands[query]["intent"]
-            action = commands[query]["action"]
-
-        response["intent"] = intent
-        response["action"] = action
-        response["context"] = context
-        response["error"] = False
-        response["message"] = ""
-
-        response["data"]["response"] = "Hey there!"
-
-        if "context" in request.data:
-                if "user" in request.data["context"] or "session_key" in request.data["context"]:
-                    response["data"]["session_key"] = request.data["context"]["session_key"]
-                    response["data"]["user"] = request.data["context"]["user"]
-
-        # switch mode intent
-        if intent == INTENT_SWITCH_MODE:
-            if query in AVA_MODES:
-                response["mode"] = AVA_MODES.get(query)
-
-                response["data"]["response"] = "Mode changed to " + mode
-                return Response(response)
-            else:
-                response["data"]["response"] = "Hmmm...no such mode exits"
-                return Response(response)
-
-        # study intent and perform action if required [that can be performed with or without params]
-        response = perform_intent_function_and_get_response(request, response, query, intent, action, context)
-        response = prepare_response(query=query, mode=response["mode"], intent=response["intent"], action = response["action"],context=response["context"], response=response["data"]["response"])
-        return Response(response)
-
-
-class Register(APIView) :
+class UserSignup(APIView):
     def post(self,request, *args, **kwargs):
-        firstname = request.data["firstname"]
-        lastname = request.data["lastname"]
-        email = request.data["email"]
-        username = request.data["username"]
-        password = request.data["password"]
-        dob = request.data["dob"]
-        profile_pic = request.data["pro_pic"]
+
+        try:
+            email = request.data["email"]
+            username = request.data["username"]
+            password = request.data["password"]
+            request_count = int (request.data["request_count"]) + 1
+        except:
+            message = "Oops! There seems to be a problem getting a parameter at the server. My bad! "
+            element = {
+                "action": "search"
+                }
+            response = prepare_res(ava_response=message, request_count=1, elements=element)
+            return Response(response, status=status.HTTP_200_OK)
+
         flag = 0
         try:
-            User.objects.get(username = username)
-            res = "username already exists"
+            User.objects.get(username=username)
+            flag = 1
         except:
-            res = "username does not exist"
-            flag += 1
-        try:
-            User.objects.get(email = email)
-            res = "email already exists"
-        except:
-            res = "email does not exist"
-            flag += 1
-        if flag == 2 :
-            User.objects.create(first_name = firstname, last_name = lastname, email = email, username = username, password = password, profile_pic = profile_pic).save()
-            user = User.objects.get(username=username, password=password)
-            token = Token.objects.create(user= user)
-            res = "created successfully"
+            pass
 
-        res = {"message":res}
-        return Response (res)
+        try:
+            User.objects.get(email=email)
+            flag = 1
+        except:
+            pass
+
+        if flag != 0:
+            message = "email/username already exists, do you want to try login instead? "
+            element = {
+                "action":"ack",
+                "ack":
+                    {"action":"login",
+                     "response":"There you go!"},
+                "nack":
+                    {"action":"signup",
+                     "response":"Okay then, Try again!"}
+                       }
+            response  = prepare_res(ava_response=message,request_count=request_count,elements=element)
+            return Response(response, status=status.HTTP_200_OK)
+
+        else:
+
+            User.objects.create(username = username, email= email, password= password)
+            user = user = User.objects.get(username=username, password=password)
+            token = Token.objects.create(user=user)
+            message = "Registration  complete<br> So what are you hungry for today, "+ user.username + " ?"
+            element = {
+                "action":"search",
+                "user_token": token.key,
+                "user_id": user.id,
+                "user_name": user.username,
+                "user_image": user.profile_pic
+            }
+            response = prepare_res(ava_response=message, request_count = request_count, elements=element)
+            return Response(response, status= status.HTTP_200_OK)
 
 class UserProfileView(APIView):
     def get(self, request):
@@ -245,17 +256,6 @@ class UserProfileView(APIView):
 
 
 
-class Login(APIView) :
-    def post(self,request, *args, **kwargs):
-        username = request.data["username"]
-        password = request.data["password"]
-        try:
-            User.objects.get(username = username , password = password)
-            res = "Authentication Successful"
-        except:
-            res = "Username or password is invalid"
-        res = {"message": res}
-        return Response(res)
 
 
 class Pantry(APIView):
@@ -374,3 +374,89 @@ class getRecipe(APIView) :
 
         res = {"message": res}
         return Response(res)
+
+# class Controller(APIView):
+#     def get(self,request, *args, **kwargs):
+#         return Response("hey",status=status.HTTP_200_OK)
+#
+#     def post(self,request, *args, **kwargs):
+#
+#         response = {}
+#         response["mode"] = AVA_MODES[DEFAULT_MODE]
+#         response["data"] = {}
+#         context = {}
+#         print request.data
+#         print request.data
+#         from ava.settings import STATIC_URL
+#         if request.data["query"] in ["italian pasta","pasta", "italian", "white pasta", "pasta"]:
+#             response = prepare_response(response=" Here are some : <a href='http://localhost:63342/ava/dashboard/templates/recipe.html?_ijt=vv33bkmao9s33hp2ndmfniajru'>White Pasta</a>, <a href='http://localhost:63342/ava/dashboard/templates/recipe.html?_ijt=vv33bkmao9s33hp2ndmfniajru'>Chicken pasta</a>")
+#             return Response(response)
+#
+#         if request.data["query"] in ["spicy", "something spicy"]:
+#             response = prepare_response(response=" Okay! I narrowed them down to these : <a href='http://localhost:63342/ava/dashboard/templates/recipe.html?_ijt=vv33bkmao9s33hp2ndmfniajru'>White Pasta</a>")
+#             return Response(response)
+#
+#         try:
+#             query = str(request.data["query"]).lower()
+#             mode = int(request.data["mode"])
+#         except:
+#             response["response"] = API_PARAMETERS_MISSING_RESPONSE
+#             return Response(prepare_response(response=response))
+#
+#         if "context" not in request.data:
+#             context = {}
+#         else:
+#             if type(request.data["context"]) == 'str':
+#                 context = ast.literal_eval(request.data["context"])
+#             else:
+#                 context = request.data["context"]
+#
+#         if "intent" not in request.data or "action" not in request.data:
+#             intent = INTENT_DEFAULT
+#             action = ACTION_DEFAULT
+#
+#             prev_intent = INTENT_DEFAULT
+#             prev_action = ACTION_DEFAULT
+#
+#         else:
+#
+#             intent = str(request.data["intent"])
+#             action = str(request.data["action"])
+#
+#
+#
+#         commands = {"login": {"intent": INTENT_LOGIN, "action": ASK_FOR_EMAIL},
+#                     "register": {"intent": INTENT_REGISTER, "action": ASK_FOR_EMAIL}}
+#
+#         if query in commands:
+#             intent = commands[query]["intent"]
+#             action = commands[query]["action"]
+#
+#         response["intent"] = intent
+#         response["action"] = action
+#         response["context"] = context
+#         response["error"] = False
+#         response["message"] = ""
+#
+#         response["data"]["response"] = "Hey there!"
+#
+#         if "context" in request.data:
+#                 if "user" in request.data["context"] or "session_key" in request.data["context"]:
+#                     response["data"]["session_key"] = request.data["context"]["session_key"]
+#                     response["data"]["user"] = request.data["context"]["user"]
+#
+#         # switch mode intent
+#         if intent == INTENT_SWITCH_MODE:
+#             if query in AVA_MODES:
+#                 response["mode"] = AVA_MODES.get(query)
+#
+#                 response["data"]["response"] = "Mode changed to " + mode
+#                 return Response(response)
+#             else:
+#                 response["data"]["response"] = "Hmmm...no such mode exits"
+#                 return Response(response)
+#
+#         # study intent and perform action if required [that can be performed with or without params]
+#         response = perform_intent_function_and_get_response(request, response, query, intent, action, context)
+#         response = prepare_response(query=query, mode=response["mode"], intent=response["intent"], action = response["action"],context=response["context"], response=response["data"]["response"])
+#         return Response(response)

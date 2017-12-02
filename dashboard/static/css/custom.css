@@ -2,9 +2,8 @@ body {
 
 }
 .main_wrapper{
-    margin-top: 2%;
+    /*margin-top: 2%;*/
 }
-
 
 .uk-search-default{
     width: 300px;
@@ -27,7 +26,8 @@ body {
 }
 
 .ava-board{
-    min-height: 350px;
+    min-width: 100%;
+    height: 90%;
 }
 
 .uk-logo{
@@ -51,10 +51,18 @@ body {
 .img-responsive {
     display: block;
     height: auto;
-    max-width: 100%;
+    max-width: 50%;
 }
 
 .ava-dialog{
-    height: 120px;
+    height: 80px;
 }
 
+.nav-user-image{
+    height: 50px;
+    width: 50px;
+}
+
+.nav-user-dropdown{
+    margin-top: 0px;
+}

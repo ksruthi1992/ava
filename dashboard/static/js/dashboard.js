@@ -4,23 +4,28 @@ $(document).ready(function () {
         $mode = 0;
         var user_info;
         var request_data;
-        var request_count=0;
 
+        var user_token = get_user_token();
+        var request_count = get_request_count();
 
-        var session_data = JSON.parse(localStorage.getItem('session'));
-
-        if(!session_data){
+        if(!user_token){
         //    do nothing, no user data, guest user
-            user_info = "guest";
+            user_info = 0;
+            $('#nav-user').html('<a>Login</a>');
         }
         else{
         //    logged in user
-            user_info = 'registered'
+            user_info = 1;
         }
 
+        if(!request_count){
+        //    first request
+            request_count = 0;
+            set_request_count(request_count)
+        }
 
         request_data = {"user_info": user_info, "request_count":request_count};
-        console.log('hy');
+
         $.ajax({
             type: "POST",
             url: "/query/",
@@ -30,26 +35,23 @@ $(document).ready(function () {
                 console.log(data);
                 console.log(data.ava_response);
 
-                // if check for server session key
-                if (!("session_key" in data)){
-                    console.log("No session key in response");
-                }
-                else{
-                    localStorage.setItem('session_key',JSON.stringify(data.session_key));
+
+                if ("request_count" in data){
+                    set_request_count(request_count);
                 }
 
-                if("request_count" in data){
-                    request_count = data.request_count;
+                // if check for server session key
+                if (user_info === 1){
+                    set_user_image_dashboard(get_user_image());
+                }
+                else{
+                    console.log("No user_token in response");
                 }
 
                 $('#spinner').hide();
-                $('#ava_response').typeIt({strings:data.ava_response, speed:50});
-                if("search" in data.element){
-                    $('#ava_board').html(search_form);
-                }
-                else if("login" in data.element){
-                    $('#ava_board').html(signup_form);
-                }
+                set_ava_response(data.ava_response);
+                console.log(data.element.action);
+                set_ava_board(data.element);
 
             }
         });
