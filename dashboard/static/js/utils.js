@@ -25,6 +25,13 @@ function get_user_id() {
     return localStorage.getItem('user_id');
 }
 
+function login() {
+    var ava_response = "Let me know it's you!";
+    var element = {"action":"login"};
+    set_ava_response(ava_response);
+    set_ava_board(element);
+}
+
 function get_user_token() {
     return localStorage.getItem('user_token');
 }

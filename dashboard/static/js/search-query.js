@@ -93,10 +93,7 @@ $(document).on("click", "#search", function (e) {
 
 $(document).on("click", "#btn-login", function (e) {
         UIkit.offcanvas('#offcanvas-primary-nav').hide();
-        var ava_response = "Let me know it's you!";
-        var element = {"action":"login"};
-        set_ava_response(ava_response);
-        set_ava_board(element);
+        login()
         });
 
 $(document).on("click", "#btn-signup", function (e) {

@@ -11,7 +11,7 @@ $(document).ready(function () {
         if(!user_token){
         //    do nothing, no user data, guest user
             user_info = 0;
-            $('#nav-user').html('<a>Login</a>');
+            $('#nav-user').html('<a href="javascript:login()">Login</a>');
         }
         else{
         //    logged in user
