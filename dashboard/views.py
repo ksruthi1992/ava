@@ -387,19 +387,6 @@ class Contact(APIView) :
         return Response (res)
 
 
-class Login(APIView) :
-    def post(self,request, *args, **kwargs):
-        email = request.data["email"]
-        password = request.data["password"]
-        try:
-            User.objects.get(username = email , password = password)
-            res = "Authentication Successful"
-        except:
-            res = "Username or password is invalid"
-        res = {"message": res}
-        return Response(res)
-
-
 
 class Pantry(APIView):
     def get(self,request):
