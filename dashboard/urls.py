@@ -22,6 +22,7 @@ from django.contrib import admin
 from dashboard.views import Dashboard, UserSignup, RecipeAdmin, Recipe, UserProfileView, Login, Pantry, getRecipe, \
     MainController, UserProfile, AvaRecipe
 
+
 urlpatterns = [
     url(r'^$', Dashboard.as_view(), name='dashboard'),
 
@@ -42,5 +43,8 @@ urlpatterns = [
     url(r'^user-profile/(?P<user_id>[0-9]+)/$', UserProfile.as_view(), name='user_profile'),
 
     url(r'^ava-recipe/$', AvaRecipe.as_view(), name='recipe'),
+
+    url(r'^recipe-admin/$', RecipeAdmin.as_view(), name='recipe_add')
+
     # url(r'^<slug>$',TemplateLoader.as_view(), name='template_loader')
 ]

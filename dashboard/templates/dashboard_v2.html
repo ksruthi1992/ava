@@ -13,6 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/slider.css'%}"/>
 
 
+
         <!-- UIkit JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit-icons.min.js"></script>
@@ -55,6 +56,7 @@
             <li>
                     <a class="uk-navbar-toggle" id="search" >
                         <span>Search</span>
+
                     </a>
             </li>
 
@@ -112,8 +114,6 @@
         <div id="offcanvas-pantry" uk-offcanvas="mode: reveal; overlay: true; flip: true">
             <div class="uk-offcanvas-bar">
 
-                <button class="uk-offcanvas-close" type="button" uk-close></button>
-
                 <h3>Pantry</h3>
 <form>
                 <ul uk-accordion>
@@ -127,7 +127,7 @@
 
                                 <div class="uk-width-1-2" >
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success" name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
+                                <button type="button" class="btn btn-default " data-color="success" name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
                                 <input type="checkbox" class="hidden" >
                                 </span>
                                 </div>
@@ -145,32 +145,14 @@
 
                                 <div class="uk-width-1-2">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"name="vegetable" value="potato" id="potato"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Potato </button>
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="potato" id="potato"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Potato </button>
                                 <input type="checkbox" class="hidden" >
                                 </span>
                                 </div>
 
                                 <div class="uk-width-1-2">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
-                                <input type="checkbox" class="hidden" >
-                                </span>
-                                </div>
-
-                                </div>
-
-                                <div class="uk-grid">
-
-                                <div class="uk-width-1-2">
-                                <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
-                                <input type="checkbox" class="hidden" >
-                                </span>
-                                </div>
-
-                                <div class="uk-width-1-2">
-                                <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
                                 <input type="checkbox" class="hidden" >
                                 </span>
                                 </div>
@@ -181,14 +163,32 @@
 
                                 <div class="uk-width-1-2">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
+                                <input type="checkbox" class="hidden" >
+                                </span>
+                                </div>
+
+                                <div class="uk-width-1-2">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
+                                <input type="checkbox" class="hidden" >
+                                </span>
+                                </div>
+
+                                </div>
+
+                                <div class="uk-grid">
+
+                                <div class="uk-width-1-2">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
                                 <input type="checkbox" class="hidden">
                                 </span>
                                 </div>
 
                                 <div class="uk-width-1-2">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
                                 <input type="checkbox" class="hidden" >
                                 </span>
                                 </div>
@@ -205,7 +205,7 @@
                     </li>
 
                     <li class="open">
-                        <h3 class="uk-accordion-title">Veggies</h3>
+                        <h3 class="uk-accordion-title">Meat</h3>
                         <div class="uk-accordion-content">
                             <div class="col-md-12" id="">
 
@@ -395,15 +395,30 @@
 
                 <div class="uk-width-1-2">
                 <div class="uk-inline">
-                <button class="uk-button uk-button-default" name="savePantry" id = 'btntest'>Submit</button>
+                <button  class="uk-button uk-button-default " uk-toggle="target: #offcanvas-pantry"
+                 name="savePantry" id = 'btntest'>Submit</button>
+
                 </div>
             </div>
                    <div class="uk-width-1-2">
                 <div class="uk-inline">
+
                 <button class="uk-button uk-button-default" id="btn_add_ingredient">Add</button>
+
                 </div>
             </div>
                 </div>
+
+
+
+
+{#    <fieldset>#}
+{##}
+{##}
+{#         <div class="uk-margin" id="parent" name="addItems">#}
+{#            <input class="uk-input" type="text" placeholder="Input">#}
+{#        </div>#}
+{#        </fieldset>#}
     </form>
             </div>
         </div>

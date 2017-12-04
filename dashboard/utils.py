@@ -14,6 +14,7 @@ def prepare_res(ava_response, request_count, elements):
                 "element":elements }
     return response
 
+
 def prepare_response_not_auth(req_data):
     message = "Not Authorized"
     elements = {}

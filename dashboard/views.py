@@ -23,8 +23,12 @@ from dashboard.controller import perform_intent_function_and_get_response
 from dashboard.models import Command, SmallTalk, Recipe, User, Pantry, Ingredient, Recipe_Direction, Direction, \
     Recipe_Ingredient
 
+
 from dashboard.utils import prepare_response, prepare_res, check_parameters, check_and_get_req_count, \
     prepare_response_not_auth
+
+from dashboard.utils import prepare_res
+
 
 
 class Dashboard(TemplateView):
@@ -53,6 +57,7 @@ class Dashboard(TemplateView):
 
 class RecipeAdmin(TemplateView):
     template_name = "recipe-admin.html"
+
 
 
 class UserProfile(APIView):
@@ -505,6 +510,7 @@ class getRecipe(APIView) :
         res = {"message": res}
         return Response(res)
 
+
 # class Controller(APIView):
 #     def get(self,request, *args, **kwargs):
 #         return Response("hey",status=status.HTTP_200_OK)
@@ -590,3 +596,4 @@ class getRecipe(APIView) :
 #         response = perform_intent_function_and_get_response(request, response, query, intent, action, context)
 #         response = prepare_response(query=query, mode=response["mode"], intent=response["intent"], action = response["action"],context=response["context"], response=response["data"]["response"])
 #         return Response(response)
+

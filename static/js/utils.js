@@ -25,6 +25,13 @@ function get_user_id() {
     return localStorage.getItem('user_id');
 }
 
+function login() {
+    var ava_response = "Let me know it's you!";
+    var element = {"action":"login"};
+    set_ava_response(ava_response);
+    set_ava_board(element);
+}
+
 function get_user_token() {
     return localStorage.getItem('user_token');
 }
@@ -132,7 +139,30 @@ function set_options_on_board(options) {
         }
     }
     var options_3 = '</div>';
+    var image_1 = "<img class='recipe_option' src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzYwMHg0MDAvc2t5L2F1dG8vdGV4dDoxL3NpemU6MTAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi41LjIuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcy8+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiMwRDhGREIiLz48Zz48dGV4dCB4PSIyNjIuOTI5Njg3NSIgeT0iMjQ0LjciIHN0eWxlPSJmaWxsOiNGRkZGRkY7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTAwcHQiPjE8L3RleHQ+PC9nPjwvc3ZnPg==\" width=\"600\" height=\"400\" alt=\"1 [600x400]\" draggable=\"false\" data-src=\"holder.js/600x400/sky/auto/text:1/size:100\" data-holder-rendered=\"true\">";
+    var image_2 = "<img class='recipe_option' src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzYwMHg0MDAvdmluZS9hdXRvL3RleHQ6Mi9zaXplOjEwMApDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNS4yLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnMvPjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMzlEQkFDIi8+PGc+PHRleHQgeD0iMjYyLjkyOTY4NzUiIHk9IjI0NC43IiBzdHlsZT0iZmlsbDojMUUyOTJDO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwMHB0Ij4yPC90ZXh0PjwvZz48L3N2Zz4=\" width=\"600\" height=\"400\" alt=\"2 [600x400]\" draggable=\"false\" data-src=\"holder.js/600x400/vine/auto/text:2/size:100\" data-holder-rendered=\"true\">";
+    var image_3 = "<img class='recipe_option' src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzYwMHg0MDAvbGF2YS9hdXRvL3RleHQ6My9zaXplOjEwMApDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNS4yLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnMvPjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjg1OTFBIi8+PGc+PHRleHQgeD0iMjYyLjkyOTY4NzUiIHk9IjI0NC43IiBzdHlsZT0iZmlsbDojMUMyODQ2O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwMHB0Ij4zPC90ZXh0PjwvZz48L3N2Zz4=\" width=\"600\" height=\"400\" alt=\"3 [600x400]\" draggable=\"false\" data-src=\"holder.js/600x400/lava/auto/text:3/size:100\" data-holder-rendered=\"true\">";
+
     var choices = options_1 + options_2 + options_3;
+    choices = "</div><div data-uk-slider='{center:true}'>\n" +
+        "\n" +
+        "    <div class=\"uk-slider-container\">\n" +
+        "        <ul class=\"uk-slider\">\n" +
+        "            <li>"+image_1+"</li>\n" +
+        "            <li>"+image_2+"</li>\n" +
+        "            <li>"+image_3+"</li>\n" +
+        "        </ul>\n" +
+        "    </div></div>\n" +
+        "<a href=\"#\" class=\"uk-slidenav uk-slidenav-contrast uk-slidenav-previous\" data-uk-slider-item=\"previous\" draggable=\"false\"></a>" +
+        "<a href=\"#\" class=\"uk-slidenav uk-slidenav-contrast uk-slidenav-previous\" data-uk-slider-item=\"previous\" draggable=\"false\"></a> \n" +
+        "</div>\n";
+    // choices = "<div data-uk-slider='{center:true}'>" +
+    //     "<div class='uk-slider-container uk-flex-center'>" +
+    //     "   <ul class='uk-slider uk-tile-small'>" +
+    //     "       <li>"+ image_1+"</li>" +
+    //     "       <li>"+ image_2+"</li>" +
+    //     "   </ul>" +
+    //     "</div></div>";
     $('#ava_board').html(choices);
 }
 
