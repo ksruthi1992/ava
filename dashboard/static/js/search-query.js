@@ -73,8 +73,11 @@ $(document).on("submit", "#login-form", function (e) {
                     console.log(data);
                     set_ava_response(data.ava_response);
                     set_ava_board(data.element);
-                    set_user_items(data.element);
-                    set_user_image_dashboard(get_user_image());
+                    if("user_id" in data.element){
+                        set_user_items(data.element);
+                        set_user_image_dashboard(get_user_image());
+                    }
+
                 }
             });
         });
