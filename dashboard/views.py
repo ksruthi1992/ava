@@ -389,10 +389,10 @@ class Contact(APIView) :
 
 class Login(APIView) :
     def post(self,request, *args, **kwargs):
-        username = request.data["username"]
+        email = request.data["email"]
         password = request.data["password"]
         try:
-            User.objects.get(username = username , password = password)
+            User.objects.get(username = email , password = password)
             res = "Authentication Successful"
         except:
             res = "Username or password is invalid"
