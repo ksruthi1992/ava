@@ -1,9 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact Us</title>
 <script>
+
+ <meta charset="UTF-8">
+    <title>Contact Us</title>
+
 function validateForm() {
     var x = document.forms["myForm"]["fname"].value;
     if (x == "") {
@@ -11,6 +14,8 @@ function validateForm() {
         return false;
     }
 }
+
+
 </script>
 </head>
 <body>
@@ -23,31 +28,70 @@ function validateForm() {
 </font>
 <p>We welcome your questions. Feel free to write to us and we'll be happy to answer your questions</p>
 
-<form name="Form" action="/action_page.php" onsubmit="return validateForm()" method="post">
+      <div class="uk-inline uk-margin">
+          <div class="uk-padding uk-background-muted uk-width-1-2@s">
+          <div class="uk-position-small uk-position-center-right uk-overlay uk-overlay-default">
+              <h3>What is Ava</h3>
+          <p>Do you have only few ingredients at home and don't know how what to make?</p>
 
+          <p> Ava is a recipe search engine that finds recipes you can make with the ingredients you currently have at home according to your desire.</p>
+
+              <p>For best results, make sure to tell Ava about every ingredient you have at home. The more ingredients you add to Ava, the better the recipes will be! </p>
+
+          <p>  Ava is also a practical way to save money. Take full advantage of ingredients you already have, and naturally buy less groceries.</p>
+
+              <h3>How do I add my ingredients?</h3>
+           <p>Adding your ingredients is done on the right side panel. </p>
+              <p>You can either type(list) your ingredients one by one, or you can use the category view. On category view, simply check off the ingredients you have on each category. </p>
+              <p>For best results, add all the ingredients you have in your home. The more ingredients you tell Ava you have, the better the recipes will be.</p>
+
+              <h3> What are the benefits of signing up for an account? </h3>
+              <p>If you sign up for an account, your ingredients, and dietary restrictions, will be saved on Ava Pantry.</p>
+
+              <h3>Can I use Supercook without signing up?</h3>
+              <p>Yes, but you won't be able to save your ingrdients or recipes for future use. </p>
+
+          </div>
+      </div>
+      </div>
+
+<form name="ContactUs" method="post" action="">
+<div class="uk-padding">
   Username : <br>
-    <input type="text" name="username" value="">
-  <br><br>
+  <div class ="uk-nav-left">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input class="uk-input" type="text" value=" ">
+            </div>
+      <br><br>
   Email : <br>
 
-    <input type ="text" name = "email" value = "">
-    <br><br>
+            <div class="uk-inline">
+                <input class="uk-input" type="text" value=" ">
 
-    <input type = "text" name="email" value="">
-   <br><br>
+            </div>
+      <br><br>
 
   Recipe : <br>
-  <input type="text" name="recipe" value="">
+            <div class="uk-inline">
+
+                <input class="uk-input" type="text" value=" ">
+
+            </div>
   <br><br>
   <div class="row">
   Please enter your message : <br>
   <textarea name="message" id="Message" rows="3" class="form-control" maxlength="1500"></textarea>
     <br><br>
+
   Do you like our page :
  <label><input type="checkbox" name="yes" value="yes" id="yescb" onclick="uncheck('nocb')" checked="checked"> yes</label>
  <label><input type="checkbox" name="no" value="no" id="nocb" onclick="uncheck('yescb')"> no</label>
       <br><br>
+
 <input type="submit" value="Submit">
+
+  </div>
 </form>
 </body>
 </html>
