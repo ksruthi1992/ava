@@ -1106,7 +1106,23 @@ Furthermore, particular to a recipe, the relevancy algorithm/formula will theref
 
 ## <a name="history_of_work"></a> History of Work
 
+August 31st to Sept 17th
+
+At the start of the semester, our team decided to take on the chatbot on recipes project and created the proposal on how we would go about in tackling this project. We went through various websites to understand where they did well and what we could do to improve the experience.
+
+Sept 18th to Sept 27th
+
+We received feedback on how to improve our proposal and how we could plan better for our project as well. Based on the feedback given, we incorporated those new ideas into our first report. The system specifications of our project was built based on the report guidelines given : customer requirements, Functional Requirements Specification, Use Cases, Nonfunctional Requirements, Domain Analysis and User Interface Design. We divided the work evenly and pieced together the report at the end.
+
+Sept 28th to October 24th
+
+We then started with the second report, i.e., design phase based on what we drafted in the first report on system specifications. Through the Interaction Diagrams, Class Diagram and Interface Specification, System Architecture and System Design, Algorithms and Data Structures and User Interface Design and Implementation we started developing our project. We divided the work evenly and started implementing.
+
+Current Status
+
+
 ![image](diagrams/ava_gantt_chart.JPG)
+
 
 
 
