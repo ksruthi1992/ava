@@ -73,8 +73,11 @@ $(document).on("submit", "#login-form", function (e) {
                     console.log(data);
                     set_ava_response(data.ava_response);
                     set_ava_board(data.element);
-                    set_user_items(data.element);
-                    set_user_image_dashboard(get_user_image());
+                    if("user_id" in data.element){
+                        set_user_items(data.element);
+                        set_user_image_dashboard(get_user_image());
+                    }
+
                 }
             });
         });
@@ -94,10 +97,7 @@ $(document).on("click", "#search", function (e) {
 
 $(document).on("click", "#btn-login", function (e) {
         UIkit.offcanvas('#offcanvas-primary-nav').hide();
-        var ava_response = "Let me know it's you!";
-        var element = {"action":"login"};
-        set_ava_response(ava_response);
-        set_ava_board(element);
+        login()
         });
 
 $(document).on("click", "#btn-signup", function (e) {
