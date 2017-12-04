@@ -738,40 +738,8 @@ Admin login
 **Legal**- As of right now, the system will not be licensed. There are no liability issues/royalties to discuss.
 
 ## <a name="effort"></a> Effort Estimation using Use Case Points
-**Scenario 1 : User SignUp into Ava
-	1. Navigation : Select "Register".
-		a) User enter his/her username in the text box labeled "Username".
-		b) User enter his/her Password in the text box labeled "Password".
-		c) User enter his/her Email in the  text box labeled "Email".
-		
-**Scenario 2 : User enters the main page to get a pantry to save items
-	2. Navigation : Select "log in" 
-		a)User enter his/her username in the text labeled "username".
-		b)User enter his/her password in the text labeled "password".
-
-**Scenario 3 : User search recipe
-	3. Navigation : Selects search recipe
-		a) User enter choose the ingredients he/she already have.
-		b) User selects his/her favourite cuisine and what type of the day.
-		c) User clicks on "Search" to search for recipes.
-
-**Scenario 4 : The user saves their ingredients/recipe
-	4. Navigation : Select "Pantry"
-		a) User choose the ingredients and selects "save" to save the ingredients for future use. 
-		b) User click "save" on their favourite recipe to save it in the pantry.
-		c) User can include their own recipe in the pantry and save it for thier own use.
 
 
-UCP = UUCP x TCF x ECF
-
-Weight : 5  -> Simple
-	 10 -> Medium
-	 15 -> Difficult
-
-|UC | Use Case Weight |
-|   |-----------------|
-|UC-1 : Register/Login| 5|
-|UC-2 :           |  | 
 
 ## <a name="domain_analysis"></a> Domain Analysis
 
@@ -801,18 +769,7 @@ Weight : 5  -> Simple
 |-------------|-------------------------|-----------------|
 |User <-> Register| Allows users to register into the system | Registration|
 |User <-> Login| Allows registered user to login into the system| Login|
-|User <-> ViewRecipeOfTheDay| Registered users can view the recipe of the day provided on the page| Convey Requests|
-|User <-> SearchRecipe | Allows the user to search recipe based on the search filter| Provides Data|
-|User <-> SearchFilter | Allows the user to search for recipes using ingredients,cuisine and/or time| Convey Requests/Provides Data|
-|User <-> Pantry | Allows registered user to add,save and/or delete the ingredients in the pantry | Convey Requests/ Request Save|
-|Pantry <-> PantryModifer| Allows registered user to modify menu| Modifies|
-|User <-> Bookmarkrecipe | Users can bookmark the recipe to be used in future | Request Save|
-|User <-> FeedbackOption | Users can give their comments about the system | Provides Data|
-|Admin <-> AddRecipe | The admin can add new recipes into the system and save it for the users to view| Convey Requests/ Requests save|
-|Admin<-> DisplayRecipeofTheDay| Admin is able to show the recipe of the day to the users | Provides Data |
-|Admin <-> ManageAccount | Admin is able to manage specific user account by analyzing recipes and provide side dishes| Modifies/Convey Requests|
-|Admin <-> TrackViews | Admin is able ro track down the most viewed recipe in the system | Provides data | 
- 
+|User <-> Pantry| Allows User to add and/or save ingredients, and also search for recipes| Convey Request/Request Save|
 
 
 

@@ -235,26 +235,87 @@ class UserProfileView(APIView):
                 print details.password
                 print details.dob
 
-# class Feedback(APIView):
-#     def post(self,request, *args, **kwargs):
-#         Username = models.Charfield(max_length=50)
-#         email = models.EmailField()
-#         title = models.Charfield(max_length=120)
-#         message = models.Textfield()
-#         happy = models.Booleanfield()
-#
-#     def feedback_form(request):
-#         if request.method == 'POST':
-#             form = Feedback_form(request.POST)
-#
-#             if form.is_valid():
-#                 form.save()
-#                 return render(request, 'form/thanks.html')
-#  else:
-#         form = FeedbackForm()
-#      return render(request,'form/feedback_form.html',{'form': form})
+class ContactView(APIView) :
+    def post(self,request, *args, **kwargs):
+        Email = request.data["email"]
+        Username = request.data["username"]
+        Recipe = request.data ["recipe"]
+        Message = request.data ["message"]
+        flag = 0
+        try:
+            User.objects.get(username = username)
+            res = "username does not exists"
+        except:
+            res = "username exist"
+            flag += 1
+        try:
+            User.objects.get(email = email)
+            res = "email already exists"
+        except:
+            res = "email does not exist"
+            flag += 1
+        if flag == 2 :
+            User.objects.create(Email = email, Username = username, Recipe = recipe, Message = message).save()
+            token = Token.objects.create(user= user)
+            res = "Feedback Sent"
+
+        res = {"message":res}
+        return Response (res)
+
+class UserProfileView(APIView):
+    def get(self, request):
+        self.user = request.user
+        self.userdetails = User.objects.get(username=self.user)
+        if (self.userdetails):
+            for details in self.userdetails:
+                print details.firstname
+                print details.lastname
+                print details.email
+                print details.username
+                print details.password
+                print details.dob
+
+class Contact(APIView) :
+    def post(self,request, *args, **kwargs):
+        Username = request.data["Username"]
+        Email = request.data["email"]
+        Message = request.data["message"]
+        Recipe = request.data["recipe"]
+
+        flag = 0
+        try:
+            User.objects.get(username = username)
+            res = "Username does not exist"
+        except:
+            res = "Correct Username"
+            flag += 1
+        try:
+            User.objects.get(email = email)
+            res = "email already exists"
+        except:
+            res = "email does not exist"
+            flag += 1
+        if flag == 2 :
+            User.objects.create(Email = email, Username = username, Message = message, Recipe = recipe).save()
+            user = User.objects.get(username=username, Email = email)
+            token = Token.objects.create(user= user)
+            res = "Feedback Sent"
+
+        res = {"message":res}
+        return Response (res)
 
 
+class Login(APIView) :
+    def post(self,request, *args, **kwargs):
+        username = request.data["username"]
+        password = request.data["password"]
+        try:
+            User.objects.get(username = username , password = password)
+            res = "Authentication Successful"
+        except:
+            res = "Username or password is invalid"
+        res = {"message": res}
+        return Response(res)
 
 
 
