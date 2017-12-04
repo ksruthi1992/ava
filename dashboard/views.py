@@ -23,7 +23,8 @@ from dashboard.controller import perform_intent_function_and_get_response
 from dashboard.models import Command, SmallTalk, Recipe, User, Pantry, Ingredient, Recipe_Direction, Direction, \
     Recipe_Ingredient
 
-from dashboard.utils import prepare_response, prepare_res
+from dashboard.utils import prepare_response, prepare_res, check_parameters, check_and_get_req_count, \
+    prepare_response_not_auth
 
 
 class Dashboard(TemplateView):
@@ -52,6 +53,87 @@ class Dashboard(TemplateView):
 
 class RecipeAdmin(TemplateView):
     template_name = "recipe-admin.html"
+
+
+class UserProfile(APIView):
+
+    def get(self, request, *args, **kwargs):
+        user_id = int(self.kwargs['user_id'])
+        user = User.objects.get(id=user_id)
+        message = "user "+user.id
+        request_count = 1
+        elements = {
+            "username":user.username,
+            "email":user.email,
+            "first_name":user.first_name,
+            "last_name":user.last_name,
+        }
+
+        response = prepare_res(ava_response=message,request_count=request_count ,elements=elements )
+        return Response(response, status=status.HTTP_200_OK)
+
+    def post(self, request, *args, **kwargs):
+        user_id = int(self.kwargs['user_id'])
+
+        try:
+            user_id_token = request.auth
+            print user_id_token
+        except Exception as e:
+            response = prepare_response_not_auth(request.data)
+            print e
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+        if user_id != user_id_token:
+            print user_id
+            print 'url!=token_id'
+            print user_id_token
+            response = prepare_response_not_auth(request.data)
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+        req_parameters = ['username', 'email', 'first_name','last_name']
+
+        parameter_check = check_parameters(req_parameters, request.data)
+
+        if parameter_check.status_code != 200:
+            return parameter_check
+
+        request_count = check_and_get_req_count(request.data)
+
+        user = User.objects.get(id= user_id)
+        user.username = request.data['username']
+        user.username = request.data['email']
+        user.username = request.data['first_name']
+        user.username = request.data['last_name']
+        user.save()
+        message = "User profile updated successfully!"
+
+        response = prepare_res(ava_response=message, request_count=request_count, elements={})
+        return Response(response, status=status.HTTP_200_OK)
+
+class AvaRecipe(APIView):
+    def get(self, request, *args, **kwargs):
+        message = ""
+        request_count = 1
+        user_ingredients = []
+
+        # user_ingredients = Pantry.objects.filter(user_id=user_id)
+
+        elements = {
+            "ingredients": user_ingredients
+        }
+
+        response = prepare_res(ava_response=message,request_count=request_count,elements=elements)
+        return Response(response, status=status.HTTP_200_OK)
+
+    def post(self, request, *args, **kwargs):
+        message = ""
+        # request_count =
+        elements = {
+
+        }
+
+        response = prepare_res(ava_response=message, request_count=request_count, elements=elements)
+        return Response(response, status=status.HTTP_200_OK)
 
 class MainController(APIView):
     def post(self, request, *args, **kwargs):
@@ -211,7 +293,7 @@ class UserSignup(APIView):
             User.objects.create(username = username, email= email, password= password)
             user = user = User.objects.get(username=username, password=password)
             token = Token.objects.create(user=user)
-            message = "Registration  complete<br> So what are you hungry for today, "+ user.username + " ?"
+            message = "Registration  complete!<br> So what are you hungry for today, "+ user.username + " ?"
             element = {
                 "action":"search",
                 "user_token": token.key,

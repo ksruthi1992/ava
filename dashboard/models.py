@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 # Create your models here.
 from django.db import models
+from rest_framework.authtoken.models import Token
+
 
 class Command(models.Model):
     command = models.CharField(max_length=20)
@@ -68,6 +71,18 @@ class Feedback(models.Model):
 
 class User(AbstractUser):
     profile_pic = models.URLField()
+
+class UserManager(BaseUserManager):
+
+    def create_user(self, email, password=None, user_role=None, contact_no=None):
+        if not email:
+            raise ValueError("User must have an email")
+
+        user = self.model(email=email, user_role=user_role, contact_no=contact_no)
+        user.set_password(password)
+        user.save(using=self._db)
+        Token.objects.create(user=user)
+        return user
 
 
 

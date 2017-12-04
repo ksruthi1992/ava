@@ -9,9 +9,8 @@
         <!-- UIkit CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/css/uikit.min.css" />
-        <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css'%}"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css'%}"/>
         <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css'%}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/slider.css'%}"/>
 
 
         <!-- UIkit JS -->
@@ -23,7 +22,8 @@
         <script>
              var default_user_image = "https://d30y9cdsu7xlg0.cloudfront.net/png/212110-200.png";
         </script>
-        <script src={% static 'slick/slick.min.js' %}></script>
+        <script src={% static 'js/uk.js' %}></script>
+        <script src={% static 'js/slider.js' %}></script>
         <script src={% static 'js/dashboard.js' %}></script>
         <script src={% static 'js/utils.js' %}></script>
         <script src={% static 'js/snippets.js' %}></script>
@@ -400,7 +400,7 @@
             </div>
                    <div class="uk-width-1-2">
                 <div class="uk-inline">
-                <button class="uk-button uk-button-default" id="temp">Add</button>
+                <button class="uk-button uk-button-default" id="btn_add_ingredient">Add</button>
                 </div>
             </div>
                 </div>

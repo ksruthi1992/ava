@@ -106,3 +106,10 @@ $(document).on("click", "#btn-signup", function (e) {
         set_ava_response(ava_response);
         set_ava_board(element);
         });
+
+$(document).on("click", "#btn_add_ingredient", function (e) {
+    event.preventDefault();
+    console.log('dawd');
+
+});
+
