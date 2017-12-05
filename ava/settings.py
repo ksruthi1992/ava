@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'dashboard',
     ]
-EMAIL_HOST_USER = ""
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = ''
+EMAIL_POST = 25
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 SITE_ID =1
 MIDDLEWARE = [
