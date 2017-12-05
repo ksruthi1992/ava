@@ -5,6 +5,7 @@ from django.core.mail import EmailMessage
 from django.core.validators import validate_email
 from django.template.loader import get_template
 from rest_framework import status
+from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 
 from ava import settings
@@ -17,12 +18,19 @@ def prepare_res(ava_response, request_count, elements):
                 "element":elements }
     return response
 
+def get_token_user_from_request(request):
+
+    token = request.META['HTTP_AUTHORIZATION'].split()[1]
+    user_token = Token.objects.get(key=token)
+    user = User.objects.get(id = user_token.user_id)
+    return user
 
 def prepare_response_not_auth(req_data):
     message = "Not Authorized"
     elements = {}
     request_count = check_and_get_req_count(req_data)
     response = prepare_res(ava_response=message, request_count=request_count, elements=elements)
+
     return response
 
 def check_and_get_req_count(req_data):

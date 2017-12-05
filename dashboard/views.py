@@ -25,7 +25,7 @@ from dashboard.models import Command, SmallTalk, Recipe, User, Pantry, Ingredien
 
 
 from dashboard.utils import prepare_response, prepare_res, check_parameters, check_and_get_req_count, \
-    prepare_response_not_auth
+    prepare_response_not_auth, get_token_user_from_request
 
 from dashboard.utils import prepare_res
 
@@ -64,8 +64,16 @@ class UserProfile(APIView):
 
     def get(self, request, *args, **kwargs):
         user_id = int(self.kwargs['user_id'])
+        token_user = get_token_user_from_request(request)
+        print token_user.username
+
         user = User.objects.get(id=user_id)
-        message = "user "+user.id
+
+        if token_user != user:
+            response = prepare_response_not_auth(request.data)
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+        message = "user "+str(user.id) + " profile details."
         request_count = 1
         elements = {
             "username":user.username,
@@ -79,19 +87,12 @@ class UserProfile(APIView):
 
     def post(self, request, *args, **kwargs):
         user_id = int(self.kwargs['user_id'])
-        print request.data
-        try:
-            user_id_token = request.auth.user_id
-            print user_id_token
-        except Exception as e:
-            response = prepare_response_not_auth(request.data)
-            print e
-            return Response(response, status=status.HTTP_400_BAD_REQUEST)
+        token_user = get_token_user_from_request(request)
+        print token_user.username
 
-        if user_id != user_id_token:
-            print user_id
-            print 'url!=token_id'
-            print user_id_token
+        user = User.objects.get(id=user_id)
+
+        if token_user != user:
             response = prepare_response_not_auth(request.data)
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
@@ -137,6 +138,7 @@ class AvaRecipe(APIView):
         if check_response.status_code != 200:
             return check_response
 
+        user = User.objects.get(id = user_id)
         message = ""
         # request_count =
         elements = {
