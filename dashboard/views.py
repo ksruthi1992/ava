@@ -176,7 +176,7 @@ class AvaRecipe(APIView):
         message = "Recipe stored successfully!"
 
         elements = {
-
+            "recipe_id":recipe.id
         }
         response = prepare_res(ava_response=message, request_count=request_count, elements=elements)
         return Response(response, status=status.HTTP_200_OK)
