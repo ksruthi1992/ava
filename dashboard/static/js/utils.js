@@ -52,6 +52,8 @@ function is_user_logged_in() {
     }
 }
 
+
+
 function set_ava_response(ava_response) {
     $('#ava_response').typeIt({strings:ava_response, speed:30});
 }

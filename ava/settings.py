@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'dashboard',
 ]
+EMAIL_HOST_USER = "ava@theback.space"
 SITE_ID =1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

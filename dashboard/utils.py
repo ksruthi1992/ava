@@ -1,10 +1,13 @@
 from django.contrib import messages
 from django.contrib.sessions.backends.db import SessionStore
 from django.core.exceptions import ValidationError
+from django.core.mail import EmailMessage
 from django.core.validators import validate_email
+from django.template.loader import get_template
 from rest_framework import status
 from rest_framework.response import Response
 
+from ava import settings
 from constants import *
 from dashboard.models import User
 
@@ -28,6 +31,21 @@ def check_and_get_req_count(req_data):
     else:
         request_count = 1
     return request_count
+
+def send_reset_mail(user, key):
+    url_body = "http://theback.space:8000/users/%s/password_reset/confirm/%s" % (
+        user.id, key)
+    html_template = get_template('password_reset_email_template.html')
+    content_passed_to_template = ({'url_body': url_body})
+    html_content = html_template.render(content_passed_to_template)
+    send_email = EmailMessage(
+        'Ava Password Reset',
+        html_content,
+        settings.EMAIL_HOST_USER,
+        [user.email]
+    )
+    send_email.content_subtype = "html"
+    send_email.send()
 
 def check_parameters(req_parameters, request_data):
     message = "Good to go!"
