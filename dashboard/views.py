@@ -25,7 +25,7 @@ from dashboard.models import Command, SmallTalk, Recipe, User, Pantry, Ingredien
 
 
 from dashboard.utils import prepare_response, prepare_res, check_parameters, check_and_get_req_count, \
-    prepare_response_not_auth, get_token_user_from_request
+    prepare_response_not_auth, get_token_user_from_request, send_reset_mail
 
 from dashboard.utils import prepare_res
 
@@ -262,6 +262,7 @@ class Login(APIView) :
             email = request.data["email"]
             password = request.data["password"]
             request_count = request.data["request_count"]
+
         except:
             message = "Oops! parameter missing at the server"
             elements = {"action":"search"}
@@ -270,6 +271,7 @@ class Login(APIView) :
 
         try:
             user = User.objects.get(email=email , password = password)
+
             token = Token.objects.get(user_id=user.id)
             print token.key
             message = "Hey there, "+ user.username + "!<br> What are you hungry for today? "
@@ -288,6 +290,8 @@ class Login(APIView) :
                     {"action":"search",
                      "response":"Anyway, what delicacy were we looking for then ? "}
                        }
+
+        send_reset_mail(user, "awdaw")
         response = prepare_res(ava_response=message, request_count= request_count, elements=elements)
         return Response(response, status=status.HTTP_200_OK)
 
