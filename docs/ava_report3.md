@@ -1120,6 +1120,10 @@ We then started with the second report, i.e., design phase based on what we draf
 
 Current Status
 
+Our system is currently being developed. Our system is divided into 3 components – frontend, application server and database.
+Backend : Created Registration API, Login API, Pantry API, Search API, AddRecipes API and Bookmark API
+Frontend : Created the Dashboard, Login form, Pantry, User profile, Register, Search form and contact page.
+
 
 ![image](diagrams/ava_gantt_chart.JPG)
 
