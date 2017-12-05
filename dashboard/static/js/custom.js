@@ -22,13 +22,11 @@ $(document).ready(function() {
 
 
    // }
-
-
-
         $(function () {
             $('.button-checkbox').each(function () {
                 //Do stuff when clicked
                 // Settings
+
                 var $widget = $(this),
                     $button = $widget.find('button'),
                     $checkbox = $widget.find('input:checkbox'),
@@ -49,6 +47,7 @@ $(document).ready(function() {
                     updateDisplay();
 
                 });
+                
                 $checkbox.on('change', function () {
                     updateDisplay();
 

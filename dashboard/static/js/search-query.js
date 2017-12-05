@@ -110,6 +110,6 @@ $(document).on("click", "#btn-signup", function (e) {
 $(document).on("click", "#btn_add_ingredient", function (e) {
     event.preventDefault();
     console.log('dawd');
-
+    UIkit.offcanvas('#offcanvas-pantry').hide();
 });
 
