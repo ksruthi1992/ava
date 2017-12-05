@@ -35,7 +35,7 @@ def check_parameters(req_parameters, request_data):
 
     for i in req_parameters:
         if i not in request_data:
-            message = i+" missing!"
+            message = "parameter "+i+" missing!"
             response = prepare_res(ava_response=message, request_count=1, elements=element)
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
 

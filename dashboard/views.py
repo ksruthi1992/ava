@@ -79,9 +79,9 @@ class UserProfile(APIView):
 
     def post(self, request, *args, **kwargs):
         user_id = int(self.kwargs['user_id'])
-
+        print request.data
         try:
-            user_id_token = request.auth
+            user_id_token = request.auth.user_id
             print user_id_token
         except Exception as e:
             response = prepare_response_not_auth(request.data)
@@ -131,6 +131,12 @@ class AvaRecipe(APIView):
         return Response(response, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
+        req_parameters = ["title", "featured_image", "description","serves", "time", "ingredients", "directions", "keywords"]
+        check_response = check_parameters(req_parameters=req_parameters, request_data=request.data)
+
+        if check_response.status_code != 200:
+            return check_response
+
         message = ""
         # request_count =
         elements = {
