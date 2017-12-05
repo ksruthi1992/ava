@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'dashboard',
     ]
 EMAIL_HOST_USER = ""
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SITE_ID =1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
