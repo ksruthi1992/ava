@@ -9,7 +9,6 @@ from django.db import models
 from django.db import models
 from rest_framework.authtoken.models import Token
 
-
 class Command(models.Model):
     command = models.CharField(max_length=20)
 
@@ -23,11 +22,13 @@ class UserBookmarks(models.Model):
 
 class Recipe(models.Model):
     title = models.CharField(max_length=50)
+    ingredients_display = models.TextField(default="")
     featured_image = models.URLField()
-    description =models.TextField()
-    time = models.TimeField()
-    serves = models.IntegerField()
+    description = models.TextField()
+    time = models.CharField(max_length=10)
+    serves = models.CharField(max_length=10)
     keywords = models.CharField(max_length=50)
+    is_removed = models.BooleanField(default=False)
 
 class Recipe_Ingredient(models.Model):
     recipe = models.ForeignKey('Recipe')
@@ -39,7 +40,7 @@ class Recipe_Direction(models.Model):
     direction_number = models.IntegerField(null=False)
 
 class Direction(models.Model):
-    description = models.CharField(max_length=100)
+    description = models.TextField()
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=50)
@@ -51,7 +52,7 @@ class Pantry(models.Model):
 
 class Feedback(models.Model):
     title = models.CharField(max_length=50)
-    message = models.CharField(max_length=50)
+    message = models.TextField()
     recipe = models.ForeignKey('Recipe')
     user = models.ForeignKey('User')
     VERYBAD = 1
@@ -72,6 +73,7 @@ class Feedback(models.Model):
 class User(AbstractUser):
     profile_pic = models.URLField()
 
+
 class UserManager(BaseUserManager):
 
     def create_user(self, email, password=None, user_role=None, contact_no=None):
@@ -83,6 +85,3 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         Token.objects.create(user=user)
         return user
-
-
-

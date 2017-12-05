@@ -58,8 +58,6 @@ class Dashboard(TemplateView):
 class RecipeAdmin(TemplateView):
     template_name = "recipe-admin.html"
 
-
-
 class UserProfile(APIView):
 
     def get(self, request, *args, **kwargs):
@@ -132,19 +130,54 @@ class AvaRecipe(APIView):
         return Response(response, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
-        req_parameters = ["title", "featured_image", "description","serves", "time", "ingredients", "directions", "keywords"]
+        req_parameters = ["title", "featured_image", "description","serves", "time", "ingredients", "directions"]
         check_response = check_parameters(req_parameters=req_parameters, request_data=request.data)
+        request_count = check_and_get_req_count(request.data)
 
         if check_response.status_code != 200:
             return check_response
 
-        user = User.objects.get(id = user_id)
-        message = ""
-        # request_count =
+        # ingredients
+        ingredients = request.data['ingredients']
+        ingredients_display = request.data['ingredients_display']
+
+        # recipe
+        recipe, created = Recipe.objects.get_or_create(title=request.data['title'],
+                                       featured_image=request.data['featured_image'],
+                                       description=request.data['description'],
+                                       time=request.data['time'],
+                                       ingredients_display=ingredients_display,
+                                       serves= request.data['serves'])
+
+        try:
+            for ingredient in ingredients:
+                ingredient = ingredient.lower()
+                ing_obj, created = Ingredient.objects.get_or_create(name=ingredient)
+                Recipe_Ingredient.objects.create(recipe_id=recipe.id, ingredient_id=ing_obj.id).save()
+
+            # directions
+            directions = request.data['directions']
+            dir_n = 1
+            for direction in directions:
+                direction.lower()
+                dir_obj, created = Direction.objects.get_or_create(description=direction)
+                Recipe_Direction.objects.create(recipe_id=recipe.id ,direction_id=dir_obj.id, direction_number=dir_n).save()
+                dir_n += 1
+
+        except Exception as e:
+            message = e.message
+            elements = {
+
+            }
+
+            response = prepare_res(ava_response=message, request_count=request_count, elements=elements)
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+        message = "Recipe stored successfully!"
+
         elements = {
 
         }
-
         response = prepare_res(ava_response=message, request_count=request_count, elements=elements)
         return Response(response, status=status.HTTP_200_OK)
 
