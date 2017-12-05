@@ -17,10 +17,15 @@ ol {
     <title>White Pasta</title>
 </head>
 <body>
-  <h4>Title</h4>
-    <p>White Pasta</p>
-  <h4>Image</h4>
-    <img src ="white-sauce-pasta-recipec.jpg">
+  <a class="uk-button uk-button-default" href="#modal-full" uk-toggle>Open</a>
+
+<div id="modal-full" class="uk-modal-full" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+        <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+            <div class="uk-background-cover" style="background-image: url('/static/images/pasta.jpg');" uk-height-viewport></div>
+            <div class="uk-padding-large">
+                 <h4><p>White Pasta</p></h4>
   <h4>Description</h4>
     <p>Pasta is typically a noodle made from an unleavened dough of a durum wheat flour mixed with water or eggs and formed into sheets or various shapes, then cooked by boiling or baking.</p>
   <h4>Time</h4>
@@ -56,6 +61,11 @@ ol {
             <li>Add boiled pasta and mix well.</li>
             <li>Serve white sauce pasta hot.</li>
         </ol>
+                 </div>
+        </div>
+    </div>
+</div>
+
 
 </body>
 
