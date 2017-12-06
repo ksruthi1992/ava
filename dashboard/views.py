@@ -9,6 +9,7 @@ from django.db import connection
 
 # Create your views here.
 from django.views.generic import TemplateView
+from hashids import Hashids
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -151,10 +152,18 @@ class AvaRecipe(APIView):
                                        serves= request.data['serves'])
 
         try:
+            hashids = Hashids()
+            ingredients_list = []
             for ingredient in ingredients:
                 ingredient = ingredient.lower()
                 ing_obj, created = Ingredient.objects.get_or_create(name=ingredient)
                 Recipe_Ingredient.objects.create(recipe_id=recipe.id, ingredient_id=ing_obj.id).save()
+                ingredients_list.append(ing_obj.id)
+
+            ingredients_tuple = tuple(ingredients_list)
+            hashid_recipe_ingredients = hashids.encode(*ingredients_tuple)
+            recipe.encoded_recipe_ingredients = hashid_recipe_ingredients
+            recipe.save()
 
             # directions
             directions = request.data['directions']

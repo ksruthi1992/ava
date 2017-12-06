@@ -33,22 +33,30 @@ import numpy as np
 #
 # print es.get(index="my-index", doc_type="test-type", id=42)['_source']['any']
 
-recipe = Recipe.objects.get(id=1)
+all_recipe = Recipe.objects.all()
+hashids = Hashids()
+for recipe in all_recipe:
 
-recipe_ings = Recipe_Ingredient.objects.filter(recipe_id=recipe.id)
-recipe_ings_list = []
-for i in recipe_ings:
-    recipe_ings_list.append(i.ingredient_id)
+    recipe_ings = Recipe_Ingredient.objects.filter(recipe_id=recipe.id)
+    recipe_ings_list = []
 
+    for recipe_ing in recipe_ings:
+        recipe_ings_list.append(recipe_ing.ingredient_id)
+
+    recipe_ings_tuple = tuple(recipe_ings_list)
+    hashid_recipe = hashids.encode(*recipe_ings_tuple)
+    print hashid_recipe
+    recipe.encoded_recipe_ingredients = hashid_recipe
+    recipe.save()
 
 #
-user_ingredients = [1,4,6,8,10,44,56,67]
-user_ingredients_tuple=tuple(user_ingredients)
-
-recipe_ings_tuple = tuple(recipe_ings_list)
-matching_ings = np.intersect1d(recipe_ings_list, user_ingredients)
-print matching_ings.size
-# hashids = Hashids()
+# user_ingredients = [1,4,6,8,10,44,56,67]
+# user_ingredients_tuple=tuple(user_ingredients)
+#
+#
+# matching_ings = np.intersect1d(recipe_ings_list, user_ingredients)
+# print matching_ings.size
+#
 #
 # hashid_user = hashids.encode(*user_ingredients)
 # hashid_recipe = hashids.encode(*recipe_ings_tuple)
