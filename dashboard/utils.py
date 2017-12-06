@@ -58,7 +58,7 @@ def send_reset_mail(user, key):
 
 def send_welcome_mail(user):
 
-    html_template = get_template('password_reset_email_template.html')
+    html_template = get_template('welcome_mail_template.html')
     content_passed_to_template = ({'username': user.username})
     html_content = html_template.render(content_passed_to_template)
     send_email = EmailMessage(

@@ -29,7 +29,7 @@ from dashboard.models import Command, SmallTalk, Recipe, User, Pantry, Ingredien
 
 
 from dashboard.utils import prepare_response, prepare_res, check_parameters, check_and_get_req_count, \
-    prepare_response_not_auth, get_token_user_from_request, send_reset_mail
+    prepare_response_not_auth, get_token_user_from_request, send_reset_mail, send_welcome_mail
 
 from dashboard.utils import prepare_res
 
@@ -468,6 +468,7 @@ class UserSignup(APIView):
                 "user_name": user.username,
                 "user_image": user.profile_pic
             }
+            send_welcome_mail(user)
             response = prepare_res(ava_response=message, request_count = request_count, elements=element)
             return Response(response, status= status.HTTP_200_OK)
 
