@@ -17,7 +17,7 @@ function carousel(items) {
 $(document).on("submit", "#searchform", function (e) {
             e.preventDefault();
             var user_query = $('#user-query').val();
-            var request_data = {"user-query":user_query};
+            var request_data = {"user-query":user_query, "request_count":2};
             $.ajax({
                 type: "POST",
                 url: "/query/",

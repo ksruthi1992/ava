@@ -1,3 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ava</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/css/uikit.min.css" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css'%}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/slider.css'%}"/>
+
+
+
+        <!-- UIkit JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit-icons.min.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typeit@4.4.1/dist/typeit.min.js"></script>
+        <script>
+             var default_user_image = "https://d30y9cdsu7xlg0.cloudfront.net/png/212110-200.png";
+        </script>
+        <script src={% static 'js/uk.js' %}></script>
+        <script src={% static 'js/slider.js' %}></script>
+        <script src={% static 'js/dashboard.js' %}></script>
+        <script src={% static 'js/utils.js' %}></script>
+        <script src={% static 'js/snippets.js' %}></script>
+        <script src={% static 'js/search-query.js' %}></script>
+        <script src={% static 'js/custom.js' %}></script>
+    </head>
+
+    <body>
+
+
 <div class="horizontal uk-nav-center login-form" >
     <h3 class="uk-card-title"></h3>
     <form action="/signup/" id="signup-form">
@@ -30,3 +67,6 @@
 
     </form>
 </div>
+
+    </body>
+</html>

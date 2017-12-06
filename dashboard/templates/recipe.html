@@ -24,41 +24,24 @@ ol {
         <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
             <div class="uk-background-cover" style="background-image: url('/static/images/pasta.jpg');" uk-height-viewport></div>
             <div class="uk-padding-large">
-                 <h4><p>White Pasta</p></h4>
+                 <h4><p>{{ recipe_title }}</p></h4>
   <h4>Description</h4>
-    <p>Pasta is typically a noodle made from an unleavened dough of a durum wheat flour mixed with water or eggs and formed into sheets or various shapes, then cooked by boiling or baking.</p>
+    <p>{{ recipe_description }}</p>
   <h4>Time</h4>
-    <p>25 minutes</p>
+    <p>{{ recipe_time }}</p>
   <h4>Serves</h4>
-    <p>3</p>
+    <p>{{ recipe_serves }}</p>
     <h4>Ingredients</h4>
         <ol>
-            <li> ¾ cup pasta</li>
-            <li> 1 small carrot, peeled and chopped fine</li>
-            <li> ⅓ cup sweet corn kernels, boiled</li>
-            <li> ½ green bell pepper, chopped fine</li>
-            <li> ½ red bell pepper,chopped fine</li>
-            <li> ½ tablespoon butter</li>
-            <li> For white sauce</li>
-            <li> 1½ tablespoons butter</li>
-            <li> 1 tablespoon maida/ all purpose flour</li>
-            <li> 1¼ cup milk, boiled and cooled</li>
-            <li> ½ teaspoon pepper powder</li>
-            <li> ¼ teaspoon dried oregano or basil or thyme</li>
-            <li> ½ teaspoon chilli flakes</li>
-            <li>Salt</li>
+            {{ recipe_ingredients_display }}
         </ol>
     <h4>Directions</h4>
         <ol>
-            <li>Boil the pasta and set aside.</li>
-            <li>Heat ½ tablespoon butter in a pan and saute the chopped vegetables. Remove to a plate.</li>
-            <li>Add 1½ tablespoons butter in the same pan and add maida/flour. Whisk very well.</li>
-            <li>Add boiled milk and mix well. Whisk very well in low flame to avoid lumps.</li>
-            <li>Once the sauce starts to thicken, add salt, pepper powder, chilli flakes and dried herbs. Mix well.</li>
-            <li>Cook further in low flame till the sauce thickens and turns smooth.</li>
-            <li>Add sauteed veggies and mix well.</li>
-            <li>Add boiled pasta and mix well.</li>
-            <li>Serve white sauce pasta hot.</li>
+            {% for d in direction %}
+                <li>{{ d }}</li>
+                <br/>
+            {% endfor %}
+
         </ol>
                  </div>
         </div>

@@ -20,7 +20,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 from dashboard.views import Dashboard, UserSignup, RecipeAdmin, Recipe, Login, Pantry, getRecipe, \
-    MainController, UserProfile, AvaRecipe
+    MainController, UserProfile, AvaRecipe,RecipeTemplate
 
 
 urlpatterns = [
@@ -44,7 +44,7 @@ urlpatterns = [
 
     url(r'^recipe-admin/$', RecipeAdmin.as_view(), name='recipe_add'),
 
-
+    url(r'^recipe/(?P<recipe_id>[0-9]+)/$', RecipeTemplate.as_view(), name='recipe_add'),
 
 ]
 

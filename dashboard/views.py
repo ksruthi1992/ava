@@ -86,6 +86,30 @@ class Dashboard(TemplateView):
 class RecipeAdmin(TemplateView):
     template_name = "recipe-admin.html"
 
+class RecipeTemplate(TemplateView):
+    template_name = "recipe.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(RecipeTemplate, self).get_context_data(**kwargs)
+        print self.kwargs
+        recipe_id = self.kwargs.get('recipe_id')
+        recipe = Recipe.objects.get(id=recipe_id)
+        context['recipe_title'] = recipe.title
+        context['recipe_description'] = recipe.description
+        context['recipe_time'] = recipe.time
+        context['recipe_serves'] = recipe.serves
+        context['recipe_ingredients_display'] = recipe.ingredients_display
+        context['direction'] = []
+        recipe_directions = Recipe_Direction.objects.filter(recipe_id=recipe_id)
+        direction_ids = []
+        for recipe_direction in recipe_directions:
+            direction_ids.append(recipe_direction.direction_id)
+
+        for i in range(len(direction_ids)):
+            context['direction'].append(Direction.objects.get(id= direction_ids[i]).description)
+
+        return context
+
 class UserProfile(APIView):
 
     def get(self, request, *args, **kwargs):

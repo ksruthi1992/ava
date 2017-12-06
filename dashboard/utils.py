@@ -70,7 +70,7 @@ def fetch_recipes(request, user_query, request_count):
         user_type = USER_INFO_GUEST
         pass
 
-    message = ""
+    message = "How about these-"
 
     # if guest_user
     if user_type == USER_INFO_GUEST:
@@ -85,16 +85,19 @@ def fetch_recipes(request, user_query, request_count):
             recipes = Recipe.objects.annotate(rank=SearchRank(vector, query)).order_by('-rank')[:5]
 
             # recipes = Recipe.objects.filter(recipe_ingredients__search=user_ingredients)
-            recipe_results = {}
+            recipe_results = []
             rank_count = 1
             for recipe in recipes:
                 print str(recipe.rank) + "    " + recipe.title
 
-                recipe_results[rank_count] = {"rank": recipe.rank, "title": recipe.title,
-                                              "recipe_image": recipe.featured_image}
+                recipe_results.append(
+                    {"title": recipe.title, "recipe_image": recipe.featured_image, "recipe_id": recipe.id,
+                     "rank": recipe.rank})
                 rank_count += 1
 
             elements = {
+                "action": "search_result",
+                "user-query": user_query,
                 "options": recipe_results
             }
         except Exception as e:
@@ -125,13 +128,16 @@ def fetch_recipes(request, user_query, request_count):
             recipes = Recipe.objects.annotate(rank=SearchRank(vector, query)).order_by('-rank')[:5]
 
             # recipes = Recipe.objects.filter(recipe_ingredients__search=user_ingredients)
-            recipe_results = {}
+            recipe_results = []
 
             for recipe in recipes:
                 print recipe.rank
-                recipe_results[recipe.rank] = {"title": recipe.title, "recipe_image": recipe.featured_image}
+                recipe_results.append({"title": recipe.title, "recipe_image": recipe.featured_image, "recipe_id":recipe.id, "rank":recipe.rank})
 
+            message = "How about these-"
             elements = {
+                "action":"search_result",
+                "user-query":user_query,
                 "options": recipe_results
             }
         except Exception as e:
