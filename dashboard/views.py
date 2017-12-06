@@ -468,7 +468,7 @@ class UserSignup(APIView):
                 "user_name": user.username,
                 "user_image": user.profile_pic
             }
-            send_welcome_mail(user)
+            # send_welcome_mail(user)
             response = prepare_res(ava_response=message, request_count = request_count, elements=element)
             return Response(response, status= status.HTTP_200_OK)
 
