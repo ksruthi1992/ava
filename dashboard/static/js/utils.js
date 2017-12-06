@@ -175,8 +175,14 @@ function set_user_query(query) {
 function remove_login() {
     $('#btn-login').hide();
 }
+
+function clear_user_query() {
+    $('#user-query').html("");
+}
+
 function set_ava_board(element){
     var action = element.action;
+    clear_user_query();
     switch (action){
         case 'login':
             $('#ava_board').html(login_form);

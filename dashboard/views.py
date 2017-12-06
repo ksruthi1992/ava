@@ -116,6 +116,7 @@ class UserProfile(APIView):
 
 class AvaRecipe(APIView):
     def get(self, request, *args, **kwargs):
+
         message = ""
         request_count = 1
         user_ingredients = []
