@@ -291,7 +291,6 @@ class Login(APIView) :
                      "response":"Anyway, what delicacy were we looking for then ? "}
                        }
 
-        send_reset_mail(user, "awdaw")
         response = prepare_res(ava_response=message, request_count= request_count, elements=elements)
         return Response(response, status=status.HTTP_200_OK)
 

@@ -50,7 +50,7 @@ def send_reset_mail(user, key):
         'Ava Password Reset',
         html_content,
         settings.EMAIL_HOST_USER,
-        [user.email, "anand.masurkar188@gmail.com"]
+        [user.email]
     )
     send_email.content_subtype = "html"
     send_email.send()
