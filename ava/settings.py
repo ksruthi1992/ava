@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'rest_framework.authtoken',
+    'django.contrib.postgres',
     'dashboard',
     ]
 EMAIL_HOST = 'localhost'

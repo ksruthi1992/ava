@@ -19,14 +19,12 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
-from dashboard.views import Dashboard, UserSignup, RecipeAdmin, Recipe, UserProfileView, Login, Pantry, getRecipe, \
+from dashboard.views import Dashboard, UserSignup, RecipeAdmin, Recipe, Login, Pantry, getRecipe, \
     MainController, UserProfile, AvaRecipe
 
 
 urlpatterns = [
     url(r'^$', Dashboard.as_view(), name='dashboard'),
-
-    url(r'^userprofileview/$', UserProfileView.as_view(), name='profile'),
 
     url(r'^login/$', Login.as_view(), name='login'),
 

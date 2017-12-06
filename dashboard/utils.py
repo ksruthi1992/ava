@@ -55,6 +55,21 @@ def send_reset_mail(user, key):
     send_email.content_subtype = "html"
     send_email.send()
 
+
+def send_welcome_mail(user):
+
+    html_template = get_template('password_reset_email_template.html')
+    content_passed_to_template = ({'username': user.username})
+    html_content = html_template.render(content_passed_to_template)
+    send_email = EmailMessage(
+        'Welcome to Ava!',
+        html_content,
+        settings.EMAIL_HOST_USER,
+        [user.email]
+    )
+    send_email.content_subtype = "html"
+    send_email.send()
+
 def check_parameters(req_parameters, request_data):
     message = "Good to go!"
     element = {}

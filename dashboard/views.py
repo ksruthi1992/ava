@@ -6,6 +6,7 @@ import json
 import re
 
 import numpy
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.shortcuts import render
 from django.db import connection
 
@@ -89,12 +90,15 @@ class UserProfile(APIView):
 
     def get(self, request, *args, **kwargs):
         user_id = int(self.kwargs['user_id'])
-        token_user = get_token_user_from_request(request)
-        print token_user.username
+        try:
+            token_user = get_token_user_from_request(request)
+            print token_user.username
 
-        user = User.objects.get(id=user_id)
+            user = User.objects.get(id=user_id)
 
-        if token_user != user:
+            if token_user != user:
+                raise Exception
+        except:
             response = prepare_response_not_auth(request.data)
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
@@ -105,6 +109,7 @@ class UserProfile(APIView):
             "email":user.email,
             "first_name":user.first_name,
             "last_name":user.last_name,
+            "user-image":user.profile_pic
         }
 
         response = prepare_res(ava_response=message,request_count=request_count ,elements=elements )
@@ -143,28 +148,96 @@ class UserProfile(APIView):
 
 class AvaRecipe(APIView):
     def get(self, request, *args, **kwargs):
+        req_parameters = ["user-query"]
+        print request.GET['user-query']
+        param_check = check_parameters(req_parameters, request.GET)
+
+        if param_check.status_code != 200:
+            return param_check
+
+        user_query = request.GET['user-query']
+
+        try:
+            token_user = get_token_user_from_request(request)
+            if not token_user:
+                raise Exception
+            user_type = USER_INFO_REGISTERED
+            user_id = token_user.id
+
+        except:
+            # guest user
+            user_type=USER_INFO_GUEST
+            pass
+
 
         message = ""
-        request_count = 1
-        decoded_user_ingredients = [1,4,5]
+        request_count = check_and_get_req_count(request.data)
 
-        # user_ingredients = Pantry.objects.filter(user_id=user_id)
+        # if guest_user
+        if user_type == USER_INFO_GUEST:
+            print 'fse'
+            try:
+                # search algorithm
+                vector = SearchVector('ingredients_display', weight='C') + SearchVector('title',
+                                                                                        weight='A') + SearchVector(
+                    'description', weight='B')
+                query = SearchQuery(user_query, 'A')
 
-        recipes = Recipe.objects.all()
-        hashids = Hashids()
+                recipes = Recipe.objects.annotate(rank=SearchRank(vector, query)).order_by('-rank')[:5]
 
-        for recipe in recipes:
-            encoded_ingredients = recipe.encoded_recipe_ingredients
-            decoded_ingredients_tuple = hashids.decode(encoded_ingredients)
-            decoded_ingredients_list = list(decoded_ingredients_tuple)
-            matching_ingredients_score = numpy.intersect1d(decoded_user_ingredients, decoded_ingredients_list).size
+                # recipes = Recipe.objects.filter(recipe_ingredients__search=user_ingredients)
+                recipe_results = {}
+                rank_count = 1
+                for recipe in recipes:
+                    print str(recipe.rank) + "    " + recipe.title
+
+                    recipe_results[rank_count] = {"rank":recipe.rank,"title": recipe.title, "recipe_image": recipe.featured_image}
+                    rank_count += 1
+
+                elements = {
+                    "options": recipe_results
+                }
+            except Exception as e:
+                message = "Oops! " + e.message
+                elements = {}
+
+        else:
+            # if user_logged_in
+            try:
+                # user_ingredients = Pantry.objects.filter(user_id=user_id)
+                user_ingredients_string = Pantry.objects.get(user_id=user_id).pantry_ingredients
+                user_ingredients = eval(user_ingredients_string)
+                # user_ingredients_string = str(user_ingredients)
+                ingredients = []
+                ingredients_string = ""
+                for i in user_ingredients:
+                    ingredient = Ingredient.objects.get(id=i)
+                    ingredients_string += " "
+                    ingredients_string += ingredient.name
+                    ingredients.append(ingredient.name)
+
+                # search algorithm
+                vector = SearchVector('ingredients_display', weight='C') + SearchVector('title', weight='A') + SearchVector(
+                    'description', weight='B')
+                query = SearchQuery(user_query, 'A') | SearchQuery(ingredients_string, 'C')
+
+                recipes = Recipe.objects.annotate(rank=SearchRank(vector, query)).order_by('-rank')[:5]
 
 
+                # recipes = Recipe.objects.filter(recipe_ingredients__search=user_ingredients)
+                recipe_results = {}
 
-        elements = {
-            "ingredients": user_ingredients
-        }
+                for recipe in recipes:
+                    print recipe.rank
+                    recipe_results[recipe.rank] = {"title": recipe.title, "recipe_image":recipe.featured_image}
 
+
+                elements = {
+                    "options": recipe_results
+                }
+            except Exception as e:
+                message = "Oops! "+e.message
+                elements = {}
         response = prepare_res(ava_response=message,request_count=request_count,elements=elements)
         return Response(response, status=status.HTTP_200_OK)
 
@@ -397,89 +470,6 @@ class UserSignup(APIView):
             }
             response = prepare_res(ava_response=message, request_count = request_count, elements=element)
             return Response(response, status= status.HTTP_200_OK)
-
-class UserProfileView(APIView):
-    def get(self, request):
-        self.user = request.user
-        self.userdetails = User.objects.get(username=self.user)
-        if (self.userdetails):
-            for details in self.userdetails:
-                print details.firstname
-                print details.lastname
-                print details.email
-                print details.username
-                print details.password
-                print details.dob
-
-class ContactView(APIView) :
-    def post(self,request, *args, **kwargs):
-        Email = request.data["email"]
-        Username = request.data["username"]
-        Recipe = request.data ["recipe"]
-        Message = request.data ["message"]
-        flag = 0
-        try:
-            User.objects.get(username = username)
-            res = "username does not exists"
-        except:
-            res = "username exist"
-            flag += 1
-        try:
-            User.objects.get(email = email)
-            res = "email already exists"
-        except:
-            res = "email does not exist"
-            flag += 1
-        if flag == 2 :
-            User.objects.create(Email = email, Username = username, Recipe = recipe, Message = message).save()
-            token = Token.objects.create(user= user)
-            res = "Feedback Sent"
-
-        res = {"message":res}
-        return Response (res)
-
-class UserProfileView(APIView):
-    def get(self, request):
-        self.user = request.user
-        self.userdetails = User.objects.get(username=self.user)
-        if (self.userdetails):
-            for details in self.userdetails:
-                print details.firstname
-                print details.lastname
-                print details.email
-                print details.username
-                print details.password
-                print details.dob
-
-class Contact(APIView) :
-    def post(self,request, *args, **kwargs):
-        Username = request.data["Username"]
-        Email = request.data["email"]
-        Message = request.data["message"]
-        Recipe = request.data["recipe"]
-
-        flag = 0
-        try:
-            User.objects.get(username = username)
-            res = "Username does not exist"
-        except:
-            res = "Correct Username"
-            flag += 1
-        try:
-            User.objects.get(email = email)
-            res = "email already exists"
-        except:
-            res = "email does not exist"
-            flag += 1
-        if flag == 2 :
-            User.objects.create(Email = email, Username = username, Message = message, Recipe = recipe).save()
-            user = User.objects.get(username=username, Email = email)
-            token = Token.objects.create(user= user)
-            res = "Feedback Sent"
-
-        res = {"message":res}
-        return Response (res)
-
 
 
 class Pantry(APIView):
