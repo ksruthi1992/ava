@@ -17,7 +17,7 @@ Including another URLconf
 """import patterns as patterns"""
 from django.conf.urls import url, include
 from django.contrib import admin
-
+from django.contrib.auth import views as auth_views
 
 from dashboard.views import Dashboard, UserSignup, RecipeAdmin, Recipe, UserProfileView, Login, Pantry, getRecipe, \
     MainController, UserProfile, AvaRecipe
@@ -44,7 +44,10 @@ urlpatterns = [
 
     url(r'^ava-recipe/$', AvaRecipe.as_view(), name='recipe'),
 
-    url(r'^recipe-admin/$', RecipeAdmin.as_view(), name='recipe_add')
+    url(r'^recipe-admin/$', RecipeAdmin.as_view(), name='recipe_add'),
+
+
+
+]
 
     # url(r'^<slug>$',TemplateLoader.as_view(), name='template_loader')
-]

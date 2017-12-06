@@ -31,7 +31,7 @@ var login_form = "<div class=\"horizontal uk-nav-center login-form\" >\n" +
     "\n" +
     "        <div class=\"uk-margin uk-nav-center\">\n" +
     "            <div class=\"uk-inline\">\n" +
-    "                <button id='btn_signup' class=\"uk-button uk-button-default\">Login</button>\n" +
+    "                <button class=\"uk-button uk-button-default\">Login</button>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "\n" +

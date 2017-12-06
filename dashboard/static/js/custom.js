@@ -4,24 +4,6 @@ $(document).ready(function() {
     $("#pantry").click(function () {
      // alert('here in');
 
-
-
-    // document.getElementById('js-modal-prompt').onclick = function(e){
-    //     e.preventDefault();
-    //
-    //     //var wrapper         = $("#parent");
-    //     //wrapper.append(' <div class="uk-margin"><input class="uk-input" type="text" placeholder="Input"></div>');
-    //     // UIkit.util.on('#js-modal-prompt', 'click', function (e) {
-    //     //    e.preventDefault();
-    //     //    e.target.blur();
-    //     //    UIkit.modal.prompt('Add Your Ingredient:', '').then(function (name) {
-    //     //        console.log('Prompted:', name)
-    //     //    });
-    //    });
-
-
-
-   // }
         $(function () {
             $('.button-checkbox').each(function () {
                 //Do stuff when clicked
@@ -40,14 +22,18 @@ $(document).ready(function() {
                         }
                     };
 
-                // Event Handlers
-                $button.on('click', function () {
-                    $checkbox.prop('checked', !$checkbox.is(':checked'));
-                    $checkbox.triggerHandler('change');
-                    updateDisplay();
 
-                });
-                
+                    // Event Handlers
+                    $button.on('click', function () {
+
+                              $checkbox.prop('checked', !$checkbox.is(':checked'));
+                              $checkbox.triggerHandler('change');
+                              updateDisplay1();
+
+
+
+                    });
+
                 $checkbox.on('change', function () {
                     updateDisplay();
 
@@ -104,9 +90,9 @@ document.getElementById('btntest').onclick = function(e) {
 
     var selchb = getSelectedChbox(this.form);     // gets the array returned by getSelectedChbox()
 
-    alert(selchb);
+    console.log(selchb)
 
-            var wrapper1         = $("#parent");
+            var wrapper1= $("#parent");
         wrapper1.empty();
     $.ajax({
         url: '/pantry/',
@@ -131,10 +117,16 @@ function getSelectedChbox(frm) {
   //var inpfields = frm.getElementsByTagName('input');
   //var nr_inpfields = inpfields.length;
 
-  $.each($("input[type='checkbox']:checked"), function(){
+  // $.each($("button[type='button']"), function(){
+  //               selchbox.push($(this).val());
+  //
+  //           });
+
+    $.each($("input[type='checkbox']:checked"), function(){
                 selchbox.push($(this).val());
 
             });
+
 
   // for(var i=0; i<nr_inpfields; i++) {
   //   if(inpfields[i].type == 'checkbox' && inpfields[i].checked == true) selchbox.push(inpfields[i].val());

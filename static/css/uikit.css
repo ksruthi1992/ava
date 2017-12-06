@@ -2352,7 +2352,9 @@ select.uk-form-width-xsmall {
   /* Horizontal */
   .uk-grid {
     margin-left: -40px;
+
   }
+
   .uk-grid > * {
     padding-left: 40px;
   }
@@ -6915,6 +6917,7 @@ ul.uk-nav-sub {
 /* Auto */
 .uk-width-auto {
   width: auto;
+  margin-bottom: 20px;
 }
 /* Expand */
 .uk-width-expand {

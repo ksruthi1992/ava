@@ -77,7 +77,7 @@
     <div class="main_wrapper">
 
         {#  AVA dialog    #}
-        <div class="uk-card uk-text-center uk-card-header uk-card-body uk-width-1-2\@m ava-dialog">
+        <div class="uk-card uk-text-center uk-card-header uk-card-body uk-width-auto\@m ava-dialog">
             <h3 class="uk-card-title"><span id="ava_response"></span></h3>
         </div>
 
@@ -89,7 +89,7 @@
 
         {#  user dialog    #}
 
-        <div class="uk-card uk-text-center uk-card-header uk-card-body uk-width-1-2\@m">
+        <div class="uk-card uk-text-center uk-card-header uk-card-body uk-width-auto\@m">
             <h3 class="uk-card-title user-dialog" id="user-query"></h3>
         </div>
 
@@ -113,86 +113,179 @@
     <div class="uk-offcanvas-content">
         <div id="offcanvas-pantry" uk-offcanvas="mode: reveal; overlay: true; flip: true">
             <div class="uk-offcanvas-bar">
-
-                <h3>Pantry</h3>
 <form>
+                <h3>Pantry</h3>
+
                 <ul uk-accordion>
                     <li>
-                        <h3 class="uk-accordion-title">Veggies</h3>
+                        <h3 class="uk-accordion-title">Vegtables</h3>
                         <div class="uk-accordion-content">
                             <div class="col-md-12" id="">
 
 
-                                <div class="uk-grid">
-
-                                <div class="uk-width-1-2" >
+                                <div class="uk-width-auto" >
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default " data-color="success" name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default " data-color="success" name="vegetables" value="garlic" id="garlic"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Garlic
+                                <input type="checkbox" value="garlic" class="hidden" >
+                                    </button>
                                 </span>
                                 </div>
 
-                                <div class="uk-width-1-2">
+
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default " data-color="success"name="vegetable" value="tomato" id="tomato"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Tomato </button>
-                                <input type="checkbox" class="hidden">
+                                <button type="button" class="btn btn-default " data-color="success"name="vegetables" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
+                                <input type="checkbox" value="onion" class="hidden">
                                 </span>
                                 </div>
 
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="tomato" id="tomato"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Tomato </button>
+                                <input type="checkbox" value="tomato" class="hidden" >
+                                </span>
                                 </div>
 
-                                <div class="uk-grid">
-
-                                <div class="uk-width-1-2">
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
                                 <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="potato" id="potato"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Potato </button>
-                                <input type="checkbox" class="hidden" >
+                                <input type="checkbox" value="potato" class="hidden" >
                                 </span>
                                 </div>
 
-                                <div class="uk-width-1-2">
+
+
+
+
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="cabbage" id="cabbage"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Cabbage </button>
+                                <input type="checkbox" value="cabbage" class="hidden" >
                                 </span>
                                 </div>
 
-                                </div>
-
-                                <div class="uk-grid">
-
-                                <div class="uk-width-1-2">
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="cucumber" id="cucumber"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Cucumber</button>
+                                <input type="checkbox" value="cucumber" class="hidden" >
                                 </span>
                                 </div>
 
-                                <div class="uk-width-1-2">
+
+
+
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="spinach" id="spinach"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Spinach</button>
+                                <input type="checkbox"  value="spinach"  class="hidden">
                                 </span>
                                 </div>
 
-                                </div>
-
-                                <div class="uk-grid">
-
-                                <div class="uk-width-1-2">
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
-                                <input type="checkbox" class="hidden">
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="green beans" id="green beans"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Green beans</button>
+                                <input type="checkbox" value="green beans" class="hidden" >
                                 </span>
                                 </div>
 
-                                <div class="uk-width-1-2">
+
+
+                                    <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="onion" id="onion"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Onion </button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="cauliflower" id="cauliflower"><i class="state-icon glyphicon glyphicon-unchecked"></i> Cauliflower</button>
+                                <input type="checkbox" value="cauliflower" class="hidden" >
                                 </span>
                                 </div>
 
+                                    <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="green beans" id="green beans"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Peas</button>
+                                <input type="checkbox" value="green beans" class="hidden" >
+                                </span>
+                                </div>
+
+                                  <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="green beans" id="green beans"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Corn</button>
+                                <input type="checkbox" value="green beans" class="hidden" >
+                                </span>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="open">
+                        <h3 class="uk-accordion-title">Spices</h3>
+                        <div class="uk-accordion-content">
+                            <div class="col-md-12" id="">
+
+
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="red pepper flake" id="red pepper flake"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Red pepper flake</button>
+                                <input type="checkbox" value="red pepper flake" class="hidden" >
+                                </span>
+                                </div>
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="italian spice" id="italian spicer"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Italian spice</button>
+                                <input type="checkbox" value="italian spice" class="hidden" >
+                                </span>
+                                </div>
+
+
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="turmeric powder" id="turmeric powder"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Turmeric powder</button>
+                                <input type="checkbox" value="turmeric powder" class="hidden" >
+                                </span>
+                                </div>
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="Red chili powder" id="Red chili powder"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Red chili powder</button>
+                                <input type="checkbox" value="Red chili powder" class="hidden" >
+                                </span>
+                                </div>
+
+
+
+
+
+                               <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="garlic powder" id="garlic powder"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Garlic powder</button>
+                                <input type="checkbox" value="garlic powder" class="hidden" >
+                                </span>
+                                </div>
+
+                               <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="garam masala" id="garam masala"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Garam masala</button>
+                                <input type="checkbox" value="garam masala" class="hidden" >
+                                </span>
+                                </div>
+
+
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="coriander" id="coriander"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Coriander</button>
+                                <input type="checkbox" value="coriander" class="hidden" >
+                                </span>
+                                </div>
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="red birdseye chilli" id="red birdseye chilli"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Red birdseye chilli</button>
+                                <input type="checkbox" value="red birdseye chilli" class="hidden" >
+                                </span>
                                 </div>
 
 
@@ -210,83 +303,136 @@
                             <div class="col-md-12" id="">
 
 
-                                <div class="uk-grid">
 
-                                <div class="uk-width-1-2">
+
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="chicken breast" id="chicken breast"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; chicken breast</button>
+                                <input type="checkbox" value="chicken breast" class="hidden" >
                                 </span>
                                 </div>
 
-                                <div class="uk-width-1-2">
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default " data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden">
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="whole chicken" id="whole chicken"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Whole chicken</button>
+                                <input type="checkbox" value="whole chicken" class="hidden" >
                                 </span>
                                 </div>
 
-                                </div>
 
-                                <div class="uk-grid">
 
-                                <div class="uk-width-1-2">
+
+
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="red birdseye chilli" id="red birdseye chilli"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Red birdseye chilli</button>
+                                <input type="checkbox" value="red birdseye chilli" class="hidden" >
                                 </span>
                                 </div>
 
-                                <div class="uk-width-1-2">
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="ham" id="ham"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Ham</button>
+                                <input type="checkbox" value="ham" class="hidden" >
                                 </span>
                                 </div>
 
-                                </div>
 
-                                <div class="uk-grid">
 
-                                <div class="uk-width-1-2">
+
+
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="red birdseye chilli" id="red birdseye chilli"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Red birdseye chilli</button>
+                                <input type="checkbox" value="red birdseye chilli" class="hidden" >
                                 </span>
                                 </div>
 
-                                <div class="uk-width-1-2">
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success">
-                                <i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="sausage" id="sausage"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Sausage</button>
+                                <input type="checkbox" value="sausage" class="hidden" >
                                 </span>
                                 </div>
 
-                                </div>
 
-                                <div class="uk-grid">
+                            </div>
+                        </div>
+                    </li>
 
-                                <div class="uk-width-1-2">
+                    </li>
+
+                    <li class="open">
+                        <h3 class="uk-accordion-title">Fruits</h3>
+                        <div class="uk-accordion-content">
+                            <div class="col-md-12" id="">
+
+
+
+
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success">
-                                <i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="banana" id="banana"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Banana</button>
+                                <input type="checkbox" value="banana" class="hidden" >
                                 </span>
                                 </div>
 
-                                <div class="uk-width-1-2">
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="apple" id="apple"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Apple</button>
+                                <input type="checkbox" value="apple" class="hidden" >
                                 </span>
                                 </div>
 
+
+
+
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="strawberries" id="strawberries"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Strawberries</button>
+                                <input type="checkbox" value="strawberries" class="hidden" >
+                                </span>
+                                </div>
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="pear" id="pear"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Pear</button>
+                                <input type="checkbox" value="pear" class="hidden" >
+                                </span>
                                 </div>
 
 
 
 
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="lime" id="lime"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Lime</button>
+                                <input type="checkbox" value="lime" class="hidden" >
+                                </span>
+                                </div>
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="mango" id="mango"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Mango</button>
+                                <input type="checkbox" value="mango" class="hidden" >
+                                </span>
+                                </div>
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="orange" id="orange"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Orange</button>
+                                <input type="checkbox" value="orange" class="hidden" >
+                                </span>
+                                </div>
+
+                                <div class="uk-width-auto">
+                                <span class="button-checkbox" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="pineapple" id="pineapple"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Pineapple</button>
+                                <input type="checkbox" value="pineapple" class="hidden" >
+                                </span>
+                                </div>
 
 
                             </div>
@@ -294,91 +440,64 @@
                     </li>
 
                     <li class="open">
-                        <h3 class="uk-accordion-title">Veggies</h3>
+                        <h3 class="uk-accordion-title">Sauces</h3>
                         <div class="uk-accordion-content">
                             <div class="col-md-12" id="">
 
 
-                                <div class="uk-grid">
 
-                                <div class="uk-width-1-2">
+
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="tomato sauce" id="tomato sauce"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Tomato sauce</button>
+                                <input type="checkbox" value="tomato sauce" class="hidden" >
                                 </span>
                                 </div>
 
-                                <div class="uk-width-1-2">
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default " data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden">
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="pesto" id="pesto"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Pesto</button>
+                                <input type="checkbox" value="pesto" class="hidden" >
                                 </span>
                                 </div>
 
-                                </div>
 
-                                <div class="uk-grid">
 
-                                <div class="uk-width-1-2">
+
+
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="chicken gravy" id="chicken gravy"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Chicken gravy</button>
+                                <input type="checkbox" value="chicken gravy" class="hidden" >
                                 </span>
                                 </div>
 
-                                <div class="uk-width-1-2">
+                                <div class="uk-width-auto">
                                 <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
+                                <button type="button" class="btn btn-default pantry_item" data-color="success"name="vegetable" value="alfredo sauce" id="alfredo sauce"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; Alfredo sauce</button>
+                                <input type="checkbox" value="alfredo sauce" class="hidden" >
                                 </span>
                                 </div>
-
-                                </div>
-
-                                <div class="uk-grid">
-
-                                <div class="uk-width-1-2">
-                                <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
-                                </span>
-                                </div>
-
-                                <div class="uk-width-1-2">
-                                <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
-                                </span>
-                                </div>
-
-                                </div>
-
-                                <div class="uk-grid">
-
-                                <div class="uk-width-1-2">
-                                <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden">
-                                </span>
-                                </div>
-
-                                <div class="uk-width-1-2">
-                                <span class="button-checkbox" >
-                                <button type="button" class="btn btn-default" data-color="success"><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp;Primary</button>
-                                <input type="checkbox" class="hidden" >
-                                </span>
-                                </div>
-
-                                </div>
-
-
-
 
 
 
                             </div>
                         </div>
                     </li>
+<!-- custom ingredients at run time -->
+                    <li class="open " id="custom_ingredients">
+                        <h3 class="uk-accordion-title">Misc</h3>
+                        <div class="uk-accordion-content">
+                            <div class="col-md-12" id="insert_ingredients">
+
+
+
+
+                            </div>
+                        </div>
+
+
+
 
                 </ul>
 
@@ -386,11 +505,11 @@
 
                 <div class="uk-grid">
 
- <!--               <div class="uk-width-1-2">
+ <!--               <div class="uk-width-auto">
                 <button type="button" class="btn btn-info" data-color="info">SUBMIT</button>
                 </div>
 
-                <div class="uk-width-1-2">
+                <div class="uk-width-auto">
                 <button type="button" class="btn btn-info" data-color="info">ADD</button>
                 </div>
                 -->
@@ -404,12 +523,56 @@
             </div>
                    <div class="uk-width-1-2">
                 <div class="uk-inline">
-
-                <button class="uk-button uk-button-default" id="btn_add_ingredient">Add</button>
-
+                    <p uk-margin>
+                <!--<button class="uk-button uk-button-default" name="addIngredient" id="temp">Add</button> -->
+                <button id="btn_add_ingredient" class="uk-button uk-button-default"  name="addIngredient" >Add</button>
+                    </p>
                 </div>
             </div>
                 </div>
+
+    <script>
+
+
+
+
+       UIkit.util.on('#btn_add_ingredient', 'click', function (e) {
+
+           e.preventDefault();
+           e.target.blur();
+           UIkit.modal.prompt('Add your custom ingredient:', '').then(function (name) {
+
+               if (name == '' || name== null)
+               {
+                  console.log('Empty box')
+                   console.log('Empty ingredient')
+
+               }
+               else
+               {
+                   console.log('Prompted:', name);
+                   var extend = document.getElementById('insert_ingredients');
+                   console.log(extend.childElementCount);
+                   console.log(extend.childElementCount%2);
+
+
+                       $('#insert_ingredients').append('<div class="uk-width-auto">\n' +
+                           '                                <span class="button-checkbox" >\n' +
+                           '                                <button type="button" class="btn btn-default pantry_item" data-color="success" name="misc" value=' + name +' id=' + name +'><i class="state-icon glyphicon glyphicon-unchecked"></i>&nbsp; ' + name +'</button>\n' +
+                           '                                <input type="checkbox" value=' + name +' class = "hidden" >\n' +
+                           '                                </span>\n' +
+                           '                                </div>')
+
+
+
+
+               }
+
+           });
+       });
+
+
+    </script>
 
 
 
