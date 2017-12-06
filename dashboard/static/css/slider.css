@@ -23,6 +23,7 @@ html[dir="rtl"] .uk-slider > * {
   z-index: 0;
   /* 3 */
   touch-action: pan-y;
+
 }
 /*
  * 1. Reset list style without interfering with grid
@@ -85,6 +86,10 @@ html[dir="rtl"] .uk-slider > * {
  */
 .uk-slider img {
   pointer-events: none;
+    width: 300px;
+    height: 200px;
+
+
 }
 /* Modifier: `uk-slider-fullscreen`
  ========================================================================== */
