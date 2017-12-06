@@ -29,7 +29,7 @@ from dashboard.models import Command, SmallTalk, Recipe, User, Pantry, Ingredien
 
 
 from dashboard.utils import prepare_response, prepare_res, check_parameters, check_and_get_req_count, \
-    prepare_response_not_auth, get_token_user_from_request, send_reset_mail, send_welcome_mail
+    prepare_response_not_auth, get_token_user_from_request, send_reset_mail, send_welcome_mail, fetch_recipes
 
 from dashboard.utils import prepare_res
 
@@ -314,9 +314,9 @@ class MainController(APIView):
             pass
         response = {}
 
-        if "user_query" in request.data:
+        if "user-query" in request.data:
             #     perform search
-            user_query = request.data["user_query"]
+            user_query = request.data["user-query"]
 
             if user_query == 'signup':
                 ava_response = "I assure, it'll be our little secret! "
@@ -340,19 +340,9 @@ class MainController(APIView):
                 response = prepare_res(ava_response, request_count, element)
                 return Response(response, status=status.HTTP_200_OK)
 
-            ava_response = " How about these -"
-            element = {
-                "action":"search_result",
-                "user_query": "We are looking for: "+ user_query,
-                "options":[
-                    {"title":"Lasagne"},
-                    {"title":"Pastaawdawd"},
-                    {"title":"Pizza"}
-                ]
-            }
-            response =  prepare_res(ava_response, request_count,element)
-            return Response(response, status=status.HTTP_200_OK)
-
+            recipes_response = fetch_recipes(request, user_query, request_count)
+            return recipes_response
+        
         if request_count == 1 :
             ava_response = "Hello!<br> What are you hungry for, today? "
             element = {
@@ -539,13 +529,13 @@ class Pantry(APIView):
 
         #below code to update pantry items which are removed my user in user pantry i.e Pantry
 
-
-
-
-
-
-
         return Response("Pantry Saved", status=status.HTTP_200_OK)
+
+
+
+# class addIngredient(APIView):
+#     def post(self, request, *args, **kwargs):
+#
 
 class getRecipe(APIView) :
     def get(self, request, *args, **kwargs):

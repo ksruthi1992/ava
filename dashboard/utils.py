@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.contrib.sessions.backends.db import SessionStore
 from django.core.exceptions import ValidationError
 from django.core.mail import EmailMessage
@@ -10,7 +11,8 @@ from rest_framework.response import Response
 
 from ava import settings
 from constants import *
-from dashboard.models import User
+from dashboard.models import User, Recipe, Pantry, Ingredient
+
 
 def prepare_res(ava_response, request_count, elements):
     response = {"ava_response":ava_response,
@@ -55,6 +57,88 @@ def send_reset_mail(user, key):
     send_email.content_subtype = "html"
     send_email.send()
 
+def fetch_recipes(request, user_query, request_count):
+    try:
+        token_user = get_token_user_from_request(request)
+        if not token_user:
+            raise Exception
+        user_type = USER_INFO_REGISTERED
+        user_id = token_user.id
+
+    except:
+        # guest user
+        user_type = USER_INFO_GUEST
+        pass
+
+    message = ""
+
+    # if guest_user
+    if user_type == USER_INFO_GUEST:
+        print 'fse'
+        try:
+            # search algorithm
+            vector = SearchVector('ingredients_display', weight='C') + SearchVector('title',
+                                                                                    weight='A') + SearchVector(
+                'description', weight='B')
+            query = SearchQuery(user_query, 'A')
+
+            recipes = Recipe.objects.annotate(rank=SearchRank(vector, query)).order_by('-rank')[:5]
+
+            # recipes = Recipe.objects.filter(recipe_ingredients__search=user_ingredients)
+            recipe_results = {}
+            rank_count = 1
+            for recipe in recipes:
+                print str(recipe.rank) + "    " + recipe.title
+
+                recipe_results[rank_count] = {"rank": recipe.rank, "title": recipe.title,
+                                              "recipe_image": recipe.featured_image}
+                rank_count += 1
+
+            elements = {
+                "options": recipe_results
+            }
+        except Exception as e:
+            message = "Oops! " + e.message
+            elements = {}
+
+    else:
+        # if user_logged_in
+        try:
+            # user_ingredients = Pantry.objects.filter(user_id=user_id)
+            user_ingredients_string = Pantry.objects.get(user_id=user_id).pantry_ingredients
+            user_ingredients = eval(user_ingredients_string)
+            # user_ingredients_string = str(user_ingredients)
+            ingredients = []
+            ingredients_string = ""
+            for i in user_ingredients:
+                ingredient = Ingredient.objects.get(id=i)
+                ingredients_string += " "
+                ingredients_string += ingredient.name
+                ingredients.append(ingredient.name)
+
+            # search algorithm
+            vector = SearchVector('ingredients_display', weight='C') + SearchVector('title',
+                                                                                    weight='A') + SearchVector(
+                'description', weight='B')
+            query = SearchQuery(user_query, 'A') | SearchQuery(ingredients_string, 'C')
+
+            recipes = Recipe.objects.annotate(rank=SearchRank(vector, query)).order_by('-rank')[:5]
+
+            # recipes = Recipe.objects.filter(recipe_ingredients__search=user_ingredients)
+            recipe_results = {}
+
+            for recipe in recipes:
+                print recipe.rank
+                recipe_results[recipe.rank] = {"title": recipe.title, "recipe_image": recipe.featured_image}
+
+            elements = {
+                "options": recipe_results
+            }
+        except Exception as e:
+            message = "Oops! " + e.message
+            elements = {}
+    response = prepare_res(ava_response=message, request_count=request_count, elements=elements)
+    return Response(response, status=status.HTTP_200_OK)
 
 def send_welcome_mail(user):
 

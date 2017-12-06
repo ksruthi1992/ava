@@ -17,7 +17,7 @@ function carousel(items) {
 $(document).on("submit", "#searchform", function (e) {
             e.preventDefault();
             var user_query = $('#user-query').val();
-            var request_data = {"user_query":user_query};
+            var request_data = {"user-query":user_query};
             $.ajax({
                 type: "POST",
                 url: "/query/",
@@ -96,7 +96,12 @@ $(document).on("click", "#search", function (e) {
 
 $(document).on("click", "#btn-login", function (e) {
         UIkit.offcanvas('#offcanvas-primary-nav').hide();
-        login()
+        login();
+        });
+
+$(document).on("click", "#btn-bookmarks", function (e) {
+        UIkit.offcanvas('#offcanvas-primary-nav').hide();
+        bookmarks();
         });
 
 $(document).on("click", "#btn-signup", function (e) {

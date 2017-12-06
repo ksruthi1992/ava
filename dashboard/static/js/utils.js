@@ -60,6 +60,7 @@ function set_ava_response(ava_response) {
 
 function set_user_image_dashboard(user_image) {
     remove_login();
+    remove_register();
     $('#nav-user').html(nav_user);
     if(user_image){
         $('#nav-user-image').attr("src",user_image);
@@ -188,6 +189,16 @@ function set_user_query(query) {
 
 function remove_login() {
     $('#btn-login').hide();
+}
+
+function remove_register() {
+    $('#btn-signup').hide();
+}
+
+function bookmarks() {
+    set_ava_response('Feature coming soon!');
+    var element = {"action":"search"}
+    set_ava_board(element)
 }
 
 function clear_user_query() {

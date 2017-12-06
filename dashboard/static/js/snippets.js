@@ -8,7 +8,7 @@ var simple_form = "<div>\n" +
 var search_form = "<div class=\"uk-margin-top horizontal uk-nav-center\">\n" +
             "    <form class=\"uk-search uk-search-default\" id=\"searchform\">\n" +
             "        <span class=\"uk-search-icon-flip\" uk-search-icon></span>\n" +
-            "        <input class=\"uk-input\" type=\"search\" placeholder=\"eg. spicy lasagne\" id='user-query' autofocus>\n" +
+            "        <input class=\"uk-input\" type=\"search\" placeholder=\"eg. chicken\" id='user-query' autofocus>\n" +
             "    </form>\n" +
             "</div>";
 
