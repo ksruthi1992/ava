@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 import ast
 import json
 import re
+
+import numpy
 from django.shortcuts import render
 from django.db import connection
 
@@ -120,9 +122,20 @@ class AvaRecipe(APIView):
 
         message = ""
         request_count = 1
-        user_ingredients = []
+        decoded_user_ingredients = [1,4,5]
 
         # user_ingredients = Pantry.objects.filter(user_id=user_id)
+
+        recipes = Recipe.objects.all()
+        hashids = Hashids()
+
+        for recipe in recipes:
+            encoded_ingredients = recipe.encoded_recipe_ingredients
+            decoded_ingredients_tuple = hashids.decode(encoded_ingredients)
+            decoded_ingredients_list = list(decoded_ingredients_tuple)
+            matching_ingredients_score = numpy.intersect1d(decoded_user_ingredients, decoded_ingredients_list).size
+
+
 
         elements = {
             "ingredients": user_ingredients
@@ -152,7 +165,6 @@ class AvaRecipe(APIView):
                                        serves= request.data['serves'])
 
         try:
-            hashids = Hashids()
             ingredients_list = []
             for ingredient in ingredients:
                 ingredient = ingredient.lower()
@@ -160,9 +172,8 @@ class AvaRecipe(APIView):
                 Recipe_Ingredient.objects.create(recipe_id=recipe.id, ingredient_id=ing_obj.id).save()
                 ingredients_list.append(ing_obj.id)
 
-            ingredients_tuple = tuple(ingredients_list)
-            hashid_recipe_ingredients = hashids.encode(*ingredients_tuple)
-            recipe.encoded_recipe_ingredients = hashid_recipe_ingredients
+            ingredients_list_str = str(ingredients_list)
+            recipe.recipe_ingredients = ingredients_list_str
             recipe.save()
 
             # directions

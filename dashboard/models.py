@@ -29,7 +29,7 @@ class Recipe(models.Model):
     serves = models.CharField(max_length=10)
     keywords = models.CharField(max_length=50)
     is_removed = models.BooleanField(default=False)
-    encoded_recipe_ingredients = models.TextField(default='')
+    recipe_ingredients = models.TextField(default='')
 
 class Recipe_Ingredient(models.Model):
     recipe = models.ForeignKey('Recipe')
@@ -48,7 +48,7 @@ class Ingredient(models.Model):
 
 class Pantry(models.Model):
     user = models.ForeignKey('User')
-    encoded_pantry_ingredients = models.TextField(default='')
+    pantry_ingredients = models.TextField(default='')
     is_removed = models.BooleanField(default=False)
 
 class Feedback(models.Model):

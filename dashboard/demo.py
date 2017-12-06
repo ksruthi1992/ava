@@ -33,6 +33,9 @@ import numpy as np
 #
 # print es.get(index="my-index", doc_type="test-type", id=42)['_source']['any']
 
+# list = [1,4,2]
+# s = str(list)
+
 all_recipe = Recipe.objects.all()
 hashids = Hashids()
 for recipe in all_recipe:
@@ -43,10 +46,10 @@ for recipe in all_recipe:
     for recipe_ing in recipe_ings:
         recipe_ings_list.append(recipe_ing.ingredient_id)
 
-    recipe_ings_tuple = tuple(recipe_ings_list)
-    hashid_recipe = hashids.encode(*recipe_ings_tuple)
-    print hashid_recipe
-    recipe.encoded_recipe_ingredients = hashid_recipe
+    recipe_list = str(recipe_ings_list)
+    # recipe_ings_tuple = tuple(recipe_ings_list)
+    # hashid_recipe = hashids.encode(*recipe_ings_tuple)
+    recipe.recipe_ingredients = recipe_list
     recipe.save()
 
 #
@@ -62,5 +65,5 @@ for recipe in all_recipe:
 # hashid_recipe = hashids.encode(*recipe_ings_tuple)
 # print hashid_user
 # print hashid_recipe
-
+# ints = hashids.decode('xoz') # (456,)
 # ints_list =  list(ints)
