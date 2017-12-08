@@ -89,23 +89,28 @@ document.getElementById('btntest').onclick = function(e) {
     e.preventDefault();
 
     var selchb = getSelectedChbox(this.form);     // gets the array returned by getSelectedChbox()
-
     console.log(selchb)
 
             var wrapper1= $("#parent");
         wrapper1.empty();
-    $.ajax({
-        url: '/pantry/',
-        type: 'POST',
-        data: {
-            //vegetable: $('#tomato').val(),
-            pantry_items : selchb
-        },
-        success: function (msg) {
-            alert(msg);
-
-        }
-    })
+    if (is_user_logged_in()) {
+        var user_id = get_user_id();
+        var user_token = get_user_token();
+        $.ajax({
+            beforeSend: function (req) {
+                req.setRequestHeader('Authorization','Token '+ user_token);
+            },
+            url: '/pantry/' + user_id + '/',
+            type: 'POST',
+            data: {
+                //vegetable: $('#tomato').val(),
+                pantry_items: selchb
+            },
+            success: function (msg) {
+                alert(msg);
+            }
+        })
+    }
 
 }
 
