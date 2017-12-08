@@ -23,21 +23,13 @@
         <script>
              var default_user_image = "https://d30y9cdsu7xlg0.cloudfront.net/png/212110-200.png";
         </script>
-        <script src={% static 'js/uk.js' %}></script>
-        <script src={% static 'js/slider.js' %}></script>
-        <script src={% static 'js/dashboard.js' %}></script>
-        <script src={% static 'js/utils.js' %}></script>
-        <script src={% static 'js/snippets.js' %}></script>
-        <script src={% static 'js/search-query.js' %}></script>
-        <script src={% static 'js/custom.js' %}></script>
-        <script src="uikit/dist/js/uikit-icons.min.js"></script>
+        <script src={% static 'js/recipepage.js' %}></script>
     </head>
 <body>
-        <a class="uk-button uk-button-default" href="#modal-full" uk-toggle>Open</a>
 
 <div id="modal-full" class="uk-modal-full" uk-modal>
     <div class="uk-modal-dialog">
-        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+        <a class="uk-modal-close-full uk-close-large" id="modal-close" type="button" uk-close></a>
         <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
             <div class="uk-background-cover" style="background-image: url('/static/images/pasta.jpg');" uk-height-viewport></div>
             <div class="uk-padding-large">

@@ -87,7 +87,7 @@ class RecipeAdmin(TemplateView):
     template_name = "recipe-admin.html"
 
 class RecipeTemplate(TemplateView):
-    template_name = "recipe.html"
+    template_name = "recipeModal.html"
 
     def get_context_data(self, **kwargs):
         context = super(RecipeTemplate, self).get_context_data(**kwargs)
