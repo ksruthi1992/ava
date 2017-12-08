@@ -99,6 +99,7 @@ class RecipeTemplate(TemplateView):
         context['recipe_time'] = recipe.time
         context['recipe_serves'] = recipe.serves
         context['recipe_ingredients_display'] = recipe.ingredients_display
+        context['recipe_image' ]= recipe.featured_image
         context['direction'] = []
         recipe_directions = Recipe_Direction.objects.filter(recipe_id=recipe_id)
         direction_ids = []
