@@ -1,4 +1,4 @@
-﻿
+
 ## AVA
 
 ### Table of contents  
@@ -82,7 +82,7 @@
 
 **Project Title: AVA **
 
-**URL of Project: **
+**URL of Project: **http://theback.space:8000/
 
 **Team Members: Parker Martinez, Swapnil Patel, Angelica Smith-Evans, Anand Masurkar, **
 
@@ -743,7 +743,7 @@ Admin login
 		a) User enter his/her username in the text box labeled "Username".
 		b) User enter his/her Password in the text box labeled "Password".
 		c) User enter his/her Email in the  text box labeled "Email".
-		
+
 **Scenario 2 : User enters the main page to get a pantry to save items
 	2. Navigation : Select "log in" 
 		a)User enter his/her username in the text labeled "username".
@@ -767,34 +767,34 @@ UCP = UUCP x TCF x ECF
 Weight : 5  -> Simple
 	 10 -> Medium
 	 15 -> Difficult
-	 
+
 Unadjusted Actor Weights
 
-|Actor Name|Description                                   |Complexity|Weight|
-|----------|----------------------------------------------|:--------:|:----:|
-|User      |User interacts with the system through a web based interface|Simple   | 1     |
-|Admin     |Admin interacts with the system through a web based interface|Simple   | 1     |
-|Database  |Database is another system interacting through a protocol|Average   | 2     |
+| Actor Name | Description                              | Complexity | Weight |
+| ---------- | ---------------------------------------- | :--------: | :----: |
+| User       | User interacts with the system through a web based interface |   Simple   |   1    |
+| Admin      | Admin interacts with the system through a web based interface |   Simple   |   1    |
+| Database   | Database is another system interacting through a protocol |  Average   |   2    |
 
 **UAW**= 2 * Simple + 1 * Average + 1 * Complex = 2*1 + 1*2 = **4**
-	 
+​	 
 Use Case Weights	 
 
-|Use Case|Description                                  |Category|Weight|
-|:------:|---------------------------------------------|:------:|:----:|
-|UC-1    |NewUserSignUp New User can sign up to 'Ava' application |Average |10    |
-|UC-2    |LoginUser Existing user can login to 'Ava' application |Simple | 5    |
-|UC-3    |SaveIngredients User can save ingredients in the pantry |Average |10    |
-|UC-4    |SearchRecipe User can search recipes based on the search filter |Simple |5    |
-|UC-5    |GiveFeedback Existing users can give feedback for recipes |Simple | 5    |
-|UC-6    |ShareRecipe Users can share recipes on social media | Simple |5    |
-|UC-7    |ViewRecipeOfTheDay Users can view recipe of the day |Simple | 5    |
-|UC-8    |AddRecipe Admin can add recipe |Complex |15    |
-|UC-9    |EditRecipe Admin can edit recipe |Average | 10    |
-|UC-10   |DisplayRceipeOfTheDay Admin can show recipe of the day to logged in users |Simple | 5    |
-|UC-11    |ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe |Complex | 15    |
-|UC-12    |TrackMostViewed Admin should be able to track most viewed recipe |Average | 10    |
-|Total   |                                             |        |100    |
+| Use Case | Description                              | Category | Weight |
+| :------: | ---------------------------------------- | :------: | :----: |
+|   UC-1   | NewUserSignUp New User can sign up to 'Ava' application | Average  |   10   |
+|   UC-2   | LoginUser Existing user can login to 'Ava' application |  Simple  |   5    |
+|   UC-3   | SaveIngredients User can save ingredients in the pantry | Average  |   10   |
+|   UC-4   | SearchRecipe User can search recipes based on the search filter |  Simple  |   5    |
+|   UC-5   | GiveFeedback Existing users can give feedback for recipes |  Simple  |   5    |
+|   UC-6   | ShareRecipe Users can share recipes on social media |  Simple  |   5    |
+|   UC-7   | ViewRecipeOfTheDay Users can view recipe of the day |  Simple  |   5    |
+|   UC-8   | AddRecipe Admin can add recipe           | Complex  |   15   |
+|   UC-9   | EditRecipe Admin can edit recipe         | Average  |   10   |
+|  UC-10   | DisplayRceipeOfTheDay Admin can show recipe of the day to logged in users |  Simple  |   5    |
+|  UC-11   | ManageAccount Ava should be able to manage specific user account by analyzing recipes and provide related side dishes and let users bookmark or save recipe | Complex  |   15   |
+|  UC-12   | TrackMostViewed Admin should be able to track most viewed recipe | Average  |   10   |
+|  Total   |                                          |          |  100   |
 
 **UUCW** = 6 * Simple + 4 * Average + 2 * Complex = 6*5 + 4*10 + 2*15 = **100**
 
@@ -802,38 +802,38 @@ Use Case Weights
 
 Technical Complexity Factor (TCF)
 
-|Technical Factor|Discription                       |Weight|Preceived Complexity|Calculated Factor|
-|----------------|----------------------------------|:----:|:------------------:|:---------------:|
-|T1              |Web based system                  |2     |2                   |2 X 2 = 4        |
-|T2              |User expect good performance      |1     |3                   |1 X 3 = 3        |
-|T3              |End user expects efficiency       |1     |3                   |1 X 3 = 3        |
-|T4              |Internal processing               |1     |2                   |1 X 2 = 2        |
-|T5              |No requirement reusability        |1     |0                   |1 X 0 = 0        |
-|T6              |Ease of installation              |0.5   |0                   |0.5 X 0 = 0      |
-|T7              |Ease of use                       |0.5   |2                   |0.5 X 2 = 1      |
-|T8              |Portability                       |2     |2                   |2 X 2 = 4        |
-|T9              |Easy to change                    |1     |3                   |1 X 3 = 3        |
-|T10             |Concurrent use is required        |1     |3                   |1 X 3 = 3        |
-|T11             |Security is a minimal concern     |1     |3                   |1 X 3 = 3        |
-|T12             |No direct access for third parties|1     |0                   |1 X 0 = 0        |
-|T13             |No training required              |1     |0                   |1 X 0 = 0        |
-|Total           |                                  |      |                    |26               |
+| Technical Factor | Discription                        | Weight | Preceived Complexity | Calculated Factor |
+| ---------------- | ---------------------------------- | :----: | :------------------: | :---------------: |
+| T1               | Web based system                   |   2    |          2           |     2 X 2 = 4     |
+| T2               | User expect good performance       |   1    |          3           |     1 X 3 = 3     |
+| T3               | End user expects efficiency        |   1    |          3           |     1 X 3 = 3     |
+| T4               | Internal processing                |   1    |          2           |     1 X 2 = 2     |
+| T5               | No requirement reusability         |   1    |          0           |     1 X 0 = 0     |
+| T6               | Ease of installation               |  0.5   |          0           |    0.5 X 0 = 0    |
+| T7               | Ease of use                        |  0.5   |          2           |    0.5 X 2 = 1    |
+| T8               | Portability                        |   2    |          2           |     2 X 2 = 4     |
+| T9               | Easy to change                     |   1    |          3           |     1 X 3 = 3     |
+| T10              | Concurrent use is required         |   1    |          3           |     1 X 3 = 3     |
+| T11              | Security is a minimal concern      |   1    |          3           |     1 X 3 = 3     |
+| T12              | No direct access for third parties |   1    |          0           |     1 X 0 = 0     |
+| T13              | No training required               |   1    |          0           |     1 X 0 = 0     |
+| Total            |                                    |        |                      |        26         |
 
 **TCF** = 0.6 + 0.01 X 26 = **0.86**
 
 Environmental Complexity Factor (ECF)
 
-|Enviromental Factor|Desctiption                                  |Weight|Preceived Impact|Calculated Factor|
-|-------------------|---------------------------------------------|:----:|:--------------:|:---------------:|
-|E1                 |Beginner familiarity with development process|1.5   |1               |1.5 X 1 = 1.5    |
-|E2                 |Familiarity with appication problem          |0.5   |2               |0.5 X 2 = 1      |
-|E3                 |Some knowledge of object-oriented approach   |1     |2               |1 X 2 = 2        |
-|E4                 |Lead analyst                                 |0.5   |1               |0.5 X 1 = 0.5    |
-|E5                 |Motivation                                   |1     |3               |1 X 3 = 3        |
-|E6                 |Stable requirements                          |2     |5               |2 X 5 = 10       |
-|E7                 |All part time staff                          |-1    |3               |-1 X 3 = -3      |
-|E8                 |Average difficulty programming language      |-1    |2               |-1 X 2 = -2      |
-|Total              |                                             |      |                |13               |
+| Enviromental Factor | Desctiption                              | Weight | Preceived Impact | Calculated Factor |
+| ------------------- | ---------------------------------------- | :----: | :--------------: | :---------------: |
+| E1                  | Beginner familiarity with development process |  1.5   |        1         |   1.5 X 1 = 1.5   |
+| E2                  | Familiarity with appication problem      |  0.5   |        2         |    0.5 X 2 = 1    |
+| E3                  | Some knowledge of object-oriented approach |   1    |        2         |     1 X 2 = 2     |
+| E4                  | Lead analyst                             |  0.5   |        1         |   0.5 X 1 = 0.5   |
+| E5                  | Motivation                               |   1    |        3         |     1 X 3 = 3     |
+| E6                  | Stable requirements                      |   2    |        5         |    2 X 5 = 10     |
+| E7                  | All part time staff                      |   -1   |        3         |    -1 X 3 = -3    |
+| E8                  | Average difficulty programming language  |   -1   |        2         |    -1 X 2 = -2    |
+| Total               |                                          |        |                  |        13         |
 
 **ECF** = 1.4 - 0.03 X 13 = **1.01**
 
@@ -864,22 +864,22 @@ Environmental Complexity Factor (ECF)
 
 
 #### <a name="association_definitions"></a> ii. Association Definitions
-|Concept Pair | Association Description | Association Name|
-|-------------|-------------------------|-----------------|
-|User <-> Register| Allows users to register into the system | Registration|
-|User <-> Login| Allows registered user to login into the system| Login|
-|User <-> ViewRecipeOfTheDay| Registered users can view the recipe of the day provided on the page| Convey Requests|
-|User <-> SearchRecipe | Allows the user to search recipe based on the search filter| Provides Data|
-|User <-> SearchFilter | Allows the user to search for recipes using ingredients,cuisine and/or time| Convey Requests/Provides Data|
-|User <-> Pantry | Allows registered user to add,save and/or delete the ingredients in the pantry | Convey Requests/ Request Save|
-|Pantry <-> PantryModifer| Allows registered user to modify menu| Modifies|
-|User <-> Bookmarkrecipe | Users can bookmark the recipe to be used in future | Request Save|
-|User <-> FeedbackOption | Users can give their comments about the system | Provides Data|
-|Admin <-> AddRecipe | The admin can add new recipes into the system and save it for the users to view| Convey Requests/ Requests save|
-|Admin<-> DisplayRecipeofTheDay| Admin is able to show the recipe of the day to the users | Provides Data |
-|Admin <-> ManageAccount | Admin is able to manage specific user account by analyzing recipes and provide side dishes| Modifies/Convey Requests|
-|Admin <-> TrackViews | Admin is able ro track down the most viewed recipe in the system | Provides data | 
- 
+| Concept Pair                   | Association Description                  | Association Name               |
+| ------------------------------ | ---------------------------------------- | ------------------------------ |
+| User <-> Register              | Allows users to register into the system | Registration                   |
+| User <-> Login                 | Allows registered user to login into the system | Login                          |
+| User <-> ViewRecipeOfTheDay    | Registered users can view the recipe of the day provided on the page | Convey Requests                |
+| User <-> SearchRecipe          | Allows the user to search recipe based on the search filter | Provides Data                  |
+| User <-> SearchFilter          | Allows the user to search for recipes using ingredients,cuisine and/or time | Convey Requests/Provides Data  |
+| User <-> Pantry                | Allows registered user to add,save and/or delete the ingredients in the pantry | Convey Requests/ Request Save  |
+| Pantry <-> PantryModifer       | Allows registered user to modify menu    | Modifies                       |
+| User <-> Bookmarkrecipe        | Users can bookmark the recipe to be used in future | Request Save                   |
+| User <-> FeedbackOption        | Users can give their comments about the system | Provides Data                  |
+| Admin <-> AddRecipe            | The admin can add new recipes into the system and save it for the users to view | Convey Requests/ Requests save |
+| Admin<-> DisplayRecipeofTheDay | Admin is able to show the recipe of the day to the users | Provides Data                  |
+| Admin <-> ManageAccount        | Admin is able to manage specific user account by analyzing recipes and provide side dishes | Modifies/Convey Requests       |
+| Admin <-> TrackViews           | Admin is able ro track down the most viewed recipe in the system | Provides data                  |
+
 
 
 
