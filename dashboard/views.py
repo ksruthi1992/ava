@@ -532,15 +532,24 @@ class AvaPantry(APIView):
             return Response(response, status=status.HTTP_200_OK)
 
     def post(self,request,**kwargs):
+        request_data = {}
+        for i in request.data:
+            request_data = i
+        print request_data
+        print type(request_data)
+        request_data = eval(request_data)
         req_params = ['ingredients']
-        param_check = check_parameters(req_parameters=req_params, request_data=request.data)
+        param_check = check_parameters(req_parameters=req_params, request_data=request_data)
 
         if param_check.status_code != 200:
             return param_check
 
-        request_count = check_and_get_req_count(request.data)
-        user_ingredients_list = request.data['ingredients']
-        print user_ingredients_list
+        request_count = check_and_get_req_count(request_data)
+
+        user_ingredients_list = request_data['ingredients']
+
+        # print type(user_ingredients_list)
+        # print user_ingredients_list
         try:
             user_id = int(self.kwargs['user_id'])
             try:
@@ -552,13 +561,13 @@ class AvaPantry(APIView):
                 if token_user != user:
                     raise Exception
             except:
-                response = prepare_response_not_auth(request.data)
+                response = prepare_response_not_auth(request_data)
                 return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
             try:
                 ingredient_list = []
                 for user_ingredient in user_ingredients_list:
-                    ingredient_obj, created = Ingredient.objects.get_or_create(name=user_ingredient)
+                    ingredient_obj, created = Ingredient.objects.get_or_create(name=str(user_ingredient))
                     ingredient_list.append(ingredient_obj.id)
 
                 userPantry, created = Pantry.objects.get_or_create(user_id=token_user.id)

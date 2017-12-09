@@ -28,7 +28,7 @@ $(document).ready(function() {
 
                               $checkbox.prop('checked', !$checkbox.is(':checked'));
                               $checkbox.triggerHandler('change');
-                              updateDisplay1();
+                              // updateDisplay1();
 
 
 
@@ -89,25 +89,25 @@ document.getElementById('btntest').onclick = function(e) {
     e.preventDefault();
 
     var selchb = getSelectedChbox(this.form);     // gets the array returned by getSelectedChbox()
-    console.log(selchb)
-
-            var wrapper1= $("#parent");
+    console.log(selchb);
+    var wrapper1= $("#parent");
         wrapper1.empty();
     if (is_user_logged_in()) {
         var user_id = get_user_id();
         var user_token = get_user_token();
+
         $.ajax({
+            type: 'POST',
             beforeSend: function (req) {
                 req.setRequestHeader('Authorization','Token '+ user_token);
             },
             url: '/pantry/' + user_id + '/',
-            type: 'POST',
-            data: {
-                //vegetable: $('#tomato').val(),
-                pantry_items: selchb
-            },
+            data:JSON.stringify({'ingredients': selchb}),
             success: function (msg) {
                 alert(msg);
+            },
+            error: function (req,status, error){
+                console.log(req, status, error);
             }
         })
     }
