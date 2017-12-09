@@ -86,6 +86,8 @@ class Dashboard(TemplateView):
 class RecipeAdmin(TemplateView):
     template_name = "recipe-admin.html"
 
+
+
 class RecipeTemplate(TemplateView):
     template_name = "recipeModal.html"
 
@@ -488,80 +490,100 @@ class UserSignup(APIView):
             return Response(response, status= status.HTTP_200_OK)
 
 
-class Pantry(APIView):
-    def get(self,request):
+class AvaPantry(APIView):
+    def get(self,request, **kwargs):
+        request_count = check_and_get_req_count(request.data)
         try:
-            #self.user_id = request.session(session_key)
-            #self.user = request.user
-            #self.user_item_list = Pantry.objects.filter(user_id=self.user_id)
-            #user_item_list = Pantry.objects.filter(user_id=self.user_id).exclude(is_removed=True)
-            user_item_list = Pantry.objects.all().exclude(is_removed=True)
-            name = []
-            for e in user_item_list:
-                name.append(e["ingredient_id"])
+            user_id = int(self.kwargs['user_id'])
+            try:
+                token_user = get_token_user_from_request(request)
+                print token_user.username
 
-            return Response({"ingredients": name})
+                user = User.objects.get(id=user_id)
 
+                if token_user != user:
+                    raise Exception
+            except:
+                response = prepare_response_not_auth(request.data)
+                return Response(response, status=status.HTTP_400_BAD_REQUEST)
+            try:
+                user_item_list = Pantry.objects.get(user_id=token_user.id).pantry_ingredients
+                user_item_list = eval(user_item_list)
+                user_ingredients = []
+                for user_item in user_item_list:
+                    print user_item_list
+                    ingredient = Ingredient.objects.get(id=user_item).name
+                    user_ingredients.append(ingredient)
 
-        except:
-            print 'No pantry items added by this user'
-        return Response({"ingredients":["tomatoes", "potatoes"]})
+            except Exception as e:
+                print 'No pantry items added by this user: '+e.message
+                user_ingredients = []
 
+            message = "user " + str(token_user.id) + " ingredients!"
+            elements = {"ingredients": user_ingredients, "action": "get_user_pantry"}
+            response = prepare_res(ava_response=message, request_count=request_count, elements=elements)
+            return Response(response, status=status.HTTP_200_OK)
 
-    def post(self,request):
-        count_ingredient = Ingredient.objects.raw('SELECT 1 id , COUNT(*) AS total_count from dashboard_ingredient')
-        for obj in count_ingredient:
-            count_ingredient =  obj.total_count
-        print count_ingredient
-        myDict = dict((request.data).iterlists())
+        except Exception as e:
+            message = e.message
+            elements = {}
 
+            response = prepare_res(ava_response=message, request_count=request_count, elements=elements)
+            return Response(response, status=status.HTTP_200_OK)
 
-        # Require session key to test the code
+    def post(self,request,**kwargs):
+        req_params = ['ingredients']
+        param_check = check_parameters(req_parameters=req_params, request_data=request.data)
 
-        # user_id = request.session(session_key)
+        if param_check.status_code != 200:
+            return param_check
 
+        request_count = check_and_get_req_count(request.data)
+        user_ingredients_list = request.data['ingredients']
+        print user_ingredients_list
+        try:
+            user_id = int(self.kwargs['user_id'])
+            try:
+                token_user = get_token_user_from_request(request)
+                print token_user.username
 
+                user = User.objects.get(id=user_id)
 
-        user_id=1;
-        user = User.objects.get(id=user_id)
-        for key, values in myDict.items():
-            #for loop checks for each ingredient if its present or absent in both dashboard_pantry and dashboard_ingredient
-            for v in values:
-                if count_ingredient == 0 and request.session[user_id]==user.id:    #***
-                    #used request.session for logged in users and to maintain their pantry
-                    #this is used to check if both tables are empty and create selected pantry entries
-                    new_ingredient = Ingredient.objects.create(name=v).save()
-                    new_in_pantry = Pantry.objects.create(ingredient_id=new_ingredient.id, user_id=user.id, is_removed=False)
-                elif request.session[user_id]==user.id:
-                    try:
-                        #if_present try block will  not throw an exception
-                        #if absent exception block will execute
-                        ingredient_obj = Ingredient.objects.get(name=v)
+                if token_user != user:
+                    raise Exception
+            except:
+                response = prepare_response_not_auth(request.data)
+                return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
-                        if Pantry.objects.get(id=ingredient_obj.id):
-                            update_field = Pantry.objects.get(id=ingredient_obj.id)
-                            update_field.is_removed = False
-                            update_field.save()
+            try:
+                ingredient_list = []
+                for user_ingredient in user_ingredients_list:
+                    ingredient_obj, created = Ingredient.objects.get_or_create(name=user_ingredient)
+                    ingredient_list.append(ingredient_obj.id)
 
-                        else:
-                            Pantry.objects.create(ingredient_id = ingredient_obj.id,user_id=user.id,is_removed=False)
-                            msg = "already existed ingredient"
+                userPantry, created = Pantry.objects.get_or_create(user_id=token_user.id)
+                userPantry.pantry_ingredients = str(ingredient_list)
+                userPantry.save()
+                user_item_list = user_ingredients_list
 
-                    except:
-                        msg = "ingredient doesnot exist"
-                        new_ingredient = Ingredient.objects.create(name=v).save()
-                        new_in_pantry = Pantry.objects.create(ingredient_id=new_ingredient.id, user_id=user.id, is_removed=False)
+            except Exception as e:
+                print 'No pantry items added by this user '+e.message
+                user_item_list = []
 
-        #below code to update pantry items which are removed my user in user pantry i.e Pantry
+            message = "user " + str(token_user.id) + " ingredients updated!"
+            elements = {"ingredients": user_item_list, "action": "pantry_update"}
+            response = prepare_res(ava_response=message, request_count=request_count, elements=elements)
+            return Response(response, status=status.HTTP_200_OK)
 
-        return Response("Pantry Saved", status=status.HTTP_200_OK)
+        except Exception as e:
+            message = e.message
+            elements = {}
 
-
-
+            response = prepare_res(ava_response=message, request_count=request_count, elements=elements)
+            return Response(response, status=status.HTTP_200_OK)
 # class addIngredient(APIView):
 #     def post(self, request, *args, **kwargs):
 #
-
 class getRecipe(APIView) :
     def get(self, request, *args, **kwargs):
         template_name = "recipe.html"

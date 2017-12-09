@@ -19,7 +19,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
-from dashboard.views import Dashboard, UserSignup, RecipeAdmin, Recipe, Login, Pantry, getRecipe, \
+from dashboard.views import Dashboard, UserSignup, RecipeAdmin, Recipe, Login, AvaPantry, getRecipe, \
     MainController, UserProfile, AvaRecipe,RecipeTemplate
 
 
@@ -28,7 +28,7 @@ urlpatterns = [
 
     url(r'^login/$', Login.as_view(), name='login'),
 
-    url(r'^pantry/$', Pantry.as_view(), name='pantry'),
+    url(r'^pantry/(?P<user_id>[0-9]+)/$', AvaPantry.as_view(), name='pantry'),
 
     url(r'^getrecipe/$', getRecipe.as_view(), name='getrecipe'),
 
