@@ -3,6 +3,53 @@ $(document).ready(function() {
     //alert("hello");
     $("#pantry").click(function () {
      // alert('here in');
+        var user_id = get_user_id();
+        var user_token = get_user_token();
+        if(is_user_logged_in()) {
+            $.ajax({
+                type: 'GET',
+                url: '/pantry/' + user_id + '/',
+                beforeSend: function (req) {
+                req.setRequestHeader('Authorization','Token '+ user_token);
+            },
+
+                success: function (msg) {
+                    //alert(msg);
+                    //code here to display items from pantry on screen
+                    //alert((msg.element.ingredients));
+
+                    var count = (msg.element.ingredients).length;
+                   if(count>=0)
+                   {
+
+                       do
+                       {
+                       //alert(msg.element.ingredients);
+                        //alert(count)
+                       $("#"+msg.element.ingredients[count]).removeClass("btn-default");
+                       $("#"+msg.element.ingredients[count]).addClass("btn-success active");
+                       $("#"+msg.element.ingredients[count]).find('.state-icon').removeClass("glyphicon-unchecked");
+                       $("#"+msg.element.ingredients[count]).find('.state-icon').addClass("glyphicon-check");
+                        count--;
+                       }while (count>=0)
+                   }
+                   else
+                   {
+                       alert("no elements present in user pantry");
+                   }
+
+
+
+                },
+                error: function (req, status, error) {
+                    console.log(req, status, error);
+                }
+            })
+        }
+        else
+        {
+            alert("I am in else");
+        }
 
         $(function () {
             $('.button-checkbox').each(function () {
@@ -28,7 +75,7 @@ $(document).ready(function() {
 
                               $checkbox.prop('checked', !$checkbox.is(':checked'));
                               $checkbox.triggerHandler('change');
-                              // updateDisplay1();
+                              updateDisplay();
 
 
 
@@ -104,7 +151,7 @@ document.getElementById('btntest').onclick = function(e) {
             url: '/pantry/' + user_id + '/',
             data:JSON.stringify({'ingredients': selchb}),
             success: function (msg) {
-                alert(msg);
+                //alert(msg);
             },
             error: function (req,status, error){
                 console.log(req, status, error);

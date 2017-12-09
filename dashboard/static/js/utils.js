@@ -52,8 +52,6 @@ function is_user_logged_in() {
     }
 }
 
-
-
 function set_ava_response(ava_response) {
     $('#ava_response').typeIt({strings:ava_response, speed:30});
 }
@@ -102,6 +100,7 @@ function set_action_on(ack,value){
         localStorage.setItem('action_on_nack', value);
     }
 }
+
 function set_response_on(ack, value){
     if(ack){
         localStorage.setItem('response_on_ack', value);
