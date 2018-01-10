@@ -587,7 +587,7 @@ Main Success Scenario:
 
 #### 		<a name="usecasediagram"></a> iii. Use Case Diagram
 
-![image](diagrams/use_case_diagram.jpg)
+![image](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/diagrams/use_case_diagram.jpg)
 
 
 
@@ -614,7 +614,7 @@ Login
 
 
 
-![image](diagrams/Sequence_Diagram_for_Login.png)
+![image](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/diagrams/Sequence_Diagram_for_Login.png)
 
 
 
@@ -628,7 +628,7 @@ Add ingredients to Pantry
 
 
 
-![image](diagrams/Sequence_Diagram_Input_Ingredients.png)
+![image](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/diagrams/Sequence_Diagram_Input_Ingredients.png)
 
 
 
@@ -642,7 +642,7 @@ Search
 
 
 
-![image](diagrams/Sequence_Diagram_Search_Recipes_modified.png)
+![image](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/diagrams/Sequence_Diagram_Search_Recipes_modified.png)
 
 
 
@@ -652,7 +652,7 @@ Admin login
 
 
 
-![image](diagrams/Sequence_Diagram_Admin_login.png)
+![image](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/diagrams/Sequence_Diagram_Admin_login.png)
 
 
 
@@ -823,23 +823,23 @@ Furthermore, particular to a recipe, the relevancy algorithm/formula will theref
 
 ###### Home/Dashboard
 
-![image](diagrams/home.jpg)
+![image](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/diagrams/home.jpg)
 
 ###### Login
 
-![image](diagrams/login.jpg)
+![image](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/diagrams/login.jpg)
 
 ###### Register
 
-![image](diagrams/register.jpg)
+![image](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/diagrams/register.jpg)
 
 ###### Pantry
 
-![image](diagrams/pantry.jpg)
+![image](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/diagrams/pantry.jpg)
 
 ###### Recipe
 
-![image](diagrams/recipe.jpg)
+![image](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/diagrams/recipe.jpg)
 
 
 
@@ -862,7 +862,7 @@ Furthermore, particular to a recipe, the relevancy algorithm/formula will theref
 
 ## <a name="plan_of_work"></a> Plan of Work
 
-![image](diagrams/ava_gantt_chart.JPG)
+![image](https://github.com/CSUS-CSC-131-Fall2017/ava/blob/master/docs/diagrams/ava_gantt_chart.JPG)
 
 ## <a name="references"></a> References
 
